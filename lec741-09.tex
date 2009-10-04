@@ -295,9 +295,9 @@ Define $\nu\colon G \rightarrow G/N$ by $x \mapsto Nx$. By inspection $\nu$ is o
 Suppose $\phi \colon G \rightarrow H$, $\psi \colon G \rightarrow K$ are surjective group homomorphisms with the same kernel. Then $H \cong K$.
 \end{theorem}
 \begin{proof}
-Now $\phi$ is surjective, so it has a left-inverse which we'll denote $\phi^{-1}$ (and be careful not to use as a two-sided inverse). We will show that $\phi^{-1}\psi$ is the isomorphism we need. Pick $h$, $l \in H$. Certainly $(hl)\phi^{-1}\phi = hl = (h\phi^{-1} \phi)\mdot(l\phi^{-1}\phi) = (h\phi^{-1}\mdot l\phi^{-1})\phi$. Since $ker \phi = ker \psi$, we have that for any $a$, $b \in G$, $(a)\phi = (b)\phi$ iff $(a)\psi = (b)\psi$. But this means that $(hl)\phi^{-1}\psi = (h\phi^{-1}\mdot l\phi^{-1})\psi = (h\phi^{-1})\psi\mdot (l\phi^{-1})\psi$. Hence $\phi^{-1}\psi \colon H \rightarrow K$ is a homomorphism.
+Now $\phi$ is surjective, so it has a left-inverse which we'll denote $\phi^{-1}$ (and be careful not to use as a two-sided inverse). We will show that $\phi^{-1}\psi$ is the isomorphism we need. Pick $h$, $l \in H$. Certainly $(hl)\phi^{-1}\phi = hl = (h\phi^{-1} \phi)\mdot(l\phi^{-1}\phi) = (h\phi^{-1}\mdot l\phi^{-1})\phi$. Since $ker\ \phi = ker\ \psi$, we have that for any $a$, $b \in G$, $(a)\phi = (b)\phi$ iff $(a)\psi = (b)\psi$. But this means that $(hl)\phi^{-1}\psi = (h\phi^{-1}\mdot l\phi^{-1})\psi = (h\phi^{-1})\psi\mdot (l\phi^{-1})\psi$. Hence $\phi^{-1}\psi \colon H \rightarrow K$ is a homomorphism.
 
-To see that it is an isomorphism, suppose $h \in ker \phi^{-1}\psi$. Then $(h)\phi^{-1}\psi = 1 = (1)\psi$, so $h = (h)\phi^{-1}\phi = (1)\phi = 1$.
+To see that it is an isomorphism, suppose $h \in ker\ \phi^{-1}\psi$. Then $(h)\phi^{-1}\psi = 1 = (1)\psi$, so $h = (h)\phi^{-1}\phi = (1)\phi = 1$.
 \end{proof}
 
 The above theorem says that a homomorphism's domain and kernel essentially determine its image. We can use this result to pick a canonical homomorphism for each domain and kernel.
@@ -312,9 +312,9 @@ Alternatively we can (and most books do) show directly that all surjective homom
 Let $\theta \colon G \rightarrow H$ be a surjective group homomorphism with kernel $N$.  Then $H \cong G/N$.
 \end{theorem}
 \begin{proof}
-The map $\eta \colon G/N \rightarrow H$ defined by $Nx \mapsto (x)\theta$ is an isomorphism. It is well-defined because $Nx = Ny$ implies $xy^{-1} \in N = ker \theta$, which implies $(x)\theta\mdot(y)\theta^{-1} = (xy^{-1})\theta = 1$; hence $(x)\theta = (y)\theta$. It is a homomorphism because $(NxNy)\eta = (Nxy)\eta = (xy)\theta = (x)\theta\mdot(y)\theta = (Nx)\eta\mdot(Ny)\eta$.
+The map $\eta \colon G/N \rightarrow H$ defined by $Nx \mapsto (x)\theta$ is an isomorphism. It is well-defined because $Nx = Ny$ implies $xy^{-1} \in N = ker\ \theta$, which implies $(x)\theta\mdot(y)\theta^{-1} = (xy^{-1})\theta = 1$; hence $(x)\theta = (y)\theta$. It is a homomorphism because $(NxNy)\eta = (Nxy)\eta = (xy)\theta = (x)\theta\mdot(y)\theta = (Nx)\eta\mdot(Ny)\eta$.
 
-If $Nx \in ker \eta$ then $x \in ker \theta = N$. So $Nx = N$, the identity of $G/N$. Hence $\eta$ is injective; it is onto almost by inspection.
+If $Nx \in ker\ \eta$ then $x \in ker\ \theta = N$. So $Nx = N$, the identity of $G/N$. Hence $\eta$ is injective; it is onto almost by inspection.
 \end{proof}
 
 Although Theorem \ref{firstiso} may seem more general than Theorem \ref{iso1}, it isn't really. If $\phi \colon G \rightarrow H$ and $\psi \colon G \rightarrow K$ are surjective homomorphisms both with kernel $N$, then Theorem \ref{iso1} says that $H \cong G/N \cong K$.
