@@ -1,0 +1,359 @@
+\documentclass[letter]{article}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newcommand{\mdot}{{\cdot}}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\begin{document}
+\title{Math 741, Abstract Algebra}
+\author{Scott Pellicane \and Joe Nelson}
+\date{Fall 2009}
+\maketitle
+
+These notes contain what we consider the highlights and subtle points of Passman's lectures. We express the concepts in our own words, and insert, expand, and rearrange topics.
+
+This document is distributed under the Creative Commons 3.0 attribution license.
+
+\section{Lecture 1 -- September 3}
+
+\subsection{Solving equations in groups}
+
+The simplest form of group equation is $ax = b$, which always has a unique solution $x$. The existence and uniqueness of the solution are independent facts and must be verified separately. Notice the following proof of uniqueness requires the right-inverse and existence the left.
+
+We begin with uniqueness because it supplies the only candidate for existence.  Suppose there exists an $x$ with $ax = b$. Then $x = 1x = (a^{-1}a)x = a^{-1}(ax) = a^{-1}b$ and $x$ is unique.
+
+Is the element $a^{-1}b$ from the previous direction a solution? Yes. It is in our group by closure, and satisfies $a(a^{-1}b) = (aa^{-1})b = 1b = b$.  (Note that closure alone is not sufficient -- we had to verify that our candidate satisfies the equation.) Similarly $xa = b$ has exactly one solution.
+
+\subsection{Small concrete groups}
+
+Finite groups can be displayed in Cayley tables. Each row contains all group elements with no repetition because for every row $a$ and group element $b$ there is exactly one column $x$ solving the equation $ax = b$.
+
+\[
+\begin{array}{r|*{5}{r}}
+* & . & . & x & . \\
+\hline
+. & . & . & . & . \\
+a & . & . & b & . \\
+. & . & . & . & . \\
+. & . & . & . & . \\
+\end{array}
+\]
+
+Similarly every column is a permutation of the group elements, and these facts limit the table possibilities. In fact, there is only one way (up to relabeling) to construct each Cayley table smaller than four-by-four. With the foreknowledge that there is a four-by-four table wherein every element is an involution (i.e., $x^2 = 1$), we can exhaust the possibilities for that size.
+
+Assume we have a table of involutions. There is only one four-by-four table with this property:
+
+\[
+\begin{array}{r|*{5}{r}}
+* & 1 & a & b & c \\
+\hline
+1 & 1 & a & b & c \\
+a & a & 1 & c & b \\
+b & b & c & 1 & a \\
+c & c & b & a & 1 \\
+\end{array}
+\]
+
+Now assume we have a table of order four with a non-involution element. WLOG $a^2 = b$, and the rest of the table resolves to
+
+\[
+\begin{array}{r|*{5}{r}}
+* & 1 & a & b & c \\
+\hline
+1 & 1 & a & b & c \\
+a & a & b & c & 1 \\
+b & b & c & 1 & a \\
+c & c & 1 & a & b \\
+\end{array}
+\]
+
+One of these mutually exclusive conditions must hold: every element is an involution or at least one isn't. In each case there is only one possible table, giving exactly two tables of order four.
+
+Therefore there are at most two groups of order four, and at most one of each smaller order. We have not shown the tables to be groups. That the tables have an identity and inverses is clear, but we have not checked associativity. In fact, constructing a valid Cayley table will not guarantee associativity \cite{Burn78}. For instance, $(c * b) * a = d * a = c \ne a = c * d = c * (b * a)$ in the following table.
+
+\[
+\begin{array}{r|*{6}{r}}
+* & 1 & a & b & c & d \\
+\hline
+1 & 1 & a & b & c & d \\
+a & a & 1 & c & d & b \\
+b & b & d & 1 & a & c \\
+c & c & b & d & 1 & a \\
+d & d & c & a & b & 1 \\
+\end{array}
+\]
+
+Now here are two familiar groups of order four.
+
+\begin{enumerate}
+\item $\left\{1, i, -1, -i\right\} \subset \mathbb{C}$ under complex multiplication
+
+\item $\left( {\begin{array}{cc}
+\pm1 & 0  \\
+0 & \pm1  \\
+\end{array} } \right) \subset M_2(\mathbb{R})$ under matrix multiplication
+\end{enumerate}
+Their Cayley tables are distinct because every element in the latter is an involution. Since we showed there are only two four-by-four tables, they correspond to our examples -- and hence are groups. Of course, we could have also checked associativity directly.
+
+\section{Lecture 2 -- September 8}
+
+\subsection{Properties of functions}
+
+We would like to form groups of bijective functions on a given set under composition. To this end we examine properties of 1-1 and onto functions.
+
+\begin{lemma}
+\label{inverses}
+The composition of 1-1 (onto) functions is 1-1 (onto). 
+\end{lemma}
+\begin{proof}
+Suppose $f\colon A \rightarrow B$ and $g\colon B \rightarrow C$ are 1-1. If $(a)fg = (a')fg$ then $(a)f = (a')f$ since $g$ is 1-1. But $f$ is 1-1 as well, so $a = a'$, which proves $fg$ is 1-1.
+
+Now suppose $f$ and $g$ are onto. Pick an element $c \in C$. Then there is an element $b \in B$ with $(b)g = c$. Similarly there is an $a \in A$ where $(a)f = b$. So $(a)fg = (b)g = c$. So $fg$ is onto.
+\end{proof}
+
+\begin{lemma}
+\label{right11}
+A function $f\colon A \rightarrow B$ is 1-1 iff it has a right-inverse.
+\end{lemma}
+\begin{proof}
+Suppose $f$ is 1-1. Then for every $b \in (A)f$ there exists a unique $a \in A$ such that $(a)f = b$. Since $a$ is unique, mapping $b \mapsto a$ defines a function $g \colon (A)f \rightarrow A$.  If $a \in A$, then $(a)f = b$ for some $b \in B$ and we have $a(fg) = ((a)f)g = (b)g = a$.
+
+Suppose now $f$ has a right-inverse $g$. If $(a)f = (a')f$ then $a = (a)fg = (a')fg = a'$. So $f$ is 1-1.
+\end{proof}
+
+\begin{lemma}
+\label{leftonto}
+A function $f\colon A \rightarrow B$ is onto iff it has a left-inverse.
+\end{lemma}
+\begin{proof}
+Suppose $f$ is onto. Then for every $b \in B$ the set $(b)f^{-1}$ is not empty. We can choose an $a_b \in (b)f^{-1}$. If $B$ is infinite, we have infinitely many choices to make, requiring the Axiom of Choice. The mapping $b \mapsto a_b$ defines a function, call it $g$. Finally, $(b)gf = (a_b)f = b$ for all $b \in B$ so $g$ is a left-inverse.
+
+Now assume $f$ has a left-inverse $g$. Since $b = (b)gf = ((b)g)f$ for all $b \in B$ we have that $f$ is onto.
+\end{proof}
+
+Taken together, lemmas \ref{right11} and \ref{leftonto} imply that $f$ has a two-sided inverse iff $f$ is 1-1 and onto. Furthermore, the inverse is unique. To see this, suppose $g$ and $g'$ are inverses of $f$. Then $fg = fg'$ which implies $g = gfg = gfg' = g'$.
+
+Inverses of bijections are not only unique, they are themselves bijections. The equalities $ff^{-1} = f^{-1}f = 1$, establish that $f^{-1}$ has a left- and right-inverse, namely $f$. Lemmas \ref{right11} and \ref{leftonto} then imply $f^{-1}$ is 1-1 and onto.
+
+Since we now know that bijections on a set $A$ are closed under composition, and have bijective inverses, together with the fact that they associate and that the identity on $A$ is a bijection, we know that they form a group. It is called the \emph{symmetric group} on A and is denoted $Sym_A$.
+
+If $|A| = n$, then $|Sym_A| = n!$. First note that a 1-1 function on a finite set is necessarily onto. Therefore the number of 1-1 functions on $A$ is no greater than the size of $Sym_A$. Further, every element of $Sym_A$ is 1-1; hence we need only count the number of 1-1 functions on $A$.
+
+Write $A = \{a_0, a_1, \ldots a_n\}$. An arbitrary 1-1 function can map $a_0$ to any of $|A| = n$ elements. Once $a_0$ has been mapped, there are $n-1$ places left for $a_1$ because our function is 1-1. In general, $a_i$ can map to $n-i$ places. By counting we have $n!$ 1-1 functions on $A$.
+
+\subsection{Remarks on Subgroups}
+
+Let $S$ be a subgroup of $G$. Is the identity in $S$, $1_S$, equal to the identity in $G$, $1_G$? Yes, $1_S1_S = 1_S = 1_S1_G$. By cancellation in $G$, $1_S = 1_G$. Since the identities are equal, $S$-inverses coincide with $G$-inverses. This is a nice property for groups to enjoy; no such analogue holds for rings. For instance the subring
+\[
+\left( {\begin{array}{cc}
+\mathbb{R} & 0  \\
+0 & 0  \\
+\end{array} } \right) \subset M_2(\mathbb{R})
+\]
+has as multiplicative identity
+\[\left( {\begin{array}{cc}
+1 & 0  \\
+0 & 0  \\
+\end{array} } \right)
+\] which is not the identity in $M_2(\mathbb{R})$.
+
+\subsection{Homomorphisms}
+
+Finite groups $G$ and $H$ are essentially the same when the Cayley table of $H$ is a relabeling of $G$'s table. Let $\theta$ be the relabeling map. Suppose $a$, $b$, $c \in G$ and $ab = c$. Then part of $G$'s table is
+
+\[
+\begin{array}{r|*{5}{r}}
+  &  &   & b &   \\
+\hline
+  &   &   &   &   \\
+a &   &   & c &   \\
+  &   &   &   &   \\
+\end{array}
+\]
+
+Being a relabeling, $H$'s table contains
+
+\[
+\begin{array}{r|*{5}{r}}
+  &  &   & (b)\theta &   \\
+\hline
+  &   &   &   &   \\
+(a)\theta &   &   & (c)\theta &   \\
+  &   &   &   &   \\
+\end{array}
+\]
+
+Hence $(a)\theta\mdot (b)\theta = (c)\theta = (ab)\theta$ since $c = ab$. So for $\theta$ to be a valid relabeling it must satisfy $(ab)\theta = (a)\theta\mdot (b)\theta$. This corresponds to our notion of a group homomorphism.
+
+A homomorphism from $G$ to $H$ maps $1_G$ to $1_H$ and respects inverses. In fact if we couldn't have proved it we would have required it in the definition of homomorphism.
+
+Note that the inverse of an isormorphism is also an isomorphism. Let $\theta \colon G \rightarrow H$ be an isomorphism. Pick $x$, $y \in H$. Since $\theta$ is onto, there exist $a$, $b \in G$ with $(a)\theta = x$ and $(b)\theta = y$. So $(xy)\theta^{-1} = ((a)\theta\mdot (b)\theta)\theta^{-1} = ((ab)\theta)\theta^{-1} = ab = (x)\theta^{-1}\mdot (y)\theta^{-1}$.
+
+Even if $\theta$ is neither 1-1 nor onto we can gain information from preimages. Suppose $T$ is a subgroup of $H$. We will show $(T)\theta^{-1}$ is a subgroup of $G$. First, since $\theta$ is a homomorphism, $(1_G)\theta = 1_H = 1_T \in T$. Now if $x$, $y \in (T)\theta^{-1}$ then $(xy^{-1})\theta = (x)\theta\mdot ((y)\theta)^{-1} \in T$. Hence $xy^{-1} \in (T)\theta^{-1}$.
+
+\section{Lecture 3 -- September 10}
+
+\subsection{Equivalence relations}
+
+Equivalence relations and set partitions are merely two faces of the same coin. Given an equivalence relation on $A$, the equivalence classes partition $A$. They are disjoint by the transitvity and symmetry of the relation, and cover $A$ by the reflexivity. Conversely, given a partition of $A$, define elements of $A$ as being equivalent iff they are in the same subset. This relation is reflexive because the subsets cover $A$, transitive by the disjointness of subsets, and trivially symmetric. Define the \emph{index} of an equivalence relation as the number of its classes.
+
+One example of an equivalence relation is ismorphism between groups. The relation is reflexive because $1_G \colon G \rightarrow G$ is an isomorphism. If $G$ is isomorphic to $H$, then consider the inverse of whatever isomorphism holds between them. We have seen already that the inverse of an isomorphism is an isomorphism, by which $H$ is isomorphic to $G$. Finally, it's easy to check that the composition of isomorphisms is an isomorphism, and that establishes the transitivity of the relation.
+
+Now for a more interesting equivalence relation. Let $G$ be a group, and $H$ be a subgroup of $G$. For every $x$, $y \in G$ write $x \sim y$ iff $x^{-1}y \in H$. Showing $\sim$ is an equivalence relation requires all of $H$'s group properties. First $x \sim x$ because $x^{-1}x = 1_G \in H$ ($H$ contains the identity). If $x \sim y$ then $x^{-1}y \in H$ so $y^{-1}x = (x^{-1}y)^{-1} \in H$ ($H$ is closed under inverses). If $x \sim y$ and $y \sim z$ then $x^{-1}z = x^{-1}(yy^{-1})z = (x^{-1}y)(y^{-1}z) \in H$ ($H$ is closed under multiplication and is associative).
+
+One particularly nice property of this equivalence relation is that all its classes have the same size. To see this, look at the form of an arbitrary class: $\left[y\right] = \{x: y \sim x\} = \{x: y^{-1}x \in H\} = yH$. These classes are called \emph{left cosets of $H$}. The map from $H$ to $yH$ given by $h \mapsto yh$ is 1-1 by the group cancellation property, and is obviously onto.
+
+The number of left $H$ cosets in $G$ (the index of the relation) is denoted $|G : H|$ and pronounced ``the index of $H$ in $G$.'' The cosets, being equivalence classes, partition $G$, which means the size of $G$ is the sum of their sizes.  When $G$ is finite we see that \[|G| = |H||G : H|\] because there are $|G : H|$ cosets, each containing $|H|$ elements. In particular $|H|$ divides $|G|$.
+
+This result is known as Lagrange's Theorem, and it introduces number theory into finite group theory. For instance, a group of prime order contains only trivial subgroups (i.e. \{1\} and the group itself) because prime numbers factor only trivially.
+
+We can also define $x \sim y$ iff $xy^{-1} \in H$. The equivalence classes are now the \emph{right cosets} of $H$ in $G$ and are of the form $Hy$.  The indices of both relations are the same by the map $Hx \mapsto x^{-1}H$. The mapping is onto, and well-defined and 1-1 because
+\begin{eqnarray*}
+Hx = Hy &\Longleftrightarrow& xy^{-1} \in H\\
+        &\Longleftrightarrow& y^{-1} \in x^{-1}H\\
+		&\Longleftrightarrow& y^{-1}H = x^{-1}H.
+\end{eqnarray*}
+
+Alternatively, when $G$ is finite, Lagrange's Theorem makes this easier. We have that $|Hy| = |H| = |yH|$ since the maps $h \mapsto hy$ and $h \mapsto yh$ are bijections. The numbers of left  and right cosets are then $|G|/|H|$.
+
+\subsection{Normal subgroups}
+
+Let $G$ be a group and $H$ a subgroup of $G$. Define $H^x = x^{-1}Hx$ for any $x \in G$.
+\begin{lemma}
+\label{normal}
+Let $H$ be a subgroup of $G$. The following are equivalent for all $x \in G$:
+\begin{enumerate}
+\item $Hx = xH$
+\item $H^x = H$
+\item $H^x \subset H$
+\item $H^x \supset H$
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+It is clear that $(1)$ is equivalent to $(2)$ and that $(2)$ implies $(3)$ and $(4)$.
+
+Suppose $(3)$ holds. Then $H^{x^{-1}} \subset H$ which implies $H = (H^{x^{-1}})^x \subset H^x$. Hence $(2)$ holds.
+
+Suppose $(4)$ is true. Then $H = (H^x)^{x^{-1}} \supset H^{x^{-1}}$ and $x^{-1}$ ranges over all $G$. Hence $(2)$ is true.
+\end{proof}
+
+Note that the seemingly weaker condition $Hx = yH$ implies $x \in yH$. Of course $x \in xH$ and since $xH$ and $yH$ are disjoint, we must have that $Hx = yH = xH$. Hence condition $(1)$ is equivalent to saying every right coset is a left coset. Note that $Hx = xH$ does not imply that $hx = xh$ for every $h \in H$.
+
+A subgroup $H$ of $G$ satisfying any of the properties $(1)$ through $(4)$ is called \emph{normal}, written $H \lhd G$. Normal subgroups are neither more nor less than kernels of homomorphisms. We will prove this later. So $H \lhd G$ might be read ``$H$ is the kernel of a homomorphism.''
+
+The trivial subgroups of any group $G$ are normal: $G \lhd G$ because of closure, and $1 \lhd G$ because $1^g = 1$ for any $g \in G$. Of course, any subgroup of an abelian group is also normal.
+
+Not all subgroups are normal. One such counterexample is the subgroup $\{1, d\} \subset D_8$ where $1$ is the group identity and $d$ is a diagonal flip. Conjugating $d$ by a $90^\circ$ rotation gives a diagonal flip not in the subgroup.  Hence, by lemma \ref{normal}, the subgroup $\{1, d\}$ is not normal. Another such counterexample is a group of order four we previously considered.  We now consider $H =
+\left( {\begin{array}{cc}
+\pm1 & 0  \\
+0 & \pm1  \\
+\end{array} } \right)$ as a subgroup of $GL_2(\mathbb{R})$.  It is not a normal subgroup because
+\[
+\left( {\begin{array}{cc}
+1 & 1  \\
+1 & 0  \\
+\end{array} } \right)^{-1}
+\left( {\begin{array}{cc}
+1 & 0  \\
+0 & -1 \\
+\end{array} } \right)
+\left( {\begin{array}{cc}
+1 & 1  \\
+1 & 0  \\
+\end{array} } \right)
+=
+\left( {\begin{array}{cc}
+-1 & 0 \\
+2 & 1  \\
+\end{array} } \right)
+\notin H.
+\]
+
+If $N \lhd G$ we denote the set of cosets of $N$ in $G$ by $G/N$. We can use the normality of $N$ to define an operation on $G/N$. In the case of right cosets, define a multiplication by $NxNy = Nxy$. It is routine to verify that this is well-defined.  Note that the converse also happens to be true.  If $NxNy = Nz$, then $xN = Nzy^{-1} = Nx$. That is, if the product of two right cosets of a subgroup $N$ of $G$ is a right coset, then $N \lhd G$.
+
+Define $\nu\colon G \rightarrow G/N$ by $x \mapsto Nx$. By inspection $\nu$ is onto. In fact $\nu$ respects multiplication, which makes $G/N$ a group and $\nu$ a group homomorphism with kernel $N$. To see how $\nu$ implies, for instance, that inverses exist in $G/N$, let $x \in G/N$. There exists $g \in G$ such that $(g)\nu = x$, so $(g^{-1})\nu x = (g^{-1})\nu\mdot (g)\nu = (1)\nu$, the identity in $G/N$.
+
+\section{Lecture 4 - September 15}
+
+\subsection{Isomorphism theorems}
+
+\begin{theorem}
+\label{firstiso}
+Suppose $\phi \colon G \rightarrow H$, $\psi \colon G \rightarrow K$ are surjective group homomorphisms with the same kernel. Then $H \cong K$.
+\end{theorem}
+\begin{proof}
+Now $\phi$ is surjective, so it has a left-inverse which we'll denote $\phi^{-1}$ (and be careful not to use as a two-sided inverse). We will show that $\phi^{-1}\psi$ is the isomorphism we need. Pick $h$, $l \in H$. Certainly $(hl)\phi^{-1}\phi = hl = (h\phi^{-1} \phi)\mdot(l\phi^{-1}\phi) = (h\phi^{-1}\mdot l\phi^{-1})\phi$. Since $ker \phi = ker \psi$, we have that for any $a$, $b \in G$, $(a)\phi = (b)\phi$ iff $(a)\psi = (b)\psi$. But this means that $(hl)\phi^{-1}\psi = (h\phi^{-1}\mdot l\phi^{-1})\psi = (h\phi^{-1})\psi\mdot (l\phi^{-1})\psi$. Hence $\phi^{-1}\psi \colon H \rightarrow K$ is a homomorphism.
+
+To see that it is an isomorphism, suppose $h \in ker \phi^{-1}\psi$. Then $(h)\phi^{-1}\psi = 1 = (1)\psi$, so $h = (h)\phi^{-1}\phi = (1)\phi = 1$.
+\end{proof}
+
+The above theorem says that a homomorphism's domain and kernel essentially determine its codomain. We can use this result to pick a canonical homomorphism for each domain and kernel.
+
+Say $\phi \colon G \rightarrow H$ is a surjective homomorphism with kernel $N$. The map $\nu \colon G \rightarrow G/N$ defined in the previous lecture is surjective and also has kernel $N$. It is a sensible choice of canonical representative because of its simplicity and the similarity between the group operations in $G$ and $G/N$. By theorem \ref{firstiso}, $H \cong G/N$, so all homomorphic codomains can be considered factor groups.
+
+Alternatively we can (and most books do) show directly that all surjective homomorphisms ``factor through'' the canonical $\nu$. The disadvantage of such a presentation is that it makes the use of $\nu$ seem somehow necessary or inevitable.
+
+\begin{theorem}
+\label{iso1}
+\emph{\textbf{(Isomorphism 1)}}
+Let $\theta \colon G \rightarrow H$ be a surjective group homomorphism with kernel $N$.  Then $H \cong G/N$.
+\end{theorem}
+\begin{proof}
+The map $\eta \colon G/N \rightarrow H$ defined by $Nx \mapsto (x)\theta$ is an isomorphism. It is well-defined because $Nx = Ny$ implies $xy^{-1} \in N = ker \theta$, which implies $(x)\theta\mdot(y)\theta^{-1} = (xy^{-1})\theta = 1$; hence $(x)\theta = (y)\theta$. It is a homomorphism because $(NxNy)\eta = (Nxy)\eta = (xy)\theta = (x)\theta\mdot(y)\theta = (Nx)\eta\mdot(Ny)\eta$.
+
+If $Nx \in ker \eta$ then $x \in ker \theta = N$. So $Nx = N$, the identity of $G/N$. Hence $\eta$ is injective; it is onto almost by inspection.
+\end{proof}
+
+Although Theorem \ref{firstiso} may seem more general than Theorem \ref{iso1}, it isn't really. If $\phi \colon G \rightarrow H$ and $\psi \colon G \rightarrow K$ are surjective homomorphisms both with kernel $N$, then Theorem \ref{iso1} says that $H \cong G/N \cong K$.
+
+The usefulness of the remaining isomorphism theorems will become apparent later. For now we will just state and prove them.
+
+\begin{corollary}
+\label{iso2}
+\emph{\textbf{(Isomorphism 2)}}
+Let $H$ be a subgroup of a group $G$ and $N \lhd G$.  Then $HN/N \cong H/{H \cap N}$.
+\end{corollary}
+\begin{proof}
+First, for the result to make sense, notice that $HN$ is a group and $N \lhd HN$.  Now let $\nu \colon G \rightarrow G/N$ be the canonical homomorphism. Restrict $\nu$ to $H$. This restriction maps $H$ onto $\{Nh \colon h \in H\} = HN/N$, and is still a homomorphism. Its kernel is the inersection of $N$ with the new domain, or $N \cap H$. The result follows by Theorem \ref{iso1}.
+\end{proof}
+
+\begin{corollary}
+\label{iso3}
+\emph{\textbf{(Isomorphism 3)}}
+Let $H$ and $N$ be subgroups of a group $G$ such that $N \lhd G$, $N \subset H \subset G$, and $H/N \lhd G/N$. Then $H \lhd G$ and $\frac{G/N}{H/N} \cong G/H$.
+\end{corollary}
+\begin{proof}
+Let both $\nu \colon G \rightarrow G/N$ and $\eta \colon G/N \rightarrow \frac{G/N}{H/N}$ be canonical. The composition is a surjective homomorhism. To show the kernel is $H$ we will show $g \in H$ iff $(H/N)Ng = H/N$. Certainly $(H/N)Ng = H/N$ for $g \in H$. If $(H/N)Ng = H/N$ then $Ng = Nh$ for some $h \in H$. This implies $gh^{-1} \in N \subset H$, so $g \in Hh = H$.
+\end{proof}
+
+\begin{theorem}
+\emph{\textbf{(Correspondence Theorem)}}
+Suppose $\phi \colon G \rightarrow H$ is a surjective homomorphism with kernel $N$. Then there is a 1-1 correspondence between the subgroups of $G$ which contain $N$ and the subgroups of $H$.
+\end{theorem}
+\begin{proof}
+Let $\overline G$ be the subgroups of $G$ which contain $N$, and let $\overline H$ be the subgroups of $H$. Define $\overline \phi \colon \overline G \rightarrow \overline H$ by $U \mapsto (U)\phi$. The map does land in $\overline H$ because the homomorphic images of subgroups are subgroups. Define $\overline \psi \colon \overline H \rightarrow \overline G$ by $V \mapsto (V)\phi^{-1}$. This map lands in $\overline G$ because homomorphic preimages of subgroups are subgroups (which contain $N$ because subgroups of $H$ contain $1$). We will show $\overline \phi$ is a bijection.
+
+For any $T \in \overline H$, $T\overline\psi \overline\phi = T\phi^{-1}\phi = T$ The last equality holds since the original $\phi$ is surjective. Hence $\overline\phi$ has a left-inverse and is surjective.
+
+Pick $S \in \overline G$.  Certainly $S \subset S\phi\phi^{-1} = S\overline\phi \overline\psi$. For the other inclusion, notice $(S\phi\phi^{-1})\phi = (S\phi)\phi^{-1}\phi \subset S\phi$. Thus $(S\phi\phi^{-1})S^{-1} \subset N \subset S$ which implies $S\overline\phi \overline\psi = S\phi\phi^{-1} \subset SS = S$. Hence $\overline\phi$ has a right-inverse and is injective.
+\end{proof}
+
+
+\begin{thebibliography}{7}
+\bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
+The Mathematical Gazette, Vol. 62, No. 422, (Dec., 1978), pp. 278-281
+\end{thebibliography}
+
+\end{document}
