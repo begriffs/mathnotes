@@ -354,11 +354,22 @@ Suppose $\phi \colon G \rightarrow H$ is a surjective homomorphism with kernel $
 \begin{proof}
 Let $\overline G$ be the subgroups of $G$ which contain $N$, and let $\overline H$ be the subgroups of $H$. Define $\overline \phi \colon \overline G \rightarrow \overline H$ by $U \mapsto (U)\phi$. The map does land in $\overline H$ because the homomorphic images of subgroups are subgroups. Define $\overline \psi \colon \overline H \rightarrow \overline G$ by $V \mapsto (V)\phi^{-1}$. This map lands in $\overline G$ because homomorphic preimages of subgroups are subgroups (which contain $N$ because subgroups of $H$ contain $1$). We will show $\overline \phi$ is a bijection.
 
-For any $T \in \overline H$, $T\overline\psi \overline\phi = T\phi^{-1}\phi = T$ The last equality holds since the original $\phi$ is surjective. Hence $\overline\phi$ has a left-inverse and is surjective.
+For any $T \in \overline H$, $T\overline\psi \overline\phi = T\phi^{-1}\phi = T$. The last equality holds since the original $\phi$ is surjective. Hence $\overline\phi$ has a left-inverse and is surjective.
 
 Pick $S \in \overline G$.  Certainly $S \subset S\phi\phi^{-1} = S\overline\phi \overline\psi$. For the other inclusion, notice $(S\phi\phi^{-1})\phi = (S\phi)\phi^{-1}\phi \subset S\phi$. Thus $(S\phi\phi^{-1})S^{-1} \subset N \subset S$ which implies $S\overline\phi \overline\psi = S\phi\phi^{-1} \subset SS = S$. Hence $\overline\phi$ has a right-inverse and is injective.
 \end{proof}
 
+\section{Lecture 5 -- September 17}
+
+\subsection{Cyclic subgroups}
+
+Pick $x \in G$. The \emph{order of x}, denoted $o(x)$, is defined to be $|{<}x{>}|$. We have seen ${<}x{>} \cong \mathbb{Z}/n\mathbb{Z}$ for some $n \ge 0$. If $n = 0$ we say that $x$ has infinite order.
+
+If $n > 0$ we can count $|\mathbb{Z}/n\mathbb{Z}|$. Any coset $n\mathbb{Z} + m = n\mathbb{Z} + (nq + r)$ for some $q$ and $r$ with $r \le n$ by the division algorithm. But $nq \in n\mathbb{Z}$ so $n\mathbb{Z} + (nq + r) = n\mathbb{Z} + r$, allowing at most $n$ cosets. Now suppose $n\mathbb{Z} + r = n\mathbb{Z} + r'$ for $0 \le r, r' < n$. Then $r - r' \in n\mathbb{Z}$ so $r - r' = nx$ for some $x$. However, $r - r' < n$ so $x = 0$ and $r = r'$. This gives $n$ distinct cosets. Hence $o(x) = |\mathbb{Z}/n\mathbb{Z}| = n$.
+
+Earlier we menntioned that there is only one group of each order two and three up to isomorphism. We're now in a position to strengthen this result, and do it without analyzing Cayley tables. Suppose $G$ has prime order. Pick a non-identity $x \in G$. Certainly ${<}x{>} \ne 1$, and by Lagrange $|{<}x{>}|$ divides $|G|$. The only possibility is $|{<}x{>}| = p = |G|$. But ${<}x{>} \subset G$ so $G = {<}x{>} \cong \mathbb{Z}/p\mathbb{Z}$.
+
+\subsection{Permutation representation}
 
 \begin{thebibliography}{7}
 \bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
