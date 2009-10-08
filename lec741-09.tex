@@ -364,18 +364,26 @@ Pick $S \in \overline G$.  Certainly $S \subset S\phi\phi^{-1} = S\overline\phi 
 
 \subsection{Cyclic subgroups}
 
-Pick $x \in G$. The \emph{order of x}, denoted $o(x)$, is defined to be $|{<}x{>}|$. We have seen ${<}x{>} \cong \mathbb{Z}/n\mathbb{Z}$ for some $n \ge 0$. If $n = 0$ we say that $x$ has infinite order. If $n > 0$ we can count $|\mathbb{Z}/n\mathbb{Z}|$. For any $x, y \in \mathbb{Z}$,
+Pick $x \in G$. The \emph{order of x}, denoted $o(x)$, is defined to be $|{<}x{>}|$. We have seen ${<}x{>} \cong \mathbb{Z}/n\mathbb{Z}$ for some $n \ge 0$. If $n = 0$ we say that $x$ has infinite order. If $n > 0$ we can count $|\mathbb{Z}/n\mathbb{Z}|$. For any $i, j \in \mathbb{Z}$,
 \begin{align*}
-n\mathbb{Z} + x = n\mathbb{Z} + y
-&\Longleftrightarrow x - y \in n\mathbb{Z}\\
-&\Longleftrightarrow n \text{ divides } x - y\\
-&\Longleftrightarrow x \equiv y\ (mod\ n).
+n\mathbb{Z} + i = n\mathbb{Z} + j
+&\Longleftrightarrow i - j \in n\mathbb{Z}\\
+&\Longleftrightarrow n \text{ divides } i - j\\
+&\Longleftrightarrow i \equiv j\ (mod\ n).
 \end{align*}
-Hence $o(x) = |\mathbb{Z}/n\mathbb{Z}| = n$.
+Hence $o(x) = |\mathbb{Z}/n\mathbb{Z}| = n$. Furthermore, by Theorem \ref{iso1} the map $(n\mathbb{Z} + x) \mapsto g^x$ is an isomorphism, so
+\begin{align*}
+g^i = g^j
+&\Longleftrightarrow n\mathbb{Z} + i = n\mathbb{Z} + j\\
+&\Longleftrightarrow i \equiv j\ (mod\ n).
+\end{align*}
+In particular, $g^i = 1$ iff $n$ divides $i$, since $1 = g^0$.
 
 Earlier we menntioned that there is only one group of each order two and three up to isomorphism. We're now in a position to strengthen this result, and do it without analyzing Cayley tables. Suppose $G$ has prime order. Pick a non-identity $x \in G$. Certainly ${<}x{>} \ne 1$, and by Lagrange $|{<}x{>}|$ divides $|G|$. The only possibility is $|{<}x{>}| = p = |G|$. But ${<}x{>} \subset G$ so $G = {<}x{>} \cong \mathbb{Z}/p\mathbb{Z}$.
 
 \subsection{Permutation representation}
+
+A homomorphism from a group $G$ to $Sym_\Omega$ for some set $\Omega$ is called a \emph{permutation representation of $G$}.
 
 \begin{thebibliography}{7}
 \bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
