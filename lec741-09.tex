@@ -364,22 +364,17 @@ Pick $S \in \overline G$.  Certainly $S \subset S\phi\phi^{-1} = S\overline\phi 
 
 \subsection{Cyclic subgroups}
 
-Pick $x \in G$. The \emph{order of x}, denoted $o(x)$, is defined to be $|{<}x{>}|$. We have seen ${<}x{>} \cong \mathbb{Z}/n\mathbb{Z}$ for some $n \ge 0$. If $n = 0$ we say that $x$ has infinite order. If $n > 0$ we can count $|\mathbb{Z}/n\mathbb{Z}|$. For any $i, j \in \mathbb{Z}$,
-\begin{align*}
-n\mathbb{Z} + i = n\mathbb{Z} + j
-&\Longleftrightarrow i - j \in n\mathbb{Z}\\
-&\Longleftrightarrow n \text{ divides } i - j\\
-&\Longleftrightarrow i \equiv j\ (mod\ n).
-\end{align*}
-Hence $o(x) = |\mathbb{Z}/n\mathbb{Z}| = n$. Furthermore, by Theorem \ref{iso1} the map $(n\mathbb{Z} + x) \mapsto g^x$ is an isomorphism, so
-\begin{align*}
-g^i = g^j
-&\Longleftrightarrow n\mathbb{Z} + i = n\mathbb{Z} + j\\
-&\Longleftrightarrow i \equiv j\ (mod\ n).
-\end{align*}
-In particular, $g^i = 1$ iff $n$ divides $i$, since $1 = g^0$. So $i = n$ is the first nonzero power of $g$ where $g^i = 1$, and this is what some people choose as the definiing property for the order of $g$.
+Let $x$ be an element of a group $G$. The \emph{order of x}, denoted $o(x)$, is defined to be $|{<}x{>}|$. We have seen ${<}x{>} \cong \mathbb{Z}/n\mathbb{Z}$ for some $n \ge 0$. If $n = 0$ we say that $x$ has infinite order. If $n > 0$ we can count $|\mathbb{Z}/n\mathbb{Z}|$. For any $i, j \in \mathbb{Z}$,
+\[n\mathbb{Z} + i = n\mathbb{Z} + j \Longleftrightarrow i - j \in n\mathbb{Z} 
+\Longleftrightarrow i \equiv j\ (mod\ n).
+\]
+That is, the cosets in $\mathbb{Z}/n\mthbb{Z}$ are the congruence classes mod $n$. Hence $o(x) = |\mathbb{Z}/n\mathbb{Z}| = n$. Recall that $i \mapsto x^i$ is a surjective homomorphism; as in the proof of the First Isomorphism theorem, the map $(n\mathbb{Z} + i) \mapsto x^i$ is an isomorphism. Thus
+\[
+x^i = x^j \Longleftrightarrow n\mathbb{Z} + i = n\mathbb{Z} + j \Longleftrightarrow i \equiv j\ (mod\ n).
+\]
+In particular, taking $1 = x^0$, we get $x^i = 1$ iff $n$ divides $i$. So $i = n$ is the first positive power of $x$ where $x^i = 1$, and this is what some people choose as the defining property for the order of $x$.
 
-Earlier we menntioned that there is only one group of each order two and three up to isomorphism. We're now in a position to strengthen this result, and do it without analyzing Cayley tables. Suppose $G$ has prime order. Pick a non-identity $x \in G$. Certainly ${<}x{>} \ne 1$, and by Lagrange $|{<}x{>}|$ divides $|G|$. The only possibility is $|{<}x{>}| = p = |G|$. But ${<}x{>} \subset G$ so $G = {<}x{>} \cong \mathbb{Z}/p\mathbb{Z}$.
+Earlier we mentioned that there is only one group of each order two and three up to isomorphism. We're now in a position to strengthen this result, and do it without analyzing Cayley tables. Suppose $G$ has prime order. Pick a non-identity $x \in G$. Certainly ${<}x{>} \ne 1$, and by Lagrange $|{<}x{>}|$ divides $|G|$. The only possibility is $|{<}x{>}| = p = |G|$. But ${<}x{>} \subset G$ so $G = {<}x{>} \cong \mathbb{Z}/p\mathbb{Z}$.
 
 \subsection{Permutation representation}
 
