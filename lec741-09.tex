@@ -309,7 +309,7 @@ Alternatively we can (and most books do) show directly that all surjective homom
 
 \begin{theorem}
 \label{iso1}
-\emph{\textbf{(Isomorphism 1)}}
+\emph{\textbf{(First Isomorphism)}}
 Let $\theta \colon G \rightarrow H$ be a surjective group homomorphism with kernel $N$.  Then $H \cong G/N$.
 \end{theorem}
 \begin{proof}
@@ -382,11 +382,16 @@ Earlier we mentioned that there is only one group each of order two and three up
 A homomorphism from a group $G$ to $Sym_\Omega$ for some set $\Omega$ is called a \emph{permutation representation of $G$}.
 
 \begin{theorem}
+\emph{\textbf{(n! Theorem)}}
 Let $H$ be a subgroup of a group $G$ and suppose $|G\colon H| = n$. Then there exists a subgroup $N \lhd G$ contained in $H$ and $G\colon N$ divides $n!$.
 \end{theorem}
 \begin{proof}
-Fix $g \in G$. The map $Hx \mapsto Hxg$ is an element of $Sym_{G/H}$. Define $f\colon G \rightarrow Sym_{G/H}$ by 
+Fix $g \in G$. The map $Hx \mapsto Hxg$ is an element of $Sym_{G/H}$ because $(Hx)g = H(xg)$ and the equation $y = xg$ has exactly one solution for $g$. Define $f\colon G \rightarrow Sym_{G/H}$ by $a \mapsto (Hx \mapsto Hxa)$. Now $(Hx)(abf) = (Hx)ab = ((Hx)a)b = (Hx)(af \circ bf)$ so $abf = af \circ bf$ which makes $f$ a permutation representation. Let $N = ker\ f$. The index $|G \colon N| = |G/N| = |(G)f|$ and $(G)f$ is a subgroup of $Sym_{G/H}$. By Lagrange, $|G \colon N|$ divides $n!$, the size of $Sym_{G/H}$.
+
+Finally, suppose $y \in N$. Then $Hxy = Hx$ for all $x \in G$, including $x = 1$, so $y \in H$. This establishes that $N \subset H$.
 \end{proof}
+
+This theorem may seem odd at first sight, but it can be useful in finding nontrivial normal subgroups. A subgroup, in this case a kernel, is large exactly when its index is small. After all, its order and index are inversely proportional by Lagrange's Theorem. The $n!$ Theorem limits the index of a normal subgroup to no bigger than $n!$. This isn't necessarily a very good bound, but when $n$ is small enough, $n!$ will be small enough to guarantee that $N > 1$.
 
 \begin{thebibliography}{7}
 \bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
