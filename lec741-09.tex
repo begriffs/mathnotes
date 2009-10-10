@@ -383,7 +383,7 @@ A homomorphism from a group $G$ to $Sym_\Omega$ for some set $\Omega$ is called 
 
 \begin{theorem}
 \emph{\textbf{(n! Theorem)}}
-Let $H$ be a subgroup of a group $G$ and suppose $|G\colon H| = n$. Then there exists a subgroup $N \lhd G$ contained in $H$ and $G\colon N$ divides $n!$.
+Let $H$ be a subgroup of a group $G$ and suppose $|G\colon H| = n$. Then there exists a subgroup $N \lhd G$ contained in $H$ such that $|G \colon N|$ divides $n!$.
 \end{theorem}
 \begin{proof}
 Fix $g \in G$. The map $Hx \mapsto Hxg$ is an element of $Sym_{G/H}$ because $(Hx)g = H(xg)$ and the equation $y = xg$ has exactly one solution for $g$. Define $f\colon G \rightarrow Sym_{G/H}$ by $a \mapsto (Hx \mapsto Hxa)$. Now $(Hx)(abf) = (Hx)ab = ((Hx)a)b = (Hx)(af \circ bf)$ so $abf = af \circ bf$ which makes $f$ a permutation representation. Let $N = ker\ f$. The index $|G \colon N| = |G/N| = |(G)f|$ and $(G)f$ is a subgroup of $Sym_{G/H}$. By Lagrange, $|G \colon N|$ divides $n!$, the size of $Sym_{G/H}$.
@@ -391,11 +391,15 @@ Fix $g \in G$. The map $Hx \mapsto Hxg$ is an element of $Sym_{G/H}$ because $(H
 Finally, suppose $y \in N$. Then $Hxy = Hx$ for all $x \in G$, including $x = 1$, so $y \in H$. This establishes that $N \subset H$.
 \end{proof}
 
-This theorem may seem odd at first, but it can be useful for finding nontrivial normal subgroups. A subgroup (in this case a kernel) is large exactly when its index is small. After all, its order and index are inversely proportional by Lagrange's Theorem. The $n!$ Theorem limits the index of a normal subgroup to no bigger than $n!$. This isn't necessarily a very good bound, but when $n$ is small enough, $n!$ will be small enough to guarantee that $N > 1$.
+This theorem may seem odd at first, but it can be useful for finding nontrivial normal subgroups. A subgroup (in this case a kernel) is large exactly when its index is small. After all, its order and index are inversely proportional by Lagrange's Theorem. The $n!$ Theorem limits the index of a normal subgroup to be no bigger than $n!$. This isn't necessarily a very good bound, but when $n$ is small enough, $n!$ will be small enough to guarantee that $N > 1$.
 
-For instance, if $H$ is half of $G$, then $n! = n = 2$, so $|G \colon N| = 1$ or $2$. The first option is out of the question because $2 = |G \colon H|$ divides $|G \colon N|$. Hence $|G \colon N| = 2$. We find that $N \lhd G$. In this case more is true: $N = H$, so $H \lhd G$.
+For instance, if $H$ is half of $G$, then $n! = n = 2$, so $|G \colon N| = 1$ or $2$. The first option is out of the question because $2 = |G \colon H| \le |G \colon N|$. Hence $|G \colon N| = 2$. In this case more is true: $N = H$, so $H \lhd G$.
 
-Although the theorem seemed to pull a permutation representation out of nowhere, there is a way to cook up permutation representations. In fact we will see it is the only way.
+Although the theorem seemed to pull a permutation representation out of nowhere, there is an easier way to cook up permutation representations. Suppose an operation $\cdot \colon \Omega \times G \rightarrow \Omega$ satisfies
+\begin{enumerate}
+\item $a \cdot 1 = a$
+\item $(a \cdot x) \cdot y = a \cdot (xy)$.
+\end{enumerate}
 
 \begin{thebibliography}{7}
 \bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
