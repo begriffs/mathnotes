@@ -296,9 +296,9 @@ Define $\nu\colon G \rightarrow G/N$ by $x \mapsto Nx$. By inspection $\nu$ is o
 Suppose $\phi \colon G \rightarrow H$, $\psi \colon G \rightarrow K$ are surjective group homomorphisms with the same kernel. Then $H \cong K$.
 \end{theorem}
 \begin{proof}
-Now $\phi$ is surjective, so it has a left-inverse which we'll denote $\phi^{-1}$ (and be careful not to use as a two-sided inverse). We will show that $\phi^{-1}\psi$ is the isomorphism we need. Pick $h$, $l \in H$. Certainly $(hl)\phi^{-1}\phi = hl = (h\phi^{-1} \phi)\mdot(l\phi^{-1}\phi) = (h\phi^{-1}\mdot l\phi^{-1})\phi$. Since $ker\ \phi = ker\ \psi$, we have that for any $a$, $b \in G$, $(a)\phi = (b)\phi$ iff $(a)\psi = (b)\psi$. But this means that $(hl)\phi^{-1}\psi = (h\phi^{-1}\mdot l\phi^{-1})\psi = (h\phi^{-1})\psi\mdot (l\phi^{-1})\psi$. Hence $\phi^{-1}\psi \colon H \rightarrow K$ is a homomorphism.
+Now $\phi$ is surjective, so it has a left-inverse which we'll denote $\phi^{-1}$ (and be careful not to use as a two-sided inverse). We will show that $\phi^{-1}\psi$ is the isomorphism we need. Pick $h$, $l \in H$. Certainly $(hl)\phi^{-1}\phi = hl = (h\phi^{-1} \phi)\mdot(l\phi^{-1}\phi) = (h\phi^{-1}\mdot l\phi^{-1})\phi$. Since $\ker{\phi} = \ker{\psi}$, we have that for any $a$, $b \in G$, $(a)\phi = (b)\phi$ iff $(a)\psi = (b)\psi$. But this means that $(hl)\phi^{-1}\psi = (h\phi^{-1}\mdot l\phi^{-1})\psi = (h\phi^{-1})\psi\mdot (l\phi^{-1})\psi$. Hence $\phi^{-1}\psi \colon H \rightarrow K$ is a homomorphism.
 
-To see that it is an isomorphism, suppose $h \in ker\ \phi^{-1}\psi$. Then $(h)\phi^{-1}\psi = 1 = (1)\psi$, so $h = (h)\phi^{-1}\phi = (1)\phi = 1$.
+To see that it is an isomorphism, suppose $h \in \ker{ \phi^{-1}\psi}$. Then $(h)\phi^{-1}\psi = 1 = (1)\psi$, so $h = (h)\phi^{-1}\phi = (1)\phi = 1$.
 \end{proof}
 
 The above theorem says that a homomorphism's domain and kernel essentially determine its image. We can use this result to pick a canonical homomorphism for each domain and kernel.
@@ -313,16 +313,16 @@ Alternatively we can (and most books do) show directly that all surjective homom
 Let $\theta \colon G \rightarrow H$ be a surjective group homomorphism with kernel $N$.  Then $H \cong G/N$.
 \end{theorem}
 \begin{proof}
-The map $\eta \colon G/N \rightarrow H$ defined by $Nx \mapsto (x)\theta$ is an isomorphism. It is well-defined because $Nx = Ny$ implies $xy^{-1} \in N = ker\ \theta$, which implies $(x)\theta\mdot(y)\theta^{-1} = (xy^{-1})\theta = 1$; hence $(x)\theta = (y)\theta$. It is a homomorphism because $(NxNy)\eta = (Nxy)\eta = (xy)\theta = (x)\theta\mdot(y)\theta = (Nx)\eta\mdot(Ny)\eta$.
+The map $\eta \colon G/N \rightarrow H$ defined by $Nx \mapsto (x)\theta$ is an isomorphism. It is well-defined because $Nx = Ny$ implies $xy^{-1} \in N = \ker{\theta}$, which implies $(x)\theta\mdot(y)\theta^{-1} = (xy^{-1})\theta = 1$; hence $(x)\theta = (y)\theta$. It is a homomorphism because $(NxNy)\eta = (Nxy)\eta = (xy)\theta = (x)\theta\mdot(y)\theta = (Nx)\eta\mdot(Ny)\eta$.
 
-If $Nx \in ker\ \eta$ then $x \in ker\ \theta = N$. So $Nx = N$, the identity of $G/N$. Hence $\eta$ is injective; it is onto almost by inspection.
+If $Nx \in \ker{\eta}$ then $x \in \ker{\theta} = N$. So $Nx = N$, the identity of $G/N$. Hence $\eta$ is injective; it is onto almost by inspection.
 \end{proof}
 
 Although Theorem \ref{firstiso} may seem more general than Theorem \ref{iso1}, it isn't really. If $\phi \colon G \rightarrow H$ and $\psi \colon G \rightarrow K$ are surjective homomorphisms both with kernel $N$, then Theorem \ref{iso1} says that $H \cong G/N \cong K$.
 
 Based on either theorem, to determine the homomorphic images from a group, we need only determine its normal subgroups. Distinct normal subgroups, however, do not necessarily give distinct images. For example, the order-four group of involutions from lecture one contains the two normal subgroups $A = \{1, a\}$ and $B = \{1, b\}$. By Lagrange, $|G/A| = |G/B| = 2$. There is only one group of order two, so $G/A \cong G/B$.
 
-We now look at the homomorphisms coming out of $\mathbb{Z}$. If $f$ is such a homomorphism, then its image is isomorphic to $\mathbb{Z}/ker\ f$, by Theorem \ref{iso1}. Assume the kernel is nontrivial, and pick the smallest positive $k \in ker\ f$. Any other $h$ in the kernel can be written as $h = kq + r$ where $0 \le r < k$. Furthermore, $r = h - kq \in ker\ f$. By the minimality of $k$, $r = 0$. Hence $h = kq$, which shows $ker\ f \subset k\mathbb{Z}$ since $h$ was arbitrary. By closure we get the other inclusion. (The same argument shows that actually every subgroup of $\mathbb{Z}$ is of the form $n\mathbb{Z}$ for some $n \ge 0$.) Note that the trivial kernels $\{0\}$ and $\mathbb{Z}$ are equal to $0\mathbb{Z}$ and $1\mathbb{Z}$ respectively.
+We now look at the homomorphisms coming out of $\mathbb{Z}$. If $f$ is such a homomorphism, then its image is isomorphic to $\mathbb{Z}/\ker{f}$, by Theorem \ref{iso1}. Assume the kernel is nontrivial, and pick the smallest positive $k \in \ker{f}$. Any other $h$ in the kernel can be written as $h = kq + r$ where $0 \le r < k$. Furthermore, $r = h - kq \in \ker{f}$. By the minimality of $k$, $r = 0$. Hence $h = kq$, which shows $\ker{f} \subset k\mathbb{Z}$ since $h$ was arbitrary. By closure we get the other inclusion. (The same argument shows that actually every subgroup of $\mathbb{Z}$ is of the form $n\mathbb{Z}$ for some $n \ge 0$.) Note that the trivial kernels $\{0\}$ and $\mathbb{Z}$ are equal to $0\mathbb{Z}$ and $1\mathbb{Z}$ respectively.
 
 Assume $G$ is a group. We can use $\mathbb{Z}$ to find some of $G$'s subgroups. Fix $g \in G$ and consider the map $f \colon \mathbb{Z} \rightarrow G$ given by $i \mapsto g^{i}$. It is a homorphism by the exponent laws in $G$, which we will sketch a proof of below. Hence, $(\mathbb{Z})f \cong \mathbb{Z}/n\mathbb{Z}$. The image $(\mathbb{Z})f = \{g^i \colon i \in \mathbb{Z}\}$ is denoted ${<}g{>}$ and is called the \emph{cyclic group generated by $g$}.
 
@@ -379,14 +379,16 @@ Earlier we mentioned that there is only one group each of order two and three up
 
 \subsection{Permutation representations}
 
-A homomorphism from a group $G$ to $Sym_\Omega$ for some set $\Omega$ is called a \emph{permutation representation of $G$}. We will show later that each such homomorphism is actually induced from a binary function called a \emph{group action}.
+A homomorphism from a group $G$ to $Sym_\Omega$ for some set $\Omega$ is called a \emph{permutation representation of $G$}. We will show later that each such homomorphism is actually induced from a binary function called a \emph{group action}. It is sometimes easier to check that a binary function is an action than to find a representation directly.
+
+In the proof below we use a representation where $\Omega$ is a set of cosets.
 
 \begin{theorem}
 \emph{\textbf{(n! Theorem)}}
 Let $H$ be a subgroup of a group $G$ and suppose $|G\colon H| = n$. Then there exists a subgroup $N \lhd G$ contained in $H$ such that $|G \colon N|$ divides $n!$.
 \end{theorem}
 \begin{proof}
-Fix $g \in G$. The map $Hx \mapsto (Hx)g$ is an element of $Sym_{G/H}$ because $(Hx)g = H(xg)$ and the equation $y = xg$ has exactly one solution for $g$. Define $f\colon G \rightarrow Sym_{G/H}$ by $a \mapsto (Hx \mapsto Hxa)$. Now $(Hx)(abf) = (Hx)ab = ((Hx)a)b = (Hx)(af \circ bf)$ so $abf = af \circ bf$ which makes $f$ a permutation representation. Let $N = ker\ f$. The index $|G \colon N| = |G/N| = |(G)f|$ and $(G)f$ is a subgroup of $Sym_{G/H}$. By Lagrange, $|G \colon N|$ divides $n!$, the size of $Sym_{G/H}$.
+Fix $g \in G$. The map $Hx \mapsto (Hx)g$ is an element of $Sym_{G/H}$ because $(Hx)g = H(xg)$ and the equation $y = xg$ has exactly one solution for $g$. Define $f\colon G \rightarrow Sym_{G/H}$ by $a \mapsto (Hx \mapsto Hxa)$. Now $(Hx)(abf) = (Hx)ab = ((Hx)a)b = (Hx)(af \circ bf)$ so $abf = af \circ bf$ which makes $f$ a permutation representation. Let $N = \ker{f}$. The index $|G \colon N| = |G/N| = |(G)f|$ and $(G)f$ is a subgroup of $Sym_{G/H}$. By Lagrange, $|G \colon N|$ divides $n!$, the size of $Sym_{G/H}$.
 
 Finally, suppose $y \in N$. Then $Hxy = Hx$ for all $x \in G$, including $x = 1$, so $y \in H$. This establishes that $N \subset H$.
 \end{proof}
@@ -400,6 +402,23 @@ Although the theorem seemed to pull a permutation representation out of nowhere,
 \item $a \cdot 1 = a$
 \item $(a \cdot x) \cdot y = a \cdot (xy)$.
 \end{enumerate}
+
+Such an operation is called an \emph{action} of $G$ on $\Omega$. Actions are easy to find, and some common ones include:
+
+\begin{description}
+\item[Regular actions] are obtained from a group's ``regular'' multiplication either on itself or on its subsets such as cosets. For instance, the operation $Hx\cdot g = Hxg$ is the regular action on $G/H$.
+\item[Conjugation actions] arise from conjugation inside a group. For instance, the operation $g\cdot h = g^h$.
+\end{description}
+
+Actions induce permutation representations. Say $\cdot$ is a $G$-action on $\Omega$. For each $g \in G$, define $\sigma_g \colon \Omega \rightarrow \Omega$ by $a \mapsto a\cdot g$. Notice both that $\sigma_g \circ \sigma_h = \sigma_{gh}$ by the second property of actions and that $\sigma_1 = 1_\Omega$ by the first property. Thus $\sigma_g \sigma_{g^{-1}} = \sigma_{g^{-1}}\sigma_g = \sigma_1 = 1_\Omega$, which means $\sigma_g \in Sym_\Omega$. We now have a permutation representation $g \mapsto \sigma_g$.
+
+Conversely, let $\theta$ be a permutation representation on $\Omega$. Define $\cdot \colon \Omega \times G \rightarrow \Omega$ by $a \cdot g = a(g\theta)$. Now $1\theta = 1_\Omega$ so $\cdot$ satisfies action property one. Property two holds as well because $\theta$ is a homomorphism. We have made an action from a representation. The two concepts are nearly identical, but the latter avoids the fuss of a new operation.
+
+The kernels of representations are useful. We already saw one such kernel in the $n!$ theorem. Let's take a closer look. Recall that the represenntation came from $G$'s regular action on cosets of a subgroup $H$. Fix $x \in G$. For any $g$, $Hxg = Hx$ iff $Hxgx^{-1} = H$ iff $g^{x^{-1}} \in H$ iff $g \in H^x$. Hence the kernel is $\bigcap \limits_{x \in G}H^x$ and is called the \emph{core} of $H$.
+
+Now let $G$ act on itself by conjugation. Notice that $x^g = x$ iff $xg = gx$. Hence the kernel of this action (actually of the induced permutation representation) is the set of elements which commute with every element of the group. This common subgroup is called the \emph{center} of $G$.
+
+\section{Lecture 6 -- September 22}
 
 \begin{thebibliography}{7}
 \bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
