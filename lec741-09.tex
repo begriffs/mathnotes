@@ -420,7 +420,13 @@ Now let $G$ act on itself by conjugation. Notice that $x^g = x$ iff $xg = gx$. H
 
 \section{Lecture 6 -- September 22}
 
-\subsection{Inner automorphisms}
+\subsection{Automorphisms}
+
+Isomorphisms from a group to itself are called automorphisms, and the set of automorphisms on $G$ is denoted $Aut(G)$. They are all bijections, so $Aut(G) \subset Sym_G$. It is suggestive of the laws of arithmetic to write $x^\sigma = (x)\sigma$ for $\sigma \in Aut(G)$ and $x \in G$. By the homomorphism properties of $\sigma$, $x^\sigma y^\sigma = (xy)^\sigma$ and $1^\sigma = 1$.
+
+Recall we also denoted conjugation exponentially. Indeed, given $g \in G$, the conjugation map $x \mapsto x^g$ is an automorphism -- call it $\sigma_g$. It is actually an element of the group $Inn(G)$ we saw in the previous section. Now $x^{\sigma_g} = x^g$, so $\sigma_g$ behaves like an element from within $G$. This is the origin of the adjective \emph{inner} automorphism.
+
+Pick $\sigma_g \in Inn(G)$, $\tau \in Aut(G)$, and $a \in G$. Then $a{\sigma_g}^\tau = (g^{-1}\mdot(a\tau^{-1})\mdot g)\tau = (g\tau)^{-1}\mdot a \mdot g\tau = a\sigma_{g\tau} \in Inn(G)$. Hence $Inn(G) \lhd Aut(G)$. Can we find $Inn(G)$ as the kernel of an interesting homomorphism? Perhaps from $Aut(G)$ to $G$? Maybe this isn't possible because Passman says $Inn(G)$ can be much smaller than $Aut(G)$ and I bet $Aut(G)$ is much bigger than $G$, so $Aut(G)/Inn(G)$ would be too big to be isomorphic to a subgroup of $G$. Let's investigate these groups for particular $G$s.
 
 \subsection{Orbits and stabilizers}
 
