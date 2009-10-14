@@ -215,7 +215,7 @@ One example of an equivalence relation is ismorphism between groups. The relatio
 
 Now for a more interesting equivalence relation. Let $G$ be a group, and $H$ be a subgroup of $G$. For every $x$, $y \in G$ write $x \sim y$ iff $x^{-1}y \in H$. Showing $\sim$ is an equivalence relation requires all of $H$'s group properties. First $x \sim x$ because $x^{-1}x = 1_G \in H$ ($H$ contains the identity). If $x \sim y$ then $x^{-1}y \in H$ so $y^{-1}x = (x^{-1}y)^{-1} \in H$ ($H$ is closed under inverses). If $x \sim y$ and $y \sim z$ then $x^{-1}z = x^{-1}(yy^{-1})z = (x^{-1}y)(y^{-1}z) \in H$ ($H$ is closed under multiplication and is associative).
 
-One particularly nice property of this equivalence relation is that all its classes have the same size. To see this, look at the form of an arbitrary class: $\left[y\right] = \{x: y \sim x\} = \{x: y^{-1}x \in H\} = yH$. These classes are called \emph{left cosets of $H$}. The map from $H$ to $yH$ given by $h \mapsto yh$ is 1-1 by the group cancellation property, and is obviously onto.
+One particularly nice property of this equivalence relation is that all of its classes have the same size. To see this, look at the form of an arbitrary class: $\left[y\right] = \{x: y \sim x\} = \{x: y^{-1}x \in H\} = yH$. These classes are called \emph{left cosets of $H$}. The map from $H$ to $yH$ given by $h \mapsto yh$ is 1-1 by the group cancellation property, and is obviously onto.
 
 The number of left $H$ cosets in $G$ (the index of the relation) is denoted $|G : H|$ and pronounced ``the index of $H$ in $G$.'' The cosets, being equivalence classes, partition $G$, which means the size of $G$ is the sum of their sizes.  When $G$ is finite we see that \[|G| = |H||G : H|\] because there are $|G : H|$ cosets, each containing $|H|$ elements. In particular $|H|$ divides $|G|$.
 
@@ -413,7 +413,7 @@ Such an operation is called an \emph{action} of $G$ on $\Omega$. Actions are gen
 \item Let $H$ be a subset of $G$. Then $G$ acts on $G/H$ by $Ha\cdot g = Hag$.
 \item G acts on all of its subsets by $X\cdot g = Xg$.
 \end{enumerate}
-The last example illustrates how $\Omega$ need not have any group structure.
+The last example emphasizes that $\Omega$ need not have any group structure.
 \item[Conjugation actions] arise from conjugation inside a group. $G$ acts on itself by $a\cdot g = a^g$.
 \end{description}
 
