@@ -397,36 +397,33 @@ A subgroup (in this case a kernel) is large exactly when its index is small. Aft
 
 For instance, if $H$ is half of $G$, then $n! = n = 2$, so $|G \colon N| = 1$ or $2$. The first option is out of the question because $2 = |G \colon H| \le |G \colon N|$. Hence $|G \colon N| = 2$. In this case more is true: $N = H$, so $H \lhd G$. When $|G| > 2$ then $H$ is nontrivial.
 
-Although the theorem seemed to pull a permutation representation out of nowhere, there is an easier way to cook up permutation representations. Suppose an operation $\cdot \colon \Omega \times G \rightarrow \Omega$ satisfies
+Consider the normal subgroup constructed in the $n!$ Theorem. First fix $x \in G$. Now for any $g$, $Hxg = Hx$ iff $Hxgx^{-1} = H$ iff $g^{x^{-1}} \in H$ iff $g \in H^x$. Hence the kernel is $\bigcap \limits_{x \in G}H^x$ and is called the \emph{core of $H$}.
+
+\pagebreak Although the theorem seemed to pull a permutation representation out of nowhere, there is an easier way to cook up permutation representations. Suppose an operation $\cdot \colon \Omega \times G \rightarrow \Omega$ satisfies
 \begin{enumerate}
 \item $a \cdot 1 = a$
 \item $(a \cdot x) \cdot y = a \cdot (xy)$.
 \end{enumerate}
-
-Such an operation is called an \emph{action} of $G$ on $\Omega$. Actions are easy to find, and some common ones include:
+Such an operation is called an \emph{action} of $G$ on $\Omega$. Actions are generally easy to verify, and some common types include:
 
 \begin{description}
-\item[Regular actions] are obtained from a group's ``regular'' multiplication either on itself or on its subsets such as cosets. For instance, the operation $Hx\cdot g = Hxg$ is the regular action on $G/H$.
-\item[Conjugation actions] arise from conjugation inside a group. For instance, the operation $g\cdot h = g^h$.
+\item[Regular actions] of a group are obtained from the group's multiplication.
+\begin{enumerate}
+\item $G$ acts on itself by $a\cdot g = ag$.
+\item Let $H$ be a subset of $G$. Then $G$ acts on $G/H$ by $Ha\cdot g = Hag$.
+\item G acts on all of its subsets by $X\cdot g = Xg$.
+\end{enumerate}
+The last example illustrates how $\Omega$ need not have any group structure.
+\item[Conjugation actions] arise from conjugation inside a group. $G$ acts on itself by $a\cdot g = a^g$.
 \end{description}
 
-Actions induce permutation representations. Say $\cdot$ is a $G$-action on $\Omega$. For each $g \in G$, define $\sigma_g \colon \Omega \rightarrow \Omega$ by $a \mapsto a\cdot g$. Notice both that $\sigma_g \circ \sigma_h = \sigma_{gh}$ by the second property of actions and that $\sigma_1 = 1_\Omega$ by the first property. Thus $\sigma_g \sigma_{g^{-1}} = \sigma_{g^{-1}}\sigma_g = \sigma_1 = 1_\Omega$, which means $\sigma_g \in Sym_\Omega$. We now have a permutation representation $g \mapsto \sigma_g$.
+Actions induce permutation representations. Say $\cdot$ is a $G$-action on $\Omega$. For each $g \in G$, define $\sigma_g \colon \Omega \rightarrow \Omega$ by $a \mapsto a\cdot g$. Notice both that $\sigma_g \circ \sigma_h = \sigma_{gh}$ by the second property of actions and that $\sigma_1 = 1_\Omega$ by the first property. Thus $\sigma_g \sigma_{g^{-1}} = \sigma_{g^{-1}}\sigma_g = \sigma_1 = 1_\Omega$, which means $\sigma_g \in Sym_\Omega$. We now have a permutation representation $g \mapsto \sigma_g$. We can now recognize that the representation in the $n!$ Theorem came from $G$'s regular action on cosets of a subgroup $H$.
 
-Conversely, let $\theta$ be a permutation representation on $\Omega$. Define $\cdot \colon \Omega \times G \rightarrow \Omega$ by $a \cdot g = a(g\theta)$. Now $1\theta = 1_\Omega$ so $\cdot$ satisfies action property one. Property two holds as well because $\theta$ is a homomorphism. We have made an action from a representation. The two concepts are nearly identical, but the latter avoids the fuss of a new operation.
-
-The kernels of representations are useful. We already saw one such kernel in the $n!$ theorem. Let's take a closer look. Recall that the represenntation came from $G$'s regular action on cosets of a subgroup $H$. Fix $x \in G$. For any $g$, $Hxg = Hx$ iff $Hxgx^{-1} = H$ iff $g^{x^{-1}} \in H$ iff $g \in H^x$. Hence the kernel is $\bigcap \limits_{x \in G}H^x$ and is called the \emph{core} of $H$.
+Conversely, let $\theta$ be a permutation representation on $\Omega$. Define $\cdot \colon \Omega \times G \rightarrow \Omega$ by $a \cdot g = a(g\theta)$. Now $1\theta = 1_\Omega$ so $\cdot$ satisfies action property one. Property two holds as well because $\theta$ is a homomorphism. We have made an action from a representation. The two concepts are nearly identical, but the latter avoids the fuss of a new operation. The similarity of the concepts is reflected in our language. The kernel of a permutation representation is often called the kernel of an action.
 
 Now let $G$ act on itself by conjugation. Notice that $x^g = x$ iff $xg = gx$. Hence the kernel of this action (actually of the induced permutation representation) is the set of elements which commute with every element of the group. This common subgroup is called the \emph{center} of $G$ and written $Z(G)$. The image of the representation has a name too; it's called the \emph{inner automorphisms} of $G$ and denoted $Inn(G)$. Being a homomorphic image, it is a subgroup of $Sym_G$. The first isormorphism theorem says that $Inn(G) \cong G/Z(G)$.
 
 \section{Lecture 6 -- September 22}
-
-\subsection{Automorphisms}
-
-Isomorphisms from a group to itself are called automorphisms, and the set of automorphisms on $G$ is denoted $Aut(G)$. They are all bijections, so $Aut(G) \subset Sym_G$. It is suggestive of the laws of arithmetic to write $x^\sigma = (x)\sigma$ for $\sigma \in Aut(G)$ and $x \in G$. By the homomorphism properties of $\sigma$, $x^\sigma y^\sigma = (xy)^\sigma$ and $1^\sigma = 1$.
-
-Recall we also denoted conjugation exponentially. Indeed, given $g \in G$, the conjugation map $x \mapsto x^g$ is an automorphism -- call it $\sigma_g$. It is actually an element of the group $Inn(G)$ we saw in the previous section. Now $x^{\sigma_g} = x^g$, so $\sigma_g$ behaves like an element from within $G$. This is the origin of the adjective \emph{inner} automorphism.
-
-Pick $\sigma_g \in Inn(G)$, $\tau \in Aut(G)$, and $a \in G$. Then $a{\sigma_g}^\tau = (g^{-1}\mdot(a\tau^{-1})\mdot g)\tau = (g\tau)^{-1}\mdot a \mdot g\tau = a\sigma_{g\tau} \in Inn(G)$. Hence $Inn(G) \lhd Aut(G)$. Can we find $Inn(G)$ as the kernel of an interesting homomorphism? Perhaps from $Aut(G)$ to $G$? Maybe this isn't possible because Passman says $Inn(G)$ can be much smaller than $Aut(G)$ and I bet $Aut(G)$ is much bigger than $G$, so $Aut(G)/Inn(G)$ would be too big to be isomorphic to a subgroup of $G$. Let's investigate these groups for particular $G$s.
 
 \subsection{Orbits and stabilizers}
 
