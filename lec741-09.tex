@@ -415,6 +415,7 @@ Such an operation is called an \emph{action} of $G$ on $\Omega$. Actions are gen
 \end{enumerate}
 The last example emphasizes that $\Omega$ need not have any group structure.
 \item[Conjugation actions] arise from conjugation inside a group. $G$ acts on itself by $a\cdot g = a^g$.
+\item[Permutation actions] are prototypical and defined as the evaluation of permutations. A subgroup $G \subset Sym_\Omega$ acts on $\Omega$ by $a\cdot \sigma = (a)\sigma$.
 \end{description}
 
 Actions induce permutation representations. Say $\cdot$ is a $G$-action on $\Omega$. For each $g \in G$, define $\sigma_g \colon \Omega \rightarrow \Omega$ by $a \mapsto a\cdot g$. Notice both that $\sigma_g \circ \sigma_h = \sigma_{gh}$ by the second property of actions and that $\sigma_1 = 1_\Omega$ by the first property. Thus $\sigma_g \sigma_{g^{-1}} = \sigma_{g^{-1}}\sigma_g = \sigma_1 = 1_\Omega$, which means $\sigma_g \in Sym_\Omega$. We now have a permutation representation $g \mapsto \sigma_g$. We can now recognize that the representation in the $n!$ Theorem came from $G$'s regular action on cosets of a subgroup $H$.
@@ -426,6 +427,14 @@ We saw how the core of a subgroup is the kernel of a representation. Here is ano
 \section{Lecture 6 -- September 22}
 
 \subsection{Orbits and stabilizers}
+
+A permutation representation of $G$ on $\Omega$ provides a way to partition and count $\Omega$. Let $\theta$ be such a representation, and $H \subset Sym_\Omega$ be its image. For each $a \in \Omega$ define $aH = \{(a)h\colon h \in H\}$. This notation is reminiscent of cosets -- in fact for some representations it actually is a coset. For instance, suppose $K$ is a subgroup of $G$ and let it act regularly on $G$. Once again let $H$ be the image of the induced representation $\theta$. Then $gH = (g)(K\theta) = gK$, a left coset of $K$.
+
+Back to the general case: the set $aH$ is called the \emph{orbit of $a$}. The following demonstrates that the orbits partition $\Omega$. Suppose $b \in aH$. Then $bH \subset aHH = aH$. In the final equality, $HH$ means $\{h\circ j\colon h, j \in H\}$. However, $H$ is a group under composition and that is why $HH = H$. Also $b = (a)h$ for some $h \in H$ so $a = (b)h^{-1} \in bH$ which puts $aH \subset bH$ as well. Therefore orbits are disjoint. Finally the orbits cover $\Omega$ because $a \in aH$ for any $a \in \Omega$.
+
+Orbits are similar to, and more general than, cosets. Indeed, we could have introduced orbits first, with cosets being an application. Notice we didn't really need factor groups (and hence cosets) in the proof of the isomorphism theorems. We saw a factor-free version of the first ismorphism theorem, for instance.
+
+One complicating difference in the general viewpoint is that orbits needn't all be the same size. There is no ``Lagrange theorem of actions.'' Nonetheless, it is possible to get good information from counting the number and size of orbits. A $G$-coset $xK$ contains just as many elements as $K$ because $xk = xk'$ implies $k = k'$ by group cancellation. There isn't always cancellation when $(x)h = (x)h'$. The function $hh' \in H$ can fix $x$ even when $h \ne h'$.
 
 \subsection{Fundamental counting principle}
 
