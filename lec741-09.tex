@@ -430,11 +430,19 @@ We saw how the core of a subgroup is the kernel of a representation. Here is ano
 
 A permutation representation of $G$ on $\Omega$ provides a way to partition and count $\Omega$. Let $\theta$ be such a representation, and $H \subset Sym_\Omega$ be its image. For each $a \in \Omega$ define $aH = \{(a)h\colon h \in H\}$. This notation is reminiscent of cosets -- in fact for some representations it actually is a coset. For instance, suppose $K$ is a subgroup of $G$ and let $K$ act regularly on $G$. Once again let $H$ be the image of the induced representation $\theta$. Then $gH = (g)(K\theta) = gK$, a left coset of $K$.
 
-Back to the general case: the set $aH$ is called the \emph{orbit of $a$}. The following demonstrates that the orbits partition $\Omega$. Suppose $b \in aH$. Then $bH \subset aHH = aH$. In the final equality, $HH$ means $\{h\circ j\colon h, j \in H\}$. However, $H$ is a group under composition and that is why $HH = H$. Also $b = (a)h$ for some $h \in H$ so $a = (b)h^{-1} \in bH$ which puts $aH \subset bH$ as well. Therefore orbits are disjoint. Finally the orbits cover $\Omega$ because $a \in aH$ for any $a \in \Omega$.
+Back to the general case: the set $aH$ is called the \emph{orbit of $a$}. The following demonstrates that the orbits partition $\Omega$. Suppose $b \in aH$. Then $bH \subset aHH = aH$. In the final equality, $HH$ means $\{h\circ j\colon h, j \in H\}$. Note that $H$ is a group under composition which is why $HH = H$. Also $b = (a)h$ for some $h \in H$ so $a = (b)h^{-1} \in bH$ which puts $aH \subset bH$ as well. Therefore orbits are disjoint. Finally the orbits cover $\Omega$ because $a \in aH$ for any $a \in \Omega$.
 
 Orbits are similar to, and more general than, cosets. Indeed, we could have introduced orbits first, with cosets being an application. Notice we didn't really need factor groups (and hence cosets) in the proof of the isomorphism theorems. We saw a factor-free version of the first ismorphism theorem, for instance.
 
-One complicating difference in the general viewpoint is that orbits needn't all be the same size. There is no ``Lagrange theorem of actions.'' Nonetheless, it is possible to get good information from counting the number and size of orbits. A $G$-coset $xK$ contains just as many elements as $K$ because $xk = xk'$ implies $k = k'$ by group cancellation. There isn't always cancellation when $(x)h = (x)h'$. The function $hh' \in H$ can fix $x$ even when $h \ne h'$.
+One complicating difference in the general viewpoint is that orbits needn't all be the same size. There is no ``Lagrange theorem of actions.'' For a subgroup $K$ of $G$ the map $K \rightarrow gK$ by $k \mapsto gk$ is bijective, whereas the orbit map $H \rightarrow aH$ by $h \mapsto (a)h$ is surjective but needn't be injective. We call the set of elements in $H$ fixing $a$ the \emph{stabilizer of a} and denote it $H_a$. Injectivity fails iff $H_a$ contains a nonidentity element. We can modify this map to make it a bijection, however, and in the process discover the size of $aH$ exactly.
+
+\begin{theorem}
+\emph{\textbf{(Orbit-stabilizer)}}
+Suppose $H$ is a subgroup of $Sym_\Omega$. Then $|aH| = |H \colon H_a|$ for any $a \in \Omega$.
+\end{theorem}
+\begin{proof}
+Define a map $aH \rightarrow H/H_a$ by $(a)h \mapsto hH_a$. It is well-defined and injective because $(a)h = (a)k$ iff $hk^{-1} \in H_a$ iff $hH_a = kH_a$. It is obviously surjective.
+\end{proof}
 
 \subsection{Fundamental counting principle}
 
