@@ -426,7 +426,7 @@ We saw how the core of a subgroup is the kernel of a representation. Here is ano
 
 \section{Lecture 6 -- September 22}
 
-\subsection{Orbits and stabilizers}
+\subsection{Orbits, stabilizers, and counting}
 
 A permutation representation of $G$ on $\Omega$ provides a way to partition and count $\Omega$. Let $\theta$ be such a representation, and $H \subset Sym_\Omega$ be its image. For each $a \in \Omega$ define $aH = \{(a)h\colon h \in H\}$. This notation is reminiscent of cosets -- in fact for some representations it actually is a coset. For instance, suppose $K$ is a subgroup of $G$ and let $K$ act regularly on $G$. Once again let $H$ be the image of the induced representation $\theta$. Then $gH = (g)(K\theta) = gK$, a left coset of $K$.
 
@@ -444,7 +444,9 @@ Suppose $H$ is a subgroup of $Sym_\Omega$. Then $|aH| = |H \colon H_a|$ for any 
 Define a map $aH \rightarrow H/H_a$ by $(a)h \mapsto hH_a$. It is well-defined and injective because $(a)h = (a)k$ iff $hk^{-1} \in H_a$ iff $hH_a = kH_a$. It is obviously surjective.
 \end{proof}
 
-\subsection{Fundamental counting principle}
+We have related the size of $\Omega$ to that of $H$. By the orbit-stabilizer theorem and the fact that orbits partition $\Omega$ we have that
+\[|\Omega| = \sum_{a \in \Omega} |aH| = \sum_{a \in \Omega} |H \colon H_a|\]
+where the summation runs over a transversal of the orbits.
 
 \begin{thebibliography}{7}
 \bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
