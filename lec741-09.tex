@@ -296,7 +296,7 @@ Define $\nu\colon G \rightarrow G/N$ by $x \mapsto Nx$. By inspection $\nu$ is o
 Suppose $\phi \colon G \rightarrow H$, $\psi \colon G \rightarrow K$ are surjective group homomorphisms with the same kernel. Then $H \cong K$.
 \end{theorem}
 \begin{proof}
-Now $\phi$ is surjective, so it has a left-inverse which we'll denote $\phi^{-1}$ (and be careful not to use as a two-sided inverse). We will show that $\phi^{-1}\psi$ is the isomorphism we need. Pick $h$, $l \in H$. Certainly $(hl)\phi^{-1}\phi = hl = (h\phi^{-1} \phi)\mdot(l\phi^{-1}\phi) = (h\phi^{-1}\mdot l\phi^{-1})\phi$. Since $\ker{\phi} = \ker{\psi}$, we have that for any $a$, $b \in G$, $(a)\phi = (b)\phi$ iff $(a)\psi = (b)\psi$. But this means that $(hl)\phi^{-1}\psi = (h\phi^{-1}\mdot l\phi^{-1})\psi = (h\phi^{-1})\psi\mdot (l\phi^{-1})\psi$. Hence $\phi^{-1}\psi \colon H \rightarrow K$ is a homomorphism.
+Since $\phi$ is surjective it has a left-inverse which we'll denote $\phi^{-1}$ (and be careful not to use as a two-sided inverse). We will show that $\phi^{-1}\psi$ is the isomorphism we need. Pick $h$, $l \in H$. Certainly $(hl)\phi^{-1}\phi = hl = (h\phi^{-1} \phi)\mdot(l\phi^{-1}\phi) = (h\phi^{-1}\mdot l\phi^{-1})\phi$. Since $\ker{\phi} = \ker{\psi}$, we have that for any $a$, $b \in G$, $(a)\phi = (b)\phi$ iff $(a)\psi = (b)\psi$. But this means that $(hl)\phi^{-1}\psi = (h\phi^{-1}\mdot l\phi^{-1})\psi = (h\phi^{-1})\psi\mdot (l\phi^{-1})\psi$. Hence $\phi^{-1}\psi \colon H \rightarrow K$ is a homomorphism.
 
 To see that it is an isomorphism, suppose $h \in \ker{ \phi^{-1}\psi}$. Then $(h)\phi^{-1}\psi = 1 = (1)\psi$, so $h = (h)\phi^{-1}\phi = (1)\phi = 1$.
 \end{proof}
@@ -415,7 +415,7 @@ Such an operation is called an \emph{action} of $G$ on $\Omega$. Actions are gen
 \end{enumerate}
 The last example emphasizes that $\Omega$ need not have any group structure.
 \item[Conjugation actions] arise from conjugation inside a group. $G$ acts on itself by $a\cdot g = a^g$.
-\item[Permutation actions] are prototypical and defined as the evaluation of permutations. A subgroup $G \subset Sym_\Omega$ acts on $\Omega$ by $a\cdot \sigma = (a)\sigma$.
+\item[Permutation actions] are prototypical and defined as the evaluation of permutations. A permutation group $G \subset Sym_\Omega$ acts on $\Omega$ by $a\cdot \sigma = (a)\sigma$.
 \end{description}
 
 Actions induce permutation representations. Say $\cdot$ is a $G$-action on $\Omega$. For each $g \in G$, define $\sigma_g \colon \Omega \rightarrow \Omega$ by $a \mapsto a\cdot g$. Notice both that $\sigma_g \circ \sigma_h = \sigma_{gh}$ by the second property of actions and that $\sigma_1 = 1_\Omega$ by the first property. Thus $\sigma_g \sigma_{g^{-1}} = \sigma_{g^{-1}}\sigma_g = \sigma_1 = 1_\Omega$, which means $\sigma_g \in Sym_\Omega$. We now have a permutation representation $g \mapsto \sigma_g$. We can now recognize that the representation in the $n!$ Theorem came from $G$'s regular action on cosets of a subgroup $H$.
