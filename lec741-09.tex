@@ -1,6 +1,7 @@
 \documentclass[letterpaper]{article}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{colonequals}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -428,22 +429,22 @@ We saw how the core of a subgroup is the kernel of a representation. Here is ano
 
 \subsection{Orbits, stabilizers, and counting}
 
-A permutation group $G \subset Sym_\Omega$ provides a way to partition and count  $\Omega$. For each $a \in \Omega$ define $aG = \{(a)g\colon g \in G\}$. This set is called the \emph{orbit of $a$}. The following demonstrates that the orbits partition $\Omega$. Suppose $b \in aG$. Then $bG \subset aGG = aG$. Also $b = (a)g$ for some $g \in G$ so $a = (b)g^{-1} \in bG$ which puts $aG \subset bG$ as well. Therefore orbits are disjoint. Finally the orbits cover $\Omega$ because $a \in aG$ for any $a \in \Omega$.
+A permutation group $G \subset Sym_\Omega$ provides a way to partition and count  $\Omega$. For each $a \in \Omega$ define the \emph{orbit of $a$} as the set $aG \colonequals \{(a)g\colon g \in G\} \subset \Omega$. The following demonstrates that the orbits partition $\Omega$. Suppose $b \in aG$. Then $bG \subset aGG = aG$. Also $b = (a)g$ for some $g \in G$ so $a = (b)g^{-1} \in bG$ which puts $aG \subset bG$ as well. Therefore orbits are disjoint. Finally the orbits cover $\Omega$ because $a \in aG$ for any $a \in \Omega$.
 
-Orbits are a generalization of cosets. Suppose $H$ is a subgroup of an arbitrary group $G$ and $g \in G$. We will show that $gH$ is an orbit.
+Orbits are a generalization of cosets. Suppose $H$ is a subgroup of an arbitrary group $G$ and let $g \in G$. We will show that the coset $gH$ is an orbit. Let $H$ act regularly on $G$ (i.e. $g\cdot h \mapsto gh$). From the induced representation $\theta \colon H \rightarrow Sym_G$ we see that $gH = g(H\theta)$, an orbit.
 
-One complicating difference in the general viewpoint is that orbits needn't all be the same size. There is no ``Lagrange theorem of actions.'' For a subgroup $K$ of $G$ the map $K \rightarrow gK$ by $k \mapsto gk$ is bijective, whereas the orbit map $H \rightarrow aH$ by $h \mapsto (a)h$ is surjective but needn't be injective. We call the set of elements in $H$ fixing $a$ the \emph{stabilizer of a} and denote it $H_a$. Injectivity fails iff $H_a$ contains a nonidentity element. We can modify this map to make it a bijection, however, and in the process discover the size of $aH$ exactly.
+This generalization comes at a cost: orbits needn't all be the same size. The 1-1 correspondence between cosets does not translate to a ... need to show how stabilizers help us make bijections.
 
 \begin{theorem}
 \emph{\textbf{(Orbit-stabilizer)}}
-Suppose $H$ is a subgroup of $Sym_\Omega$. Then $|aH| = |H \colon H_a|$ for any $a \in \Omega$.
+Suppose $G$ is a subgroup of $Sym_\Omega$. Then $|aG| = |G \colon G_a|$ for any $a \in \Omega$.
 \end{theorem}
 \begin{proof}
-Define a map $aH \rightarrow H/H_a$ by $(a)h \mapsto hH_a$. It is well-defined and injective because $(a)h = (a)k$ iff $hk^{-1} \in H_a$ iff $hH_a = kH_a$. It is obviously surjective.
+Define a map $aG \rightarrow G/G_a$ by $(a)g \mapsto gG_a$. It is well-defined and injective because $(a)g = (a)k$ iff $gk^{-1} \in G_a$ iff $gG_a = kG_a$. It is obviously surjective.
 \end{proof}
 
-We have related the size of $\Omega$ to that of $H$. By the orbit-stabilizer theorem and the fact that orbits partition $\Omega$ we have that
-\[|\Omega| = \sum_{a \in \Omega} |aH| = \sum_{a \in \Omega} |H \colon H_a|\]
+We have related the size of $\Omega$ to that of $G$. By the orbit-stabilizer theorem and the fact that orbits partition $\Omega$ we have that
+\[|\Omega| = \sum_{a \in \Omega} |aG| = \sum_{a \in \Omega} |G \colon G_a|\]
 where the summation runs over a transversal of the orbits.
 
 
