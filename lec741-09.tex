@@ -433,7 +433,9 @@ A permutation group $G \subset Sym_\Omega$ provides a way to partition and count
 
 Orbits are a generalization of cosets. Suppose $H$ is a subgroup of an arbitrary group $G$ and let $g \in G$. We will show that the coset $gH$ is an orbit. Let $H$ act regularly on $G$ (i.e. $g\cdot h \mapsto gh$). From the induced representation $\theta \colon H \rightarrow Sym_G$ we see that $gH = g(H\theta)$, an orbit.
 
-This generalization comes at a cost: orbits needn't all be the same size. The 1-1 correspondence between cosets does not translate to a ... need to show how stabilizers help us make bijections.
+This generalization comes at a cost: orbits needn't all be the same size. The map $G \rightarrow aG$ by $g \mapsto (a)g$ is not always injective. Suppose for instance (and this sometimes happens) that $G$ is finite and $(a)g = a$ for some $g \ne 1$. Then $(a)g = (a)1$ so the map is not injective. It is surjective, though, so $|G| > |aG|$. The inequality happened because the \emph{stabilizer of $a$} -- that is, the elements of $G$ which fix $a$ -- contained a nonidentity element. The stabilizer is denoted $G_a$ can can be used to modify our map and obtain a bijection.
+
+The following theorem requires that $G_a$ is a subgroup of $G$. Well, $G_a$ certainly contains 1 and if $x$, $y \in G_a$ then $(a)xy^{-1} = ay^{-1} = ayy^{-1} = a$ so $xy^{-1} \in G_a$.
 
 \begin{theorem}
 \emph{\textbf{(Orbit-stabilizer)}}
