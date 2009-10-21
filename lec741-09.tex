@@ -400,7 +400,7 @@ For instance, if $H$ is half of $G$, then $n! = n = 2$, so $|G \colon N| = 1$ or
 
 It is worth investigating the normal subgroup constructed in the $n!$ Theorem since we will see it again. For any $g$, $Hxg = Hx$ iff $Hxgx^{-1} = H$ iff $g^{x^{-1}} \in H$ iff $g \in H^x$. Hence the kernel is $\bigcap \limits_{x \in G}H^x$ and is called the \emph{core of $H$}.
 
-One more note about the theorem. Its permutation representation might seem surprising, or hard to invent. In reality there is an easy way to make representations. Suppose an operation $\cdot \colon \Omega \times G \rightarrow \Omega$ satisfies the following axioms:
+One more note about the theorem. Its permutation representation might seem surprising, or hard to invent or discover. In reality there is an easy way to make representations. Suppose an operation $\cdot \colon \Omega \times G \rightarrow \Omega$ satisfies the following axioms:
 \begin{enumerate}
 \item $a \cdot 1 = a$
 \item $(a \cdot x) \cdot y = a \cdot (xy)$.
@@ -427,9 +427,9 @@ We saw how the core of a subgroup is the kernel of a representation. Here is ano
 
 \section{Lecture 6 -- September 22}
 
-\subsection{Orbits, stabilizers, and counting}
+\subsection{Counting with orbits and stabilizers}
 
-A permutation group $G \subset Sym_\Omega$ provides a way to partition and count  $\Omega$. For each $a \in \Omega$ define the \emph{orbit of $a$} as the set $aG \colonequals \{(a)g\colon g \in G\} \subset \Omega$. The following demonstrates that the orbits partition $\Omega$. Suppose $b \in aG$. Then $bG \subset aGG = aG$. Also $b = (a)g$ for some $g \in G$ so $a = (b)g^{-1} \in bG$ which puts $aG \subset bG$ as well. Therefore orbits are disjoint. Finally the orbits cover $\Omega$ because $a \in aG$ for any $a \in \Omega$.
+A permutation group $G \subset Sym_\Omega$ provides a way to partition and count  $\Omega$. For each $a \in \Omega$ the \emph{orbit of $a$} is the set $aG \colonequals \{(a)g\colon g \in G\} \subset \Omega$. The following demonstrates that the orbits partition $\Omega$. Suppose $b \in aG$. Then $bG \subset aGG = aG$. Also $b = (a)g$ for some $g \in G$ so $a = (b)g^{-1} \in bG$ which puts $aG \subset bG$ as well. Therefore orbits are disjoint. Finally the orbits cover $\Omega$ because $a \in aG$ for any $a \in \Omega$.
 
 Orbits are a generalization of cosets. Suppose $H$ is a subgroup of an arbitrary group $G$ and let $g \in G$. We will show that the coset $gH$ is an orbit. Let $H$ act regularly on $G$ (i.e. $g\cdot h \mapsto gh$). From the induced representation $\theta \colon H \rightarrow Sym_G$ we see that $gH = g(H\theta)$, an orbit.
 
@@ -447,8 +447,17 @@ Define a map $aG \rightarrow G/G_a$ by $(a)g \mapsto gG_a$. It is well-defined a
 
 We have related the size of $\Omega$ to that of $G$. By the orbit-stabilizer theorem and the fact that orbits partition $\Omega$ we have that
 \[|\Omega| = \sum_{a \in \Omega} |aG| = \sum_{a \in \Omega} |G \colon G_a|\]
-where the summation runs over a transversal of the orbits.
+where the summation runs over a transversal of the orbits. This equation is sometimes called the \emph{Fundamental Counting Principle}.
 
+As an application, let $\Omega$ be a group, and $G = Inn(\Omega)$. Then \[|\Omega| = \sum_{a \in \Omega} |G \colon G_a| = \sum_{a \in Z(\Omega)} |G \colon G_a| + \sum_{a \not \in Z(\Omega)} |G \colon G_a|.\]
+However, for any $g \in \Omega$ and $a \in Z(\Omega)$, we have that $a^g = a$. Hence $G_a$ is all of $G$ and we can rewrite
+\[\sum_{a \in Z(\Omega)} |G \colon G_a| = \sum_{a \in Z(\Omega)} |G \colon G|.\]
+Substituting gives us a predecessor to the so-called class equation:
+\[|\Omega| = |Z(\Omega)| + \sum_{a \not \in Z(\Omega)} |G \colon G_a|.\]
+
+\section{Lecture 7 -- September 24}
+
+\subsection{Alternating groups}
 
 
 \begin{thebibliography}{7}
