@@ -447,19 +447,23 @@ Define a map $aG \rightarrow G/G_a$ by $(a)g \mapsto gG_a$. It is well-defined a
 
 We have related the size of $\Omega$ to that of $G$. By the orbit-stabilizer theorem and the fact that orbits partition $\Omega$ we have that
 \[|\Omega| = \sum_{a \in \Omega} |aG| = \sum_{a \in \Omega} |G \colon G_a|\]
-where the summation runs over a transversal of the orbits. This equation is sometimes called the \emph{Fundamental Counting Principle}.
+where the summation runs over a transversal of the orbits. This equation is sometimes called the \emph{Fundamental Counting Principle} (FCP).
 
 Thus far we have defined stabilizers only in permutation groups, but we can define them using nothing more than a permutation representation. Let G be any group and $\theta \colon G \rightarrow H \subset Sym_\Omega$ be a homomorphism. For any $a \in \Omega$, define $G_a = H_a\theta^{-1}$. The stabilizer $G_a$ is a subgroup, being the homomorphic  preimage of a subgroup,
 
-The Fundamental Counting Principle remains true under this broader definition of stabilizers. To see this, let $N = \ker \theta$. Then $H \cong G/N$, so $H/H_a \cong (G/N)/(G_a/N)$. However, $(G/N)/(G_a/N) \cong G/G_a$ so $|G \colon G_a| = |H \colon H_a|$.
+The FCP remains true under this broader definition of stabilizers. To see this, let $N = \ker \theta$. Then $H \cong G/N$, so $H/H_a \cong (G/N)/(G_a/N)$. However, $(G/N)/(G_a/N) \cong G/G_a$ so $|G \colon G_a| = |H \colon H_a|$.
 
 The earlier definition of the core of a subgroup as an intersection might have seemed bulky. We are now in a position to see that it was perfectly ordinary: any kernel of a permutation representation is an intersection. The kernel is certainly contained in any stabilizer because the latter is a homomorphic preimage. Hence the kernel is contained in the intersection of all stabilizers. Conversely, if an element of $G$ is in every stabilizer, then it is mapped to a permutation which fixes every element of $\Omega$ -- that is, to the element $1$.
 
-As an application, let $\Omega$ be a group, and $G = Inn(\Omega)$. Then \[|\Omega| = \sum_{a \in \Omega} |G \colon G_a| = \sum_{a \in Z(\Omega)} |G \colon G_a| + \sum_{a \not \in Z(\Omega)} |G \colon G_a|.\]
-However, for any $g \in \Omega$ and $a \in Z(\Omega)$, we have that $a^g = a$. Hence $G_a$ is all of $G$ and we can rewrite
-\[\sum_{a \in Z(\Omega)} |G \colon G_a| = \sum_{a \in Z(\Omega)} |G \colon G|.\]
-Substituting gives us a predecessor to the so-called class equation:
-\[|\Omega| = |Z(\Omega)| + \sum_{a \not \in Z(\Omega)} |G \colon G_a|.\]
+As an application, let $G$ act on itself by conjugation. This induces a representation to $Inn(G)$. For $g \in G$, the stabilizer $G_g$ is in this instance written $C(g)$ and is the set of those elements of $G$ which commute with $g$. The FCP becomes
+\[|G| = \sum_{g \in G} |G \colon C(g)|\]
+Notice that $C(z)$ is all of $G$ for any central $z$, making $|G \colon C(z)| = 1$. We may thus break up the sum as
+\begin{alignat*}{3}
+|G| \quad &=& \quad \sum_{z \in Z(G)} 1 \quad &+& \quad \sum_{g \not \in Z(G)} |G \colon C(g)| \\
+    &=& \quad |Z(G)|              \quad &+& \quad \sum_{g \not \in Z(G)} |G \colon C(g)|
+\end{alignat*}
+
+This is called the \emph{class equation}.
 
 \section{Lecture 7 -- September 24}
 
