@@ -1,6 +1,7 @@
 \documentclass[letterpaper]{article}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{colonequals}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -457,13 +458,17 @@ The earlier definition of the core of a subgroup as an intersection might have s
 
 As an application, let $G$ act on itself by conjugation. This induces a representation to $Inn(G)$. For $g \in G$, the stabilizer $G_g$ is in this instance written $C(g)$ and is the set of those elements of $G$ which commute with $g$. The FCP becomes
 \[|G| = \sum_{g \in G} |G \colon C(g)|\]
-Notice that $C(z)$ is all of $G$ for any central $z$, making $|G \colon C(z)| = 1$. We may thus break up the sum as
+Notice that $C(z)$ is all of $G$ for any central $z$, making $|G \colon C(z)| = 1$. We may thus break up the sum into the so-called \emph{class equation}:
 \begin{alignat*}{3}
 |G| \quad &=& \quad \sum_{z \in Z(G)} 1 \quad &+& \quad \sum_{g \not \in Z(G)} |G \colon C(g)| \\
     &=& \quad |Z(G)|              \quad &+& \quad \sum_{g \not \in Z(G)} |G \colon C(g)|
 \end{alignat*}
 
-This is called the \emph{class equation}.
+Now suppose $G$ is a \emph{p-group}, that is $|G| = p^\alpha$ for a prime $p$. Then $p$ divides both $|G|$ and each $|G \colon C(g)|$, so $p$ divides $|Z(G)| = |G| - \sum |G \colon C(g)|$. Finally, $Z(G)$ is not empty (it contains the identity) so it contains at least $p$ elements. The class equation shows that every p-group has a nontrivial center.
+
+When $\alpha = 2$ more is true: the center is of order $p$ or $p^2$. Suppose for contradiction that its order is $p$ and pick $g \in G \setminus Z(G)$. Then $Z(G) \subsetneq C(g)$ so $C(g) = G$. But then all elements of $G$ commute with $g$, which puts $g \in Z(G)$, a contradiction. Hence any group of order $p^2$ is abelian.
+
+Certain stabilizers are ubiquitous subgroups. We saw that the stabilzers of a group's conjugation on itself are centralizers. If we let $G$ act by conjugation on its subgroups then $G_H = \{g\colon H^g = H\}$. That stabilizer is called the \emph{normalizer of H}, and written $N(H)$. Certainly $H \subset N(H)$; in fact $H \lhd N(H)$.
 
 \section{Lecture 7 -- September 24}
 
