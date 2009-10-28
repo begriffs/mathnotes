@@ -4,7 +4,7 @@
 \usepackage{amssymb}
 \usepackage{colonequals}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{lemma}[theorem]{Lemmaf}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 
@@ -471,6 +471,24 @@ When $\alpha = 2$ more is true: the center is of order $p$ or $p^2$. Suppose for
 Certain stabilizers are ubiquitous subgroups. We saw that the stabilzers of a group's conjugation on itself are centralizers. If we let $G$ act by conjugation on its subgroups then $G_H = \{g\colon H^g = H\}$. That stabilizer is called the \emph{normalizer of H}, and written $N(H)$. Certainly $H \subset N(H)$; in fact $H \lhd N(H)$.
 
 \section{Lecture 7 -- September 24}
+
+\subsection{Cycle structure}
+
+Suppose $|\Omega| < \infty$ and $f \in Sym_\Omega$. The permutation $f$ is a \emph{cycle} if the permutation action of ${<}f{>}$ on $\Omega$ induces exactly one nontrivial orbit. When $f$ is a cycle we refer to the nontrivial orbit as its \emph{primary orbit}. The \emph{length} of a cycle is the size of its primary orbit. Finally, two cycles are \emph{disjoint} when their primary orbits are.
+
+\begin{lemma}
+Every permutation in $Sym_\Omega$ is a composition of disjoint cycles when $\Omega$ is finite.
+\end{lemma}
+\begin{proof}
+Suppose $f \in Sym_\Omega$ and enumerate its orbits by $O_1, O_2, \ldots, O_r$ for some $r \leq |\Omega|$. For each $0 < i \leq r$ define $c_i \colon \Omega \rightarrow \Omega$ by
+\[(a)c_i = \begin{cases}
+(a)f & a \in O_i \\
+a & a \not \in O_i
+\end{cases}
+\]
+We will show that each $c_i$ is a cycle, and that $f = c_1 \circ c_2 \circ \cdots \circ c_r$.
+\end{proof}
+
 
 \subsection{Alternating groups}
 
