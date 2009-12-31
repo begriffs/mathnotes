@@ -510,7 +510,21 @@ We need to find an element $g \in G$ with order $p$, that is, a non-identity $g$
 
 Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1, \dots, g_p) \mapsto (g_p, g_1, \dots, g_{p-1})$. Notice $\sigma$ has order $p$. Let the group ${<}\sigma{>}$ act naturally on S. By the orbit-stabilizer theorem, all orbits of this action have size 1 or $p$. Let $a$ and $b$ be the numbers of orbits of sizes 1 and $p$  respectively. Now $|S| = a + pb$, and certainly $a \geq 1$ since $\sigma$ fixes $(1, \ldots, 1)$.
 
-When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides $|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides $a$, which forces $a > 1$. Thus $\sigma$ fixes an element of $S$ other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$ must be equal, and their common value is precisely the element we are seeking.
+When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides $|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides $a$, which forces $a > 1$. Thus $\sigma$  fixes an element of $S$ other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$ must be equal, and their common value is precisely the element we are seeking.
+\end{proof}
+
+Let $G$ be a finite group of order $p^ab$ where $p$ is a prime which does not divide $b$. Any subgroup of size $p^a$ is called a Sylow $p$-subgroup.
+
+\begin{theorem}
+\emph{\textbf{(Sylow-E)}}
+Let $G$ be a finite group. There exists a Sylow p-subgroup of $G$ for any prime $p$.
+\end{theorem}
+\begin{proof}
+Fix a prime $p$. We will induct on $|G|$. Write $|G| = p^ab$ for suitable $a$ and $b$ where $p \nmid b$. If $a = 0$ then the trivial subgroup $\{1\}$ is a Sylow $p$-subgroup, so assume $a \neq 0$. In the following cases, let $H$ be a proper subgroup of $G$.
+
+\underline{Case 1}: $p \nmid |G : H|$. Since $p^a \mid |G| = |H||G : H|$ we have that $p^a \mid |H|$. By induction $H$ contains a Sylow subgroup, and in this case it is of size $p^a$. This is of course a Sylow p-subgroup of $G$.
+
+\underline{Case 2}: $p \mid |G : H|$.
 \end{proof}
 
 \section{Lecture 9 -- October 1}
