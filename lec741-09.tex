@@ -504,11 +504,11 @@ Let $\Omega$ be a set with $|\Omega|>1$. Then $Alt_\Omega \lhd Sym_\Omega$.
 Let $G$ be a finite group. If $p$ is a prime such that $p$ divides $|G|$, then $G$ has an element of order $p$.
 \end{theorem}
 \begin{proof}
-We need to find an element $g \in G$ with order $p$. To do so consider the subset of $p$-tuples $S \subset G^p$ whose components multiply to $1$,
-\[S = \left\{ (g_1, \dots, g_p) \in G^p\colon \prod_{i=1}^p g_i = 1 \right\}.\]
-We need to find a non-identity $g \in G$ such that $(g, g, \ldots, g) \in S$.
+Consider the set $S$ of $p$-tuples of $G$ whose components multiply to $1$,
+\[S = \left\{ (g_1, \dots, g_p) \in G^p\colon g_1 g_2\cdots g_p = 1 \right\}.\]
+We need to find an element $g \in G$ with order $p$, that is, a non-identity $g$ such that $(g, g, \ldots, g) \in S$.
 
-Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1, \dots, g_p) \mapsto (g_p, g_1, \dots, g_{p-1})$. Notice $\sigma$ has order $p$. Let the group ${<}\sigma{>}$ act naturally on S. By the Orbit-Stabilizer theorem, all orbits of this action have size 1 or $p$. Let $a$ and $b$ be the numbers of orbits of sizes $p$ and 1 respectively. Now $|S| = a + pb$, and certainly $a \geq 1$ since $\sigma$ fixes $(1, \ldots, 1)$.
+Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1, \dots, g_p) \mapsto (g_p, g_1, \dots, g_{p-1})$. Notice $\sigma$ has order $p$. Let the group ${<}\sigma{>}$ act naturally on S. By the orbit-stabilizer theorem, all orbits of this action have size 1 or $p$. Let $a$ and $b$ be the numbers of orbits of sizes 1 and $p$  respectively. Now $|S| = a + pb$, and certainly $a \geq 1$ since $\sigma$ fixes $(1, \ldots, 1)$.
 
 When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides $|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides $a$, which forces $a > 1$. Thus $\sigma$ fixes an element of $S$ other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$ must be equal, and their common value is precisely the element we are seeking.
 \end{proof}
