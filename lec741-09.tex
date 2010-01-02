@@ -497,7 +497,11 @@ Let $\Omega$ be a set with $|\Omega|>1$. Then $Alt_\Omega \lhd Sym_\Omega$.
 
 \section{Lecture 8 -- September 29}
 
-\subsection{A partial converse of Lagrange's Theorem}
+\subsection{A partial converses of Lagrange's theorem}
+
+As we saw, Lagrange's theorem says the order of every group element divides the order of the group. The converse is not true, however: given an arbitrary divisor $d$ of a group's order, there is not necessarily an element having order $d$. For instance $Alt_5$ has order 60 but contains no element of order 30. Such an element would generate a cyclic subgroup with index 2, which would make the subgroup normal. However we will see later that $Alt_5$ has no nontrivial normal subgroups.
+
+Although there is no hope for a full converse, a curious fact emerges for prime divisors of a group's order. The following proof due to McKay uses group actions and a surprising set.
 
 \begin{theorem}
 \emph{\textbf{(Cauchy)}}
@@ -513,6 +517,8 @@ Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1, \dots, g_p) \map
 When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides $|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides $a$, which forces $a > 1$. Thus $\sigma$  fixes an element of $S$ other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$ must be equal, and their common value is precisely the element we are seeking.
 \end{proof}
 
+
+
 Let $G$ be a finite group of order $p^ab$ where $p$ is a prime which does not divide $b$. Any subgroup of size $p^a$ is called a Sylow $p$-subgroup.
 
 \begin{theorem}
@@ -526,7 +532,7 @@ We'll consider cases. First assume there is a proper subgroup $H \subset G$ with
 
 The remaining option is that $p \mid |G : H|$ for every proper $H \subset G$. By the class equation,
 \[|G| = |Z(G)| + \sum_{g \not \in Z(G)} |G \colon C(g)|\]
-and $p$ divides $|G|$ and each $|G \colon C(g)|$. Hence $p$ divides $|Z(G)|$. By Cauchy's theorem, $Z(G)$ contains an element of order $p$. This element generates a cyclic subgroup of $Z(G)$, call it $J$. Being central, $J$ is normal, and $|G/J| = p^{a-1}b$ is smaller than $G$. The induction hypothesis gives us a Sylow p-subgroup $P/J$ of $G/J$, with $|P/J| = p^{a-1}$. Thus $P \subset G$ has order $p^a$ and is a Sylow p-subgroup of $G$.
+and $p$ divides $|G|$ and each $|G \colon C(g)|$. Hence $p$ divides $|Z(G)|$. By Cauchy's theorem, $Z(G)$ contains an element of order $p$. This element generates a cyclic subgroup of $Z(G)$, call it $J$. Being central, $J$ is normal, and $|G/J| = p^{a-1}b$ is smaller than $G$. The induction hypothesis gives us a Sylow p-subgroup $P/J$ of $G/J$, with $|P/J| = p^{a-1}$. Thus $P \subset G$ has order $p^a$ making it a Sylow p-subgroup of $G$.
 \end{proof}
 
 \section{Lecture 9 -- October 1}
