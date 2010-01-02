@@ -4,7 +4,7 @@
 \usepackage{amssymb}
 \usepackage{colonequals}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemmaf}
+\newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 
@@ -520,11 +520,13 @@ Let $G$ be a finite group of order $p^ab$ where $p$ is a prime which does not di
 Let $G$ be a finite group. There exists a Sylow p-subgroup of $G$ for any prime $p$.
 \end{theorem}
 \begin{proof}
-Fix a prime $p$. We will induct on $|G|$. Write $|G| = p^ab$ for suitable $a$ and $b$ where $p \nmid b$. If $a = 0$ then the trivial subgroup $\{1\}$ is a Sylow $p$-subgroup, so assume $a \neq 0$. In the following cases, let $H$ be a proper subgroup of $G$.
+Fix a prime $p$. We will induct on $|G|$. Write $|G| = p^ab$ for suitable $a$ and $b$ where $p \nmid b$. If $a = 0$ then the trivial subgroup $\{1\}$ is a Sylow $p$-subgroup, so assume $a \neq 0$.
 
-\underline{Case 1}: $p \nmid |G : H|$. Since $p^a \mid |G| = |H||G : H|$ we have that $p^a \mid |H|$. By induction $H$ contains a Sylow subgroup, and in this case it is of size $p^a$. This is of course a Sylow p-subgroup of $G$.
+We'll consider cases. First assume there is a proper subgroup $H \subset G$ with $p \nmid |G : H|$. Since $p^a \mid |G| = |H||G : H|$ we have that $p^a \mid |H|$. By induction $H$ contains a Sylow subgroup, and in this case it is of size $p^a$. This is of course a Sylow p-subgroup of $G$.
 
-\underline{Case 2}: $p \mid |G : H|$.
+The remaining option is that $p \mid |G : H|$ for every proper $H \subset G$. By the class equation,
+\[|G| = |Z(G)| + \sum_{g \not \in Z(G)} |G \colon C(g)|\]
+and $p$ divides $|G|$ and each $|G \colon C(g)|$. Hence $p$ divides $|Z(G)|$. By Cauchy's theorem, $Z(G)$ contains an element of order $p$. This element generates a cyclic subgroup of $Z(G)$, call it $J$. Being central, $J$ is normal, and $|G/J| = p^{a-1}b$ is smaller than $G$. The induction hypothesis gives us a Sylow p-subgroup $P/J$ of $G/J$, with $|P/J| = p^{a-1}$. Thus $P \subset G$ has order $p^a$ and is a Sylow p-subgroup of $G$.
 \end{proof}
 
 \section{Lecture 9 -- October 1}
