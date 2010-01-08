@@ -517,7 +517,7 @@ Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1, \dots, g_p) \map
 When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides $|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides $a$, which forces $a > 1$. Thus $\sigma$  fixes an element of $S$ other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$ must be equal, and their common value is precisely the element we are seeking.
 \end{proof}
 
-Cauchy's theorem gives subgroups of order $p$, but larger subgroups can be proven to exist. Let $G$ be a finite group of order $p^ab$ where $p$ is a prime which does not divide $b$. Any subgroup of size $p^a$ is called a Sylow $p$-subgroup.
+Cauchy's theorem gives subgroups of order $p$, but larger subgroups can be proven to exist. Let $G$ be a finite group of order $p^ab$ where $p$ is a prime which does not divide $b$. Any subgroup in $G$ of size $p^a$ is called a Sylow $p$-subgroup of $G$.
 
 \begin{theorem}
 \emph{\textbf{(Sylow-E)}}
@@ -533,13 +533,20 @@ The remaining option is that $p \mid |G : H|$ for every proper $H \subset G$. By
 and $p$ divides $|G|$ and each $|G \colon C(g)|$. Hence $p$ divides $|Z(G)|$. By Cauchy's theorem, $Z(G)$ contains an element of order $p$. This element generates a cyclic subgroup of $Z(G)$, call it $J$. Being central, $J$ is normal, and $|G/J| = p^{a-1}b$ is smaller than $G$. The induction hypothesis gives us a Sylow p-subgroup $P/J$ of $G/J$, with $|P/J| = p^{a-1}$. Thus $P \subset G$ has order $p^a$ making it a Sylow p-subgroup of $G$.
 \end{proof}
 
-We can reverse this procedure by proving the Sylow-E theorem with an exotic action independently of Cauchy's theorem, and obtaining the latter as a corollary. The following proof is due to Wielandt.
+We can reverse this procedure by using an exotic action to prove the Sylow-E theorem independently of Cauchy's theorem, and to obtain the latter as a corollary. The following proof is due to Wielandt.
 
-Once again, write $|G| = p^ab$ where $p \nmid b$. Let $\Omega$ be the subsets of $G$ which have order $p^a$. Let $G$ act on $\Omega$ by right multiplication. There is hope for this to be a valid action because for any subset $X \subset G$ and element $g \in G$, the cardinality $|X| = |Xg|$ so $Xg \in \Omega$. The other action properties are easy to check. Now by definition \[|\Omega| = {p^ab \choose p^a}.\] It is also a fact that \[{p^ab \choose p^a} \equiv b\] but it takes us too far afield to prove this number theoretic lemma here. What matters is that $p \nmid |\Omega|$. Hence at least one of this action's orbits, say it contains $X$, has size not divisible by $p$. By the orbit-stabilizer theorem, the index of the stabilizer of $X$, call it $P$, is thus not divisible by $p$. Lagrange's theorem forces $p^a \mid |P|$ since $p \nmid |G \colon P|$, and now in particular $p^a \leq |P|$.
+\begin{theorem}
+\emph{\textbf{(Sylow-E using actions)}}
+\end{theorem}
+\begin{proof}
+Once again, write $|G| = p^ab$ where $p \nmid b$. Let $\Omega$ be the subsets of $G$ which have order $p^a$. Let $G$ act on $\Omega$ by right multiplication. There is hope for this to be a valid action because for any subset $X \subset G$ and element $g \in G$, the cardinality $|X| = |Xg|$ so $Xg \in \Omega$. The other action properties are easy to check. Now by definition \[|\Omega| = {p^ab \choose p^a}.\] It is also a fact that \[{p^ab \choose p^a} \equiv b\] but it takes us too far afield to prove this number theoretic lemma here. What matters is that $p \nmid |\Omega|$. Hence at least one of this action's orbits, say one containing a subset $X$, has size not divisible by $p$. By the orbit-stabilizer theorem, the index of the stabilizer of $X$, call it $P$, is thus not divisible by $p$. Lagrange's theorem forces $p^a \mid |P|$ since $p \nmid |G \colon P|$, and now in particular $p^a \leq |P|$.
 
 Pick $x \in X$. The coset $xP \subset XP \subset X$ where the last inclusion holds because $P$ stabilizes $X$. But $|P| = |xP|$ so $|P| \leq |X| = p^a$. Being a stabilizer, $P \subset G$ is a subgroup, and the two inequalities establish that $|P| = p^a$.
+\end{proof}
 
-Compare the action-based proof of Sylow-E with the action-based proof of Cauchy. They both act creatively on non-groups, and they both 
+Compare the action-based proof of Sylow-E with the action-based proof of Cauchy. They both act creatively on non-groups, and they both use primes and divisibility to reveal large stabilizers. In one case the stabilizer is a Sylow subgroup, and in the other it is the entire group.
+
+Alternately we can prove Cauchy's theorem using induction. This proof resembles the induction based proof of Sylow-E in that it involves the class equation and proving a prime divides the order of the center. So it seems Cauchy's and Sylow's theorems are closely related whichever way we tackle them.
 
 \section{Lecture 9 -- October 1}
 
