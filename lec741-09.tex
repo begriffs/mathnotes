@@ -424,7 +424,9 @@ Actions induce permutation representations. Say $\cdot$ is a $G$-action on $\Ome
 
 Conversely, let $\theta$ be a permutation representation on $\Omega$. Define $\cdot \colon \Omega \times G \rightarrow \Omega$ by $a \cdot g = a(g\theta)$. Now $1\theta = 1_\Omega$ so $\cdot$ satisfies action property one. Property two holds as well because $\theta$ is a homomorphism. We have made an action from a representation. The two concepts are nearly identical, but the latter avoids the fuss of a new operation.
 
-We saw how the core of a subgroup is the kernel of a representation. Here is another kernel. Let $G$ act on itself by conjugation. Notice that $x^g = x$ iff $xg = gx$. Hence the kernel of the induced permutation representation is the set of elements which commute with every element of the group. This common subgroup is called the \emph{center} of $G$ and written $Z(G)$. The image of the representation has a name too; it's called the \emph{inner automorphisms} of $G$ and denoted $Inn(G)$. Being a homomorphic image, it is a subgroup of $Sym_G$. The first isormorphism theorem says that $Inn(G) \cong G/Z(G)$.
+We saw how the core of a subgroup is the kernel of a representation. Here is another kernel. Let $G$ act on itself by conjugation. Notice that $x^g = x$ iff $xg = gx$. Hence the kernel of the induced permutation representation is the set of elements which commute with every element of the group. This common subgroup is called the \emph{center} of $G$ and written $Z(G)$. The image of the representation has a name too; it's called the \emph{inner automorphisms} of $G$ and denoted $Inn(G)$. Being a homomorphic image, it is a subgroup of $Sym_G$. The first isormorphism theorem says that $Inn(G) \cong G/Z(G)$. The group $Inn(G) \subset Aut(G)$, the group of automorphisms of $G$ -- that is the isomorphisms from $G$ to itself.
+
+Finally, if a group $G$ acts on a group $H$ such that the induced permutation representation maps $G \rightarrow Aut(H)$ rather than just $G \rightarrow Sym_H$ then $G$ is said to \emph{act via automorphism} on $H$. We will see a special use for these kind of actions later.
 
 \section{Lecture 6 -- September 22}
 
@@ -555,6 +557,22 @@ Alternately we can prove Cauchy's theorem using induction. This proof resembles 
 Let $G$ be a group and suppose a prime $p$ does not divide $|G|$. Then the trivial subgroup 1 has order $p^0$ and is the only p-subgroup of $G$ -- hence the maximal such. However, if $p$ does divide $|G|$ then Cauchy's theorem gives us a subgroup of order $p$ which contains 1, so 1 is no longer maximal. We would like necessary and sufficient conditions for a p-subgroup to be maximal.
 
 Write $|G| = p^\alpha b$ where $p \nmid b$. A Sylow p-subgroup of $G$ has order $p^\alpha$, and Lagrange's theorem prevents any bigger p-subgroup. Sylow subgroups are thus maximal, and we will show conversely that any maximal p-subgroup is Sylow.
+
+\section{Lecture 10 -- October 6}
+
+\subsection{Decomposing a group with direct products}
+
+A \emph{decomposition} is a means of listing the possible isomorphism classes of a group using auxiliary facts. The direct product is a basic decomposition. We will pass over the definitions of internal and external direct product as they are straightforward. Merely notice that $A \times B$ has two normal subgroups, the first isomorphic to $A$, the other to $B$, and that these subgroups intersect trivially. Conversely if $AB = G$ where $A$ and $B$ are normal in $G$ and $A \cap B = 1$ then $G \cong A \times B$. What qualifies the direct product as a decomposition is that $A \times B \cong A' \times B'$ implies $A \cong A'$ and $B \cong B'$ -- i.e. the isomorphism class of $A \times B$ is determined by the classes of $A$ and $B$.
+
+(Example: $|G| = p^2$. Notice we looked at groups of order four using grubby Cayley tables, but we get it immediately now.)
+
+Sylow subgroups are a natural instrument for decomposing finite groups into direct products. Write $|G| = p_1^{e_1}p_2^{e_2}\cdots p_n^{e_n}$ for suitable primes $p_i$ and powers $e_i$. For each $p_i$, pick $P_i \in Syl_{p_i}(G)$. Then \emph{if all Sylow subgroups are normal}, $|P_1P_2\cdots P_n| = |P_1||P_2|\cdots |P_n| = p_1^{e_1}p_2^{e_2}\cdots p_n^{e_n} = |G|$. Because $G$ is finite we have $G = P_1P_2\cdots P_n$, and Lagrange forces the intersection of any two Sylow subgroups to be trivial. In this case $G$ is the direct product of its Sylow subgroups.
+
+For instance, suppose $|G| = 15 = 3\cdot 5$. The number of Sylow 3-subgroups is congruent to 1 mod 3, and divides 15. The only possibility is 1. Let $P \in Syl_3(G)$. Then $|G \colon N(P)| = 1$ so $N(P) = G$ which means $P \lhd G$. Let $Q \in Syl_5(G)$. Similarly $Q \lhd G$. By our discussion above, $G \cong P \times Q$. In lecture five we saw that groups of prime order (like $P$ and $Q$) are cylic. In particular $G \cong \mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/5\mathbb{Z}$. This is commonly written $\mathbb{Z}_3 \times \mathbb{Z}_5$.
+
+More is true. In general if $a$ and $b$ are relatively prime then $\mathbb{Z}_a \times \mathbb{Z}_b \cong \mathbb{Z}_{ab}$. As noted, $\mathbb{Z}_a \times \mathbb{Z}_b$ contains normal subgroups $A$ and $B$ ismorphic to $\mathbb{Z}_a$ and $\mathbb{Z}_b$ respectively. Suppose $(x, 0)$ generates $A$ and $(0, y)$ generates $B$. We write our group operation additively. Since $i \cdot (x, y) = (i \cdot x, i \cdot y)$ for any integer $i$, the order of $(x, y)$ is a common multiple of $o(x,0) = a$ and $o(0, y) = b$. By the definition of order it is the \emph{least} common multiple. However $a$ and $b$ are relatively prime so the order of $(x, y) = ab = |\mathbb{Z}_a \times \mathbb{Z}_b|$. This establishes the general fact. Looking back at our example, any group of order 15 must be cyclic.
+
+\subsection{Generalizing: semidirect products}
 
 \begin{thebibliography}{7}
 \bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
