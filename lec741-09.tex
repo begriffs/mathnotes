@@ -22,7 +22,7 @@
 \begin{document}
 \title{Abstract Algebra\\
 Math 741}
-\author{Scott Pellicane \and Joe Nelson}
+\author{Joe Nelson \and Scott Pellicane}
 \date{Fall 2009}
 \maketitle
 
@@ -499,11 +499,11 @@ Let $\Omega$ be a set with $|\Omega|>1$. Then $Alt_\Omega \lhd Sym_\Omega$.
 
 \section{Lecture 8 -- September 29}
 
-\subsection{A partial converses of Lagrange's theorem}
+\subsection{A partial converse of Lagrange's theorem}
 
 As we saw, Lagrange's theorem says the order of every group element divides the order of the group. The converse is not true, however: given an arbitrary divisor $d$ of a group's order, there is not necessarily an element having order $d$. For instance $Alt_5$ has order 60 but contains no element of order 30. Such an element would generate a cyclic subgroup with index 2, which would make the subgroup normal. However we will see later that $Alt_5$ has no nontrivial normal subgroups.
 
-Although there is no hope for a full converse, a curious fact emerges for prime divisors of a group's order. The following proof due to McKay uses group actions and a surprising set.
+Although there is no hope for a full converse, a curious fact emerges for prime divisors of a group's order. The following proof due to James H. McKay \cite{McKay59} uses group actions and a surprising set.
 
 \begin{theorem}
 \emph{\textbf{(Cauchy)}}
@@ -519,7 +519,7 @@ Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1, \dots, g_p) \map
 When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides $|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides $a$, which forces $a > 1$. Thus $\sigma$  fixes an element of $S$ other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$ must be equal, and their common value is precisely the element we are seeking.
 \end{proof}
 
-Cauchy's theorem gives subgroups of order $p$, but larger subgroups can be proven to exist. Let $G$ be a finite group of order $p^ab$ where $p$ is a prime which does not divide $b$. Any subgroup in $G$ of size $p^a$ is called a Sylow $p$-subgroup of $G$.
+Cauchy's theorem gives subgroups of order $p$, but larger subgroups can be proven to exist. Let $G$ be a finite group of order $p^ab$ where $p$ is a prime which does not divide $b$. Any subgroup in $G$ of size $p^a$ is called a \emph{Sylow $p$-subgroup of $G$}.
 
 \begin{theorem}
 \emph{\textbf{(Sylow-E)}}
@@ -577,6 +577,7 @@ More is true. In general if $a$ and $b$ are relatively prime then $\mathbb{Z}_a 
 \begin{thebibliography}{7}
 \bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
 The Mathematical Gazette, Vol. 62, No. 422, (Dec., 1978), pp. 278-281
+\bibitem{McKay59} James H. McKay, \emph{Another Proof of Cauchy's Group Theorem}, American Mathematical Monthly, Vol. 66, No. 2, (Feb., 1959), p. 119
 \end{thebibliography}
 
 \end{document}
