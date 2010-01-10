@@ -466,11 +466,13 @@ Notice that $C(z)$ is all of $G$ for any central $z$, making $|G \colon C(z)| = 
     &=& \quad |Z(G)|              \quad &+& \quad \sum_{g \not \in Z(G)} |G \colon C(g)|
 \end{alignat*}
 
-Now suppose $G$ is a \emph{p-group}, that is $|G| = p^\alpha$ for a prime $p$. Then $p$ divides both $|G|$ and each $|G \colon C(g)|$, so $p$ divides $|Z(G)| = |G| - \sum |G \colon C(g)|$. Finally, $Z(G)$ is not empty (it contains the identity) so it contains at least $p$ elements. The class equation shows that every p-group has a nontrivial center.
+Now suppose $G$ is a \emph{\emph{p}-group}, that is $|G| = p^\alpha$ for a prime $p$. Then $p$ divides both $|G|$ and each $|G \colon C(g)|$, so $p$ divides $|Z(G)| = |G| - \sum |G \colon C(g)|$. Finally, $Z(G)$ is not empty (it contains the identity) so it contains at least $p$ elements. The class equation shows that every $p$-group has a nontrivial center.
+
+\textit{Aside.} Some books define a $p$-group to be a group $G$ in which the order of every element is a power of a prime $p$ regardless of whether the group is finite or not. In the finite case, as above, we would still have that $p$ divides $|G|$ from Lagrange's Theorem; however, we cannot guarantee that $p$ divides each $|G \colon C(g)|$. We would have to wait until we prove that a group whose elements have prime-power order is equivalent to the group having prime-power order. This is a consequence of Cauchy's Theorem taken up in lecture 8.
 
 When $\alpha = 2$ more is true: the center is of order $p$ or $p^2$. Suppose for contradiction that its order is $p$ and pick $g \in G \setminus Z(G)$. Then $Z(G) \subsetneq C(g)$ so $C(g) = G$. But then all elements of $G$ commute with $g$, which puts $g \in Z(G)$, a contradiction. Hence any group of order $p^2$ is abelian.
 
-Certain stabilizers are ubiquitous subgroups. We saw that the stabilzers of a group's conjugation on itself are centralizers. If we let $G$ act by conjugation on its subgroups then $G_H = \{g\colon H^g = H\}$. That stabilizer is called the \emph{normalizer of H}, and written $N(H)$. Certainly $H \subset N(H)$; in fact $H \lhd N(H)$.
+Certain stabilizers are ubiquitous subgroups. We saw that the stabilizers of a group's conjugation on itself are centralizers. If we let $G$ act by conjugation on its subgroups then $G_H = \{g\colon H^g = H\}$. That stabilizer is called the \emph{normalizer of H}, and written $N(H)$. Certainly $H \subset N(H)$; in fact $H \lhd N(H)$.
 
 \section{Lecture 7 -- September 24}
 
@@ -522,20 +524,29 @@ Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1, \dots, g_p) \map
 When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides $|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides $a$, which forces $a > 1$. Thus $\sigma$  fixes an element of $S$ other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$ must be equal, and their common value is precisely the element we are seeking.
 \end{proof}
 
+In lecture 6 we noted that some books define a $p$-group to be a group whose elements have prime-power order. When the group is finite we can now prove that this is equivalent to the group having prime-power order. Recall that in lecture 6 we applied the class equation to a group of prime-power order to show that it had a nontrivial center.
+
+\begin{corollary}
+Let $G$ be a finite group. The order of $G$ is a power of a prime $p$ iff the order of every element of $G$ is a power of $p$.
+\end{corollary}
+\begin{proof}
+If $|G|=p^a$ for some $a \in \mathbb{N}$, then the order of every element is a power of $p$ by Lagrange's Theorem. Suppose next that the order of every element is a power of $p$. If a prime $q \neq p$ divides $|G|$, then Cauchy's Theorem gives us an element with order $q$, a contradiction.
+\end{proof}
+
 Cauchy's theorem gives subgroups of order $p$, but larger subgroups can be proven to exist. Let $G$ be a finite group of order $p^ab$ where $p$ is a prime which does not divide $b$. Any subgroup in $G$ of size $p^a$ is called a \emph{Sylow $p$-subgroup} of $G$.
 
 \begin{theorem}
 \emph{\textbf{(Sylow-E)}}
-Let $G$ be a finite group. There exists a Sylow p-subgroup of $G$ for any prime $p$.
+Let $G$ be a finite group. There exists a Sylow $p$-subgroup of $G$ for any prime $p$.
 \end{theorem}
 \begin{proof}
 Fix a prime $p$. We will induct on $|G|$. Write $|G| = p^ab$ for suitable $a$ and $b$ where $p \nmid b$. If $a = 0$ then the trivial subgroup $\{1\}$ is a Sylow $p$-subgroup, so assume $a \neq 0$.
 
-We'll consider cases. First assume there is a proper subgroup $H \subset G$ with $p \nmid |G : H|$. Since $p^a \mid |G| = |H||G : H|$ we have that $p^a \mid |H|$. By induction $H$ contains a Sylow subgroup, and in this case it is of size $p^a$. This is of course a Sylow p-subgroup of $G$.
+We'll consider cases. First assume there is a proper subgroup $H \subset G$ with $p \nmid |G : H|$. Since $p^a \mid |G| = |H||G : H|$ we have that $p^a \mid |H|$. By induction $H$ contains a Sylow subgroup, and in this case it is of size $p^a$. This is of course a Sylow $p$-subgroup of $G$.
 
 The remaining option is that $p \mid |G : H|$ for every proper $H \subset G$. By the class equation,
 \[|G| = |Z(G)| + \sum_{g \not \in Z(G)} |G \colon C(g)|\]
-and $p$ divides $|G|$ and each $|G \colon C(g)|$. Hence $p$ divides $|Z(G)|$. By Cauchy's theorem, $Z(G)$ contains an element of order $p$. This element generates a cyclic subgroup of $Z(G)$, call it $J$. Being central, $J$ is normal, and $|G/J| = p^{a-1}b$ is smaller than $G$. The induction hypothesis gives us a Sylow p-subgroup $P/J$ of $G/J$, with $|P/J| = p^{a-1}$. Thus $P \subset G$ has order $p^a$ making it a Sylow p-subgroup of $G$.
+and $p$ divides $|G|$ and each $|G \colon C(g)|$. Hence $p$ divides $|Z(G)|$. By Cauchy's theorem, $Z(G)$ contains an element of order $p$. This element generates a cyclic subgroup of $Z(G)$, call it $J$. Being central, $J$ is normal, and $|G/J| = p^{a-1}b$ is smaller than $G$. The induction hypothesis gives us a Sylow $p$-subgroup $P/J$ of $G/J$, with $|P/J| = p^{a-1}$. Thus $P \subset G$ has order $p^a$ making it a Sylow $p$-subgroup of $G$.
 \end{proof}
 
 We can reverse this procedure by using an exotic action to prove the Sylow-E theorem independently of Cauchy's theorem, and to obtain the latter as a corollary. The following proof is due to Wielandt.
@@ -555,11 +566,19 @@ Alternately we can prove Cauchy's theorem using induction. This proof resembles 
 
 \section{Lecture 9 -- October 1}
 
-\subsection{Maximal p-subgroups}
+\subsection{Maximal $p$-subgroups}
 
-Let $G$ be a group and suppose a prime $p$ does not divide $|G|$. Then the trivial subgroup 1 has order $p^0$ and is the only p-subgroup of $G$ -- hence the maximal such. However, if $p$ does divide $|G|$ then Cauchy's theorem gives us a subgroup of order $p$ which contains 1, so 1 is no longer maximal. We would like necessary and sufficient conditions for a p-subgroup to be maximal.
+Let $G$ be a group and suppose a prime $p$ does not divide $|G|$. Then the trivial subgroup 1 has order $p^0$ and is the only $p$-subgroup of $G$ -- hence the maximal such. However, if $p$ does divide $|G|$ then Cauchy's theorem gives us a subgroup of order $p$ which contains 1, so 1 is no longer maximal. We would like necessary and sufficient conditions for a $p$-subgroup to be maximal.
 
-Write $|G| = p^\alpha b$ where $p \nmid b$. A Sylow p-subgroup of $G$ has order $p^\alpha$, and Lagrange's theorem prevents any bigger p-subgroup. Sylow subgroups are thus maximal, and we will show conversely that any maximal p-subgroup is Sylow.
+Write $|G| = p^\alpha b$ where $p \nmid b$. A Sylow $p$-subgroup of $G$ has order $p^\alpha$, and Lagrange's theorem prevents any bigger $p$-subgroup. Sylow subgroups are thus maximal, and we will show conversely that any maximal $p$-subgroup is Sylow.
+
+\begin{lemma}
+Let $A$ and $B$ be finite subgroups of a group $G$. Then $|AB|= \frac{|A||B|}{|A \cap B|}$.
+\end{lemma}
+\begin{proof}
+Define $f \colon A \times B \rightarrow AB$ by $(a,b) \mapsto ab$.
+
+\end{proof}
 
 \section{Lecture 10 -- October 6}
 
