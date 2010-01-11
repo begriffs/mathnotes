@@ -426,7 +426,7 @@ Conversely, let $\theta$ be a permutation representation on $\Omega$. Define $\c
 
 We saw how the core of a subgroup is the kernel of a representation. Here is another kernel. Let $G$ act on itself by conjugation. Notice that $x^g = x$ iff $xg = gx$. Hence the kernel of the induced permutation representation is the set of elements which commute with every element of the group. This common subgroup is called the \emph{center} of $G$ and written $Z(G)$. The image of the representation has a name too; it's called the \emph{inner automorphisms} of $G$ and denoted $Inn(G)$. Being a homomorphic image, it is a subgroup of $Sym_G$. The first isormorphism theorem says that $Inn(G) \cong G/Z(G)$. The group $Inn(G) \subset Aut(G)$, the group of automorphisms of $G$ -- that is the isomorphisms from $G$ to itself.
 
-Finally, if a group $G$ acts on a group $H$ such that the induced permutation representation maps $G \rightarrow Aut(H)$ rather than just $G \rightarrow Sym_H$ then $G$ is said to \emph{act via automorphism} on $H$. We will see a special use for these kind of actions later.
+Finally, if a group $G$ acts on a group $H$ such that the induced permutation representation maps $G \rightarrow Aut(H)$ rather than just $G \rightarrow Sym_H$ then $G$ is said to \emph{act via automorphism} on $H$. We will see a special use for these kinds of actions later.
 
 \section{Lecture 6 -- September 22}
 
@@ -592,7 +592,15 @@ Let $P$ be a Sylow $p$-subgroup of a group $G$ and $D$ a $p$-subgroup of $G$ suc
 
 \begin{proof}
 By Lemma \ref{|AB|} we have $|PD|=\frac{|P||D|}{|P \cap D|}$ which implies $|PD|$ is a power of $p$ and $|PD| \geq |P|$. Since $D$ normalizes $P$ we get that $PD$ is a subgroup of $G$. As a Sylow $p$-subgroup $|P|$ is the largest power of $p$ a subgroup of $G$ can have; hence, $|PD|=|P|$. Thus, $PD=P$ and so $D \subset P$.
+\end{proof}
 
+\begin{theorem}
+\emph{\textbf{(Sylow-C)}}
+All Sylow $p$-subgroups of a group $G$ are conjugate.
+\end{theorem}
+
+\begin{proof}
+Let $P$ and $Q$ be Sylow $p$-subgroups of $G$. In particular $Q$ is a $p$-subgroup and so by Theorem XXX (above) we have that $Q \subset P^g$ for some $g \in G$. Since the map from $P$ to $P^g$ given by $p \mapsto p^g$ is a bijection, and $|P|=|Q|$, we have that $Q=P^g$.
 \end{proof}
 
 \section{Lecture 10 -- October 6}
