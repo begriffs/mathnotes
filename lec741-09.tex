@@ -576,7 +576,13 @@ Write $|G| = p^\alpha b$ where $p \nmid b$. A Sylow $p$-subgroup of $G$ has orde
 Let $A$ and $B$ be finite subgroups of a group $G$. Then $|AB|= \frac{|A||B|}{|A \cap B|}$.
 \end{lemma}
 \begin{proof}
-Define $f \colon A \times B \rightarrow AB$ by $(a,b) \mapsto ab$.
+Define $f \colon A \times B \rightarrow AB$ by $(a,b) \mapsto ab$. Since $f$ is surjective the size of $AB$ is the number of inverse images. Since the inverse images of $AB$ partition $A \times B$ our strategy is to show that all the inverse images have the same size, namely, $|A \cap B|$. For then the number of inverse images will be $\frac{|A \times B|}{|A \cap B|}=\frac{|A||B|}{|A \cap B|}$. We accomplish this by showing that for an arbitrary $ab \in AB$ the map $\theta \colon f^{-1}(ab) \rightarrow A \cap B$ defined by $(x,y) \mapsto a^{-1}x$ is a bijection.
+
+The inverse image of $ab \in AB$ is $f^{-1}(ab)=\left\{(x,y) \in A \times B \colon xy=ab\right\}=\left\{(x,y) \in A \times B \colon a^{-1}x=by^{-1}\right\}$. Hence, $\theta ((x,y)) \in A \cap B$. If $(x,y)=(r,s) \in f^{-1}(ab)$, then since $x=r$ we have $\theta((x,y))=a^{-1}x=a^{-1}r=\theta((r,s))$. Hence, $\theta$ is well-defined.
+
+To show that $\theta$ is one-to-one let $(x,y),(r,s) \in f^{-1}(ab)$ and suppose $\theta((x,y))=\theta((r,s))$. Then $by^{-1}=a^{-1}x=a^{-1}r=bs^{-1}$. Hence, $x=r$ and $y=s$. Hence, $\theta$ is one-to-one.
+
+Finally, let $x \in A \cap B$.  Then $f((ax,x^{-1}b))=(ax)(x^{-1}b)=ab$ and so $(ax,x^{-1}b) \in f^{-1}(ab)$. Further, $\theta((ax,x^{-1}b))=a^{-1}(ax)=x$ and so $\theta$ is onto.
 
 \end{proof}
 
