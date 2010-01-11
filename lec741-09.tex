@@ -590,7 +590,9 @@ Finally, let $x \in A \cap B$.  Then $f((ax,x^{-1}b))=(ax)(x^{-1}b)=ab$ and so $
 
 \subsection{Decomposing a group with direct products}
 
-A \emph{decomposition} is a means of listing the possible isomorphism classes of a group using auxiliary facts. The direct product is a basic decomposition. We will pass over the definitions of internal and external direct product as they are straightforward. Merely notice that $A \times B$ has two normal subgroups, the first isomorphic to $A$, the other to $B$, and that these subgroups intersect trivially. Conversely if $AB = G$ where $A$ and $B$ are normal in $G$ and $A \cap B = 1$ then $G \cong A \times B$. What qualifies the direct product as a decomposition is that $A \times B \cong A' \times B'$ implies $A \cong A'$ and $B \cong B'$ -- i.e. the isomorphism class of $A \times B$ is determined by the classes of $A$ and $B$.
+A \emph{decomposition} is a means of listing the possible isomorphism classes of a group using auxiliary facts. The direct product is a basic decomposition. We will pass over the definitions of internal and external direct product as they are straightforward. Merely notice that $A \times B$ has two normal subgroups, the first isomorphic to $A$, the other to $B$, and that these subgroups intersect trivially. At this point we have for free that $B \cong B/1 = B/(A\cap B) \cong AB/A = G/A$. Similarly $A \cong G/B$.
+
+Conversely if $AB = G$ where $A$ and $B$ are normal in $G$ and $A \cap B = 1$ then $G \cong A \times B$. What qualifies the direct product as a decomposition is that $A \times B \cong A' \times B'$ implies $A \cong A'$ and $B \cong B'$ -- i.e. the isomorphism class of $A \times B$ is determined by the classes of $A$ and $B$.
 
 (Example: $|G| = p^2$. Notice we looked at groups of order four using grubby Cayley tables, but we get it immediately now.)
 
@@ -601,6 +603,12 @@ For instance, suppose $|G| = 15 = 3\cdot 5$. The number of Sylow 3-subgroups is 
 More is true. In general if $a$ and $b$ are relatively prime then $\mathbb{Z}_a \times \mathbb{Z}_b \cong \mathbb{Z}_{ab}$. As noted, $\mathbb{Z}_a \times \mathbb{Z}_b$ contains normal subgroups $A$ and $B$ ismorphic to $\mathbb{Z}_a$ and $\mathbb{Z}_b$ respectively. Suppose $(x, 0)$ generates $A$ and $(0, y)$ generates $B$. We write our group operation additively. Since $i \cdot (x, y) = (i \cdot x, i \cdot y)$ for any integer $i$, the order of $(x, y)$ is a common multiple of $o(x,0) = a$ and $o(0, y) = b$. By the definition of order it is the \emph{least} common multiple. However $a$ and $b$ are relatively prime so the order of $(x, y) = ab = |\mathbb{Z}_a \times \mathbb{Z}_b|$. This establishes the general fact. Looking back at our example, any group of order 15 must be cyclic.
 
 \subsection{Generalizing: semidirect products}
+
+Suppose $N \lhd G$ and $H \subset G$ where $NH = G$ and $N \cap H = 1$. The group $G$ would be a direct product except $H$ is not necessarily normal. However, there is still enough structure to endow the product $N \times H$ with a group operation. The operation, while somewhat baffling, makes this new group (denoted $N \rtimes H$) isomorphic to $G$. It is defined $(n_1, h_1) \cdot (n_2, h_2) = (n_1 n_2^{h_1}, h_1 h_2)$. The reader can check the group axioms, it requires nothing tricky. The group identity is $(1, 1)$ and inverses are $(n, h)^{-1} = ((n^{-1})^h, h^{-1})$.
+
+Constructing distinct semidirect products can be challenging. Suppose $N \lhd G$ and both $H$ and $K$ are subgroups of $G$. It can happen that $N \rtimes H \cong N \rtimes K$ even though $H$ is not isomorphic to $K$. (Example needed.)
+
+As with direct products, we can build external semidirect products. Let $N$ and $H$ be any two groups and suppose $\phi \colon H \rightarrow Aut(N)$ is a homomorphism.
 
 \begin{thebibliography}{7}
 \bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
