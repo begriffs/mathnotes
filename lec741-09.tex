@@ -621,11 +621,19 @@ More is true. In general if $a$ and $b$ are relatively prime then $\mathbb{Z}_a 
 
 \subsection{Generalizing: semidirect products}
 
-Suppose $N \lhd G$ and $H \subset G$ where $NH = G$ and $N \cap H = 1$. The group $G$ would be a direct product except $H$ is not necessarily normal. However, there is still enough structure to endow the product $N \times H$ with a group operation. The operation, while somewhat baffling, makes this new group (denoted $N \rtimes H$) isomorphic to $G$. It is defined $(n_1, h_1) \cdot (n_2, h_2) = (n_1 n_2^{h_1}, h_1 h_2)$. The reader can check the group axioms, it requires nothing tricky. The group identity is $(1, 1)$ and inverses are $(n, h)^{-1} = ((n^{-1})^h, h^{-1})$.
+Suppose $N \lhd G$ and $H \subset G$ where $NH = G$ and $N \cap H = 1$. The group $G$ would be a direct product except $H$ is not necessarily normal. However, there is still enough structure to endow the product $N \times H$ with a group operation. The operation, while somewhat baffling, makes this new group (denoted $N \rtimes H$) isomorphic to $G$. It is defined $(n_1, h_1) \cdot (n_2, h_2) = (n_1 n_2^{h_1}, h_1 h_2)$. The reader can check the group axioms. For instance, the group identity is $(1, 1)$ and inverses are given by $(n, h)^{-1} = ((n^{-1})^h, h^{-1})$.
 
 Constructing distinct semidirect products can be challenging. Suppose $N \lhd G$ and both $H$ and $K$ are subgroups of $G$. It can happen that $N \rtimes H \cong N \rtimes K$ even though $H$ is not isomorphic to $K$. (Example needed.)
 
-As with direct products, we can build external semidirect products. Let $N$ and $H$ be any two groups and suppose $\phi \colon H \rightarrow Aut(N)$ is a homomorphism.
+As with direct products, we can build external semidirect products. Let $N$ and $H$ be any two groups and suppose $\phi \colon H \rightarrow Aut(N)$ is a homomorphism. (Notice $\phi$ is the permutation representation of an $H$-action via automorphisms on $N$.) Define a binary operation on $H \times N$ by $(n_1, h_1) \cdot (n_2, h_2) \mapsto (n_1n_2^{(h_1)\phi}, h_1 h_2)$. Once again a brute force check of the axioms is required, but the operation forms a group.
+
+The operation looks similar to the earlier one using conjugation, as well it should. Let $\bar N = (N, 1) \subset N \times H$ and $\bar H = (1, H) \subset N \times H$. Then $N \cong \bar N$ and $H \cong \bar H$. Also $\bar N$ is normal because it is the kernel of the the projection homoorphism from $N \times H$ to $H$.
+
+\section{Lecture 11 -- October 8}
+
+
+
+\section{Lecture 11 -- October 13}
 
 \begin{thebibliography}{7}
 \bibitem{Burn78} R. P. Burn, \emph{Cayley Tables and Associativity},
