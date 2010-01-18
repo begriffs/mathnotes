@@ -524,7 +524,7 @@ Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1, \dots, g_p) \map
 When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides $|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides $a$, which forces $a > 1$. Thus $\sigma$  fixes an element of $S$ other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$ must be equal, and their common value is precisely the element we are seeking.
 \end{proof}
 
-In lecture 6 we noted that some books define a $p$-group to be a group whose elements have prime-power order. When the group is finite we can now prove that this is equivalent to the group having prime-power order. Recall that in lecture 6 we applied the class equation to a group of prime-power order to show that it had a nontrivial center.
+In lecture six we noted that some books define a $p$-group to be a group whose elements have prime-power order. When the group is finite we can now prove that this is equivalent to the group having prime-power order. Recall that in lecture 6 we applied the class equation to a group of prime-power order to show that it had a nontrivial center.
 
 \begin{corollary}
 Let $G$ be a finite group. The order of $G$ is a power of a prime $p$ iff the order of every element of $G$ is a power of $p$.
@@ -621,13 +621,17 @@ More is true. In general if $a$ and $b$ are relatively prime then $\mathbb{Z}_a 
 
 \subsection{Generalizing: semidirect products}
 
-Suppose $N \lhd G$ and $H \subset G$ where $NH = G$ and $N \cap H = 1$. The group $G$ would be a direct product except $H$ is not necessarily normal. However, there is still enough structure to endow the product $N \times H$ with a group operation. The operation, while somewhat baffling, makes this new group (denoted $N \rtimes H$) isomorphic to $G$. It is defined $(n_1, h_1) \cdot (n_2, h_2) = (n_1 n_2^{h_1}, h_1 h_2)$. The reader can check the group axioms. For instance, the group identity is $(1, 1)$ and inverses are given by $(n, h)^{-1} = ((n^{-1})^h, h^{-1})$.
+Suppose $N \lhd G$ and $H \subset G$ where $NH = G$ and $N \cap H = 1$. The group $G$ would be a direct product except $H$ is not necessarily normal. However, there is still enough structure to endow the product $N \times H$ with a group operation. The operation, while somewhat baffling, makes this new group (denoted $N \rtimes H$) isomorphic to $G$. It is defined $(n_1, h_1) \cdot (n_2, h_2) = (n_1 n_2^{h_1^{-1}}, h_1 h_2)$. The reader can check the group axioms. For instance, the group identity is $(1, 1)$ and inverses are given by $(n, h)^{-1} = ((n^{-1})^h, h^{-1})$.
 
-Constructing distinct semidirect products can be challenging. Suppose $N \lhd G$ and both $H$ and $K$ are subgroups of $G$. It can happen that $N \rtimes H \cong N \rtimes K$ even though $H$ is not isomorphic to $K$. (Example needed.)
+As with direct products, we can build external semidirect products. Let $N$ and $H$ be any two groups and suppose $\phi \colon H \rightarrow Aut(N)$ is a homomorphism. (Notice $\phi$ is the permutation representation of an $H$-action via automorphisms on $N$.) Define a binary operation on $H \times N$ by $(n_1, h_1) \cdot (n_2, h_2) \mapsto (n_1n_2^{(h_1^{-1})\phi}, h_1 h_2)$. Once again a brute force check of the axioms is required, but the operation forms a group.
 
-As with direct products, we can build external semidirect products. Let $N$ and $H$ be any two groups and suppose $\phi \colon H \rightarrow Aut(N)$ is a homomorphism. (Notice $\phi$ is the permutation representation of an $H$-action via automorphisms on $N$.) Define a binary operation on $H \times N$ by $(n_1, h_1) \cdot (n_2, h_2) \mapsto (n_1n_2^{(h_1)\phi}, h_1 h_2)$. Once again a brute force check of the axioms is required, but the operation forms a group.
+The operation looks similar to the earlier one using conjugation, as well it should. Let $\bar N = (N, 1) \subset N \times H$ and $\bar H = (1, H) \subset N \times H$. Then $N \cong \bar N$ and $H \cong \bar H$. Also $\bar N$ is normal because it is the kernel of the the projection homoorphism from $N \times H$ to $\bar H$. Pick $\bar n \in \bar N$ and $\bar h \in \bar H$. Then $\bar n = (n, 1)$ and $\bar h = (1, h)$ for some $n \in N$ and $h \in H$. So ${\bar n}^{\bar h} = (n, 1)^{(1, h)} = (1, h^{-1})(n, 1)(1, h) = (1n^{(h^{-1})\phi}, h^{-1})(1, h) = (n^{(h^{-1})\phi}, 1)$. Thus an automorphism on $N$ behaves just like $\bar H$-conjugation does on $\bar N$. The external semidirect product operation ``becomes'' the conjugation operation internally.
 
-The operation looks similar to the earlier one using conjugation, as well it should. Let $\bar N = (N, 1) \subset N \times H$ and $\bar H = (1, H) \subset N \times H$. Then $N \cong \bar N$ and $H \cong \bar H$. Also $\bar N$ is normal because it is the kernel of the the projection homoorphism from $N \times H$ to $H$.
+Constructing distinct semidirect products can be challenging. Suppose $N \lhd G$ and both $H$ and $K$ are subgroups of $G$. It can happen that $N \rtimes H \cong N \rtimes K$ even though $H$ is not isomorphic to $K$. (Example needed.) Checking the distinctness of semidirect products can be done ad hoc, as we will see.
+
+We already classified all groups of order 15, so one would think that doing the same for those of order 12 should be easy. It is actually much harder and provides good exercise with semidirect products and Sylow theory.
+
+Let $G$ be a group of order 12.
 
 \section{Lecture 11 -- October 8}
 
