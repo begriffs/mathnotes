@@ -524,7 +524,7 @@ Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1, \dots, g_p) \map
 When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides $|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides $a$, which forces $a > 1$. Thus $\sigma$  fixes an element of $S$ other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$ must be equal, and their common value is precisely the element we are seeking.
 \end{proof}
 
-In lecture six we noted that some books define a $p$-group to be a group whose elements have prime-power order. When the group is finite we can now prove that this is equivalent to the group having prime-power order. Recall that in lecture 6 we applied the class equation to a group of prime-power order to show that it had a nontrivial center.
+In lecture 6 we noted that some books define a $p$-group to be a group whose elements have prime-power order. When the group is finite we can now prove that this is equivalent to the group having prime-power order. Recall that in lecture 6 we applied the class equation to a group of prime-power order to show that it had a nontrivial center.
 
 \begin{corollary}
 Let $G$ be a finite group. The order of $G$ is a power of a prime $p$ iff the order of every element of $G$ is a power of $p$.
@@ -594,13 +594,19 @@ Let $P$ be a Sylow $p$-subgroup of a group $G$ and $D$ a $p$-subgroup of $G$ suc
 By Lemma \ref{|AB|} we have $|PD|=\frac{|P||D|}{|P \cap D|}$ which implies $|PD|$ is a power of $p$ and $|PD| \geq |P|$. Since $D$ normalizes $P$ we get that $PD$ is a subgroup of $G$. As a Sylow $p$-subgroup $|P|$ is the largest power of $p$ a subgroup of $G$ can have; hence, $|PD|=|P|$. Thus, $PD=P$ and so $D \subset P$.
 \end{proof}
 
+We can also say that $D$ always normalizes a conjugate of a Sylow, in particular.......  We have just proved that D is contained in a conjugate of a Sylow.....
+
+\begin{corollary}
+Let $P$ be a Sylow $p$-subgroup of a group $G$ and $D$ a $p$-subgroup of $G$. Then $D \subset P^g$ for some $g \in G$.
+\end{corollary}
+
 \begin{theorem}
 \emph{\textbf{(Sylow-C)}}
 All Sylow $p$-subgroups of a group $G$ are conjugate.
 \end{theorem}
 
 \begin{proof}
-Let $P$ and $Q$ be Sylow $p$-subgroups of $G$. In particular $Q$ is a $p$-subgroup and so by Theorem XXX (above) we have that $Q \subset P^g$ for some $g \in G$. Since the map from $P$ to $P^g$ given by $p \mapsto p^g$ is a bijection, and $|P|=|Q|$, we have that $Q=P^g$.
+Let $P$ and $Q$ be Sylow $p$-subgroups of $G$. In particular, $Q$ is a $p$-subgroup and so by Theorem XXX (above) we have that $Q \subset P^g$ for some $g \in G$. Since the map from $P$ to $P^g$ given by $p \mapsto p^g$ is a bijection, and $|P|=|Q|$, we have that $Q=P^g$.
 \end{proof}
 
 \section{Lecture 10 -- October 6}
