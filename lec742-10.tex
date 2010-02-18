@@ -72,17 +72,26 @@ PIDs are UFDs.
 \section{January 29}
 
 \begin{lemma}
-In a polynomial ring, any product of primitives is primitive.
+\label{prim}
+In a polynomial ring with coefficients in a UFD, any product of primitives is primitive.
 \end{lemma}
 
 \begin{lemma}
-Let $R$ be an integral domain, and $F$ its field of fractions.
+Let $R$ be a UFD, and $F$ its field of fractions.
 \begin{enumerate}
 \item Suppose $f \in R[x]$ factors as a product of two elements in $F[x]$. Then it factors as two  elements in $R[x]$. Further, the degrees of the factors in $R[x]$ match those in $F[x]$.
 \item If $p \in R$ is prime, then so is the constant polynomial $p$ in $R[x]$.
 \item If a primitive polynomial in $R[x]$ is prime in $F[x]$ then it is prime in $R[x]$.
 \end{enumerate}
 \end{lemma}
+
+\begin{proof}
+\begin{enumerate}
+\item Let $f = gh$ where $g,h \in F[x]$. Multiply through by $d=ab$ considered as an element of $R$ where $a$ and $b$ are the product of the denominators of $g$ and $h$, respectively.  Then $df = \bar{g} \bar{h}$ where $ag = \bar{g} \in R[x]$ and $bh = \bar{h} \in R[x]$.  Taking out the contents we get $c \cdot df^* = c' \cdot \bar{g}^* \bar{h}^*$ where the stars denote primitive elements of $R[x]$. Since the content of $df$ is the same as the content of $f$ times $d$ we have $c \cdot f^* = c' \cdot \bar{g}^* \bar{h}^*$. By Lemma \ref{prim} $\bar{g}^* \bar{h}^*$ is primitive. Therefore $f^* = \bar{g}^* \bar{h}^*$ up to a unit in $F$.
+
+%incomplete%
+
+\end{proof}
 
 \section{February 8}
 
@@ -95,7 +104,7 @@ If $R$ is UFD then so is $R[x_1, x_2, \ldots, x_n]$.
 \end{corollary}
 
 \begin{theorem}
-Let $R$ be a UFD and $f = (a_i) \in R[x]$. If $p$ is a prime in $R$ such that $p$ divides $a_i$ for $0 \leq i \leq n-1$, and $p$ does not divide $a_n$ and $p^2$ does not divide $a_0$ then $f$ is prime in $F[x]$ where $F$ is the field of fractions of $R$.
+Let $R$ be a UFD and $f = (a_i) \in R[x]$. If $p$ is a prime in $R$ such that $p$ divides $a_i$ for $0 \leq i \leq n-1$, and $p$ does not divide $a_n$ and $p^2$ does not divide $a_0$, then $f$ is prime in $F[x]$ where $F$ is the field of fractions of $R$.
 \end{theorem}
 
 \section{February 10}
@@ -125,7 +134,7 @@ Let $\theta$ be a field isomorphism between $F$ and $\bar{F}$. Then $\theta$ ext
 \section{February 15}
 
 \begin{lemma}
-A polynomail $f \in K[x]$ has a root with multiplicity in some field extension of $K$ iff $gcd(f, Df) \ne 1$.
+A polynomial $f \in K[x]$ has a root with multiplicity in some field extension of $K$ iff $gcd(f, Df) \ne 1$.
 \end{lemma}
 
 \begin{corollary}
