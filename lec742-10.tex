@@ -85,12 +85,6 @@ Let $R$ be a UFD, and $F$ its field of fractions.
 \end{enumerate}
 \end{lemma}
 
-\begin{proof}
-\begin{enumerate}
-\item Let $f = gh$ where $g,h \in F[x]$. Multiply through by $d=ab$ considered as an element of $R$ where $a$ and $b$ are the product of the denominators of $g$ and $h$, respectively.  Then $df = \bar{g} \bar{h}$ where $ag = \bar{g} \in R[x]$ and $bh = \bar{h} \in R[x]$.  Taking out the contents we get $c \cdot df^* = c' \cdot \bar{g}^* \bar{h}^*$ where the stars denote primitive elements of $R[x]$. Since the content of $df$ is the same as the content of $f$ times $d$ we have $c \cdot f^* = c' \cdot \bar{g}^* \bar{h}^*$. By Lemma \ref{prim} $\bar{g}^* \bar{h}^*$ is primitive. Therefore $f^* = \bar{g}^* \bar{h}^*$ up to a unit in $F$.
-\end{enumerate}
-
-\end{proof}
 
 \section{February 8}
 
@@ -200,6 +194,33 @@ $\Phi_n \in \mathbb{Z}[x]$.
 \emph{\textbf{(Gauss)}}
 $\Phi_n$ is irreducible over $\mathbb{Q}[x]$ for all $n$.
 \end{theorem}
+
+\section{February 24}
+
+\begin{lemma}
+\emph{\textbf{(Dedekind)}}
+Let $M$ be a multiplicative group, $F$ a field, and let $\lambda_i \colon M \rightarrow F^{\times}$ for $1 \leq i \leq n$ be distinct homomorphisms. If $a_i \in F$ for $1 \leq i \leq n$ and $\sum a_i \lambda_i (x) = 0$ for all $x \in M$, then $a_i = 0$ for $1 \leq i \leq n$.
+\end{lemma}
+
+\begin{corollary}
+Let $\sigma_i$ for $1 \leq i \leq n$ be distinct automorphisms of a field $F$. If $a_i \in F$ for $1 \leq i \leq n$ and $\sum a_i \sigma_i (x) = 0$ for all $x \in F$, then $a_i = 0$ for $1 \leq i \leq n$.
+\end{corollary}
+
+\begin{definition}
+Let $S$ be a set of automorphisms of a field $F$.  The field $F^S = \left\{x \in F \colon x^{\sigma} = x \textnormal{for all} \sigma \in S\right\}$ is called the \emph{fixed field of S}.
+\end{definition}
+
+\begin{lemma}
+$|F \colon F^S| \geq |S|$
+\end{lemma}
+
+\begin{lemma}
+Let $G$ be a finite group of automorphisms of a field $F$.  The trace map $tr \colon F \rightarrow F^G$ defined by $x \mapsto \sum_{\sigma \in G} x^\sigma$ is a surjective linear transformation of $F^G$.
+\end{lemma}
+
+\begin{lemma}
+Let $|G| < \infty$. Then $|F \colon F^G| \leq |G|$.
+\end{lemma}
 
 
 \end{document}
