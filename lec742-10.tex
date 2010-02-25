@@ -88,8 +88,7 @@ Let $R$ be a UFD, and $F$ its field of fractions.
 \begin{proof}
 \begin{enumerate}
 \item Let $f = gh$ where $g,h \in F[x]$. Multiply through by $d=ab$ considered as an element of $R$ where $a$ and $b$ are the product of the denominators of $g$ and $h$, respectively.  Then $df = \bar{g} \bar{h}$ where $ag = \bar{g} \in R[x]$ and $bh = \bar{h} \in R[x]$.  Taking out the contents we get $c \cdot df^* = c' \cdot \bar{g}^* \bar{h}^*$ where the stars denote primitive elements of $R[x]$. Since the content of $df$ is the same as the content of $f$ times $d$ we have $c \cdot f^* = c' \cdot \bar{g}^* \bar{h}^*$. By Lemma \ref{prim} $\bar{g}^* \bar{h}^*$ is primitive. Therefore $f^* = \bar{g}^* \bar{h}^*$ up to a unit in $F$.
-
-%incomplete%
+\end{enumerate}
 
 \end{proof}
 
@@ -149,6 +148,58 @@ Let $f \in K[x]$ be irreducible. Then $f$ has a double root in an extension fiel
 \item $K$ is not perfect
 \end{enumerate}
 \end{corollary}
+
+\section{February 17}
+
+\begin{lemma}
+Every finite field has prime-power order.
+\end{lemma}
+
+\begin{lemma}
+All finite fields of a given size are isomorphic.
+\end{lemma}
+
+\begin{lemma}
+There exists a finite field of size $p^n$ for any $n \ge 0$ and prime $p$.
+\end{lemma}
+
+The unique finite field of size $p^n$ is denoted $GF(p^n)$.
+
+\begin{lemma}
+Suppose a finite abelian group has at most one subgroup of prime order for any prime. Then the group is cyclic.
+\end{lemma}
+
+\section{February 19}
+
+\begin{theorem}
+\emph{\textbf{(Primitive Element)}}
+Let $F \supset K$ be a finite field extension. Then $F = K[\alpha]$ for some $\alpha$ iff there are only finitely many intermediate fields between $F$ and $K$.
+\end{theorem}
+
+\begin{lemma}
+The $n$th roots of unity in a field form a cyclic multiplicative group of order $n$.
+\end{lemma}
+
+Define $\Phi_n = \displaystyle\prod_{o(a) = n} (x - a) \in F[x]$.
+
+\section{February 22}
+
+\begin{lemma}
+The polynomial $x^n - 1$ has $n$ distinct roots in a field of characteristic 0 or $p$ where $p$ does not divide $n$.
+\end{lemma}
+
+\begin{lemma}
+$x^n - 1 = \displaystyle\prod_{d | n} \Phi_d$.
+\end{lemma}
+
+\begin{corollary}
+$\Phi_n \in \mathbb{Z}[x]$.
+\end{corollary}
+
+\begin{theorem}
+\emph{\textbf{(Gauss)}}
+$\Phi_n$ is irreducible over $\mathbb{Q}[x]$ for all $n$.
+\end{theorem}
 
 
 \end{document}
