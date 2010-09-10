@@ -26,6 +26,8 @@ Math 751}
 \date{Fall 2010}
 \maketitle
 
+These notes contain what I consider the highlights and subtle points of Professor Laurentiu-George Maxim's lectures. I express the concepts in my own words, and insert, expand, and rearrange topics.
+
 This document is distributed under the Creative Commons 3.0 attribution license.
 
 \section{Lecture 1 -- September 3}
@@ -78,16 +80,15 @@ If $f \colon I \rightarrow I$ is continuous then it fixes a point.
 Assume not. Then $f(x) \neq x$ for any $x$ and it is sensible to define $r \colon I \rightarrow \{\pm 1\}$ by \[ r(x) = \frac{f(x) - x}{|f(x) - x|} \] Also, $f(0) > 0$ so $r(0) = 1$ and $f(1) < 1$ so $r(1) = -1$. Hence $r$ is surjective. But notice the $n$-values of the spaces. First, $n(I) = 1$ because for any $a < b$, the identity function on $[a, b]$ is a path connecting them. The discrete space $\{\pm 1\}$ is totally disconnected so $n(\{\pm 1\}) = 2$. The lemma above implies $2 \leq 1$, a contradiction.
 \end{proof}
 
-A space $X$ where $n(X) = 1$ is called \emph{path connected}. One important invariant in such spaces is the \emph{fundamental group}. It is defined in terms of homotopy.
+Another (important) invariant is a group made from the paths of a space and the $\ast$ operation. To motivate its definition we will begin naively. Is the set of all paths on a space a group under $\ast$? If so, then $p \ast p$ must be defined for every path $p$. However, composition of paths is only defined when one path ends where the other begins, so $p$ must be a \emph{loop} (a path starting and ending at the same point). Similarly, to be sensibly composed, arbitrary loops must originate from the same point.
+
+Next try: for an arbitrary $x \in X$, is $\Omega(P, x) = P(X, x, x)$ a group under $\ast$? The first problem is that associativity fails for the majority of loops. In $(f \ast g) \ast h$, the loop $f$ is compressed to a quarter of its original ``length'' and $h$ is compressed only a half, whereas in $f \ast (g \ast h)$ exactly the opposite is true. Another problem is finding an identity element. Even an innocent guess like the constant loop can't undo the compression that paths undergo through composition.
+
+Although this naive approach fails, it seems well-intentioned. If we can find a precise way to be less fussy about composition compression, we can make it work.
+
+\section{Lecture 2 -- September 8}
 
 \subsection{The homotopy relation}
-
-For $x$, $y \in X$, let $P(X, x, y)$ denote the paths in $X$ from $x$ to $y$. Two paths $\gamma$, $\delta$ in this set are called \emph{homotopic} if there is a family of paths $f_t \in P(X, x, y)$ for $t \in I$ such that $f_0 = \gamma$, $f_1 = \delta$ and the map $F(s, t) = f_t(s)$ is continuous. In this case we call $F$ a homotopy and write $\gamma \overset{F}{\sim} \delta$. For each $k \in (0, 1)$, define the binary operation $\ast_k$ on homotopies by
-
-The homotopy relation is in fact an equivalence. Any path is homotopic to itself by a constant homotopy. If $\gamma \overset{F}{\sim} \delta$ then $\delta \overset{F^{-1}}{\sim} \gamma$ where $F^{-1}(s, t) = F(s, 1-t)$ is reparameterized backwards.
-
-Let $\Omega(X, x) = P(X, x, x)$. These are called \emph{loops}.
-
 
 
 \end{document}
