@@ -82,7 +82,9 @@ Assume not. Then $f(x) \neq x$ for any $x$ and it is sensible to define $r \colo
 
 Another (important) invariant is a group made from the paths of a space and the $\ast$ operation. To motivate its definition we will begin naively. Is the set of all paths on a space a group under $\ast$? If so, then $p \ast p$ must be defined for every path $p$. However, composition of paths is only defined when one path ends where the other begins, so $p$ must be a \emph{loop} (a path starting and ending at the same point). Similarly, to be sensibly composed, arbitrary loops must originate from the same point.
 
-Next try: for an arbitrary $x \in X$, is $\Omega(P, x) = P(X, x, x)$ a group under $\ast$? The first problem is that associativity fails for the majority of loops. In $(f \ast g) \ast h$, the loop $f$ is compressed to a quarter of its original ``length'' and $h$ is compressed only a half, whereas in $f \ast (g \ast h)$ exactly the opposite is true. Another problem is finding an identity element. Even an innocent guess like the constant loop can't undo the compression that paths undergo through composition.
+Next try: for an arbitrary $x \in X$, is $\Omega(P, x) = P(X, x, x)$ a group under $\ast$? The first problem is that associativity fails for the majority of loops. In $(f \ast g) \ast h$, the loop $f$ is compressed to a quarter of its original ``length'' and $h$ is compressed only a half, whereas in $f \ast (g \ast h)$ exactly the opposite is true. If $\ast$ could selectively behave like $\ast_k$ for various $k$ then associativity would work, since $f \ast_\frac{1}{3} (g \ast_\frac{1}{2} h) = (f \ast_\frac{1}{2} g) \ast_\frac{2}{3} h$.
+
+Another problem is finding an identity element. Even an innocent guess like the constant loop can't undo the compression that paths undergo through composition.
 
 Although this naive approach fails, it seems well-intentioned. If we can find a precise way to be less fussy about composition compression, we can make it work.
 
@@ -90,5 +92,6 @@ Although this naive approach fails, it seems well-intentioned. If we can find a 
 
 \subsection{The homotopy relation}
 
+Paths in the function space $P(X, x, y)$ are called \emph{homotopies} and paths connected by a homotopy are called \emph{homotopic}. A homotopy is thus a ``path path.''
 
 \end{document}
