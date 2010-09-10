@@ -26,7 +26,7 @@ Math 751}
 \date{Fall 2010}
 \maketitle
 
-These notes contain what I consider the highlights and subtle points of Professor Laurentiu-George Maxim's lectures. I express the concepts in my own words, and insert, expand, and rearrange topics.
+These notes contain what I consider the highlights and subtle points of Professor Laurentiu Maxim's lectures. I express the concepts in my own words, and insert, expand, and rearrange topics.
 
 This document is distributed under the Creative Commons 3.0 attribution license.
 
@@ -38,7 +38,7 @@ Invariants of topological spaces are properties preserved by homeomorphisms. Inv
 
 Let $I = [0, 1] \subset \mathbb{R}$. Recall that a \emph{path} from points $x$ to $y$ in a topological space $X$ is a continuous map $f \colon I \rightarrow X$ such that $f(0) = x$ and $f(1) = y$. The set of such maps is denoted $P(X, x, y)$.
 
-Define the relation $x \sim y$ if $P(X, x, y) \ne \emptyset$. It is in fact an equivalence. First, $x \sim x$ for any $x$ by the constant path. If $x \sim y$ by a path $f$, then $y \sim x$ by $t \mapsto f(1-t)$. We can call this ``reversed'' path $f^{-1}$, taking care not to confuse it with an inverse map. Finally suppose $x \sim y$ by $f$ and $y \sim z$ by $g$. For any $k \in (0, 1)$ define
+Define the relation $x \sim y$ if $P(X, x, y) \ne \emptyset$. It is in fact an equivalence. First, $x \sim x$ for any $x$ by the constant path. If $x \sim y$ by a path $f$, then $y \sim x$ by $t \mapsto f(1-t)$. We can call this ``reversed'' path $f^{-1}$, taking care not to confuse it with an inverse map. Finally suppose $x \sim y$ by $f$ and $y \sim z$ by $g$. For any $k \in (0, 1)$ define the \emph{k-composition} of paths by
 \[ f \ast_k g \colon t \mapsto
    \left\{
      \begin{array}{lr}
@@ -47,7 +47,7 @@ Define the relation $x \sim y$ if $P(X, x, y) \ne \emptyset$. It is in fact an e
      \end{array}
    \right.
 \]
-Now $f$ and $g$ agree at $t = k$ and each is continuous, so $f \ast_k g$ is continuous by the pasting lemma. This puts the product in $P(X, x, z)$. (When the subscript $k$ is omitted, it is assumed $k = \frac{1}{2}$.) Hence $x \sim z$.
+Now $f$ and $g$ agree at $t = k$ and each is continuous, so $f \ast_k g$ is continuous by the pasting lemma. This puts the composition in $P(X, x, z)$. (When the subscript $k$ is omitted, it is assumed $k = \frac{1}{2}$.) Hence $x \sim z$.
 
 A \emph{path component} of $X$ is an equivalence class of this relation. For any topological space $X$ let $n(X)$ be the number of path components of $X$.
 
@@ -86,19 +86,19 @@ Assume not. Then $f(x) \neq x$ for any $x$ and it is sensible to define $r \colo
 
 Another (important) invariant is a group made from the paths of a space and the $\ast$ operation. To motivate its definition we will begin naively. Is the set of all paths on a space a group under $\ast$? If so, then $p \ast p$ must be defined for every path $p$. However, composition of paths is only defined when one path ends where the other begins, so $p$ must be a \emph{loop} (a path starting and ending at the same point). Similarly, to be sensibly composed, arbitrary loops must originate from the same point.
 
-Next try: for an arbitrary $x \in X$, is $\Omega(P, x) = P(X, x, x)$ a group under $\ast$? The first problem is that associativity fails for the majority of loops. In $(f \ast g) \ast h$, the loop $f$ is compressed to a quarter of its original ``length'' and $h$ is compressed only a half, whereas in $f \ast (g \ast h)$ exactly the opposite is true. If $\ast$ could selectively behave like $\ast_k$ for various $k$ then associativity would work, since $f \ast_\frac{1}{3} (g \ast_\frac{1}{2} h) = (f \ast_\frac{1}{2} g) \ast_\frac{2}{3} h$.
+Take two: for an arbitrary $x \in X$, is $\Omega(P, x) = P(X, x, x)$ a group under $\ast$? The first problem is that associativity fails for the majority of loops. In $(f \ast g) \ast h$, the loop $f$ is compressed to a quarter of its original ``length'' and $h$ is compressed only a half, whereas in $f \ast (g \ast h)$ exactly the opposite is true. If $\ast$ could selectively behave like $\ast_k$ for various $k$ then associativity would work, since $f \ast_\frac{1}{3} (g \ast h) = (f \ast g) \ast_\frac{2}{3} h$.
 
 Another problem is finding an identity element. Even an innocent guess like the constant loop can't undo the compression that paths undergo through composition.
 
 Although this naive approach fails, it seems well-intentioned. If we can find a precise way to be less fussy about composition compression, we can make it work.
 
-The solution is a concept called \emph{homotopy}. A homotopy is a paths in the function space $P(X, x, y)$ i.e. a ``path path.'' Two paths connected by a homotopy are said to be \emph{homotopic} and path components of $P(X, x, y)$ are called \emph{homotopy classes}. The following lemma illustrates a nice property of these classes.
+The solution is a concept called \emph{homotopy}. A homotopy is a path in the function space $P(X, x, y)$ i.e. a ``path path.'' Two paths connected by a homotopy are said to be \emph{homotopic} and path components of $P(X, x, y)$ are called \emph{homotopy classes}. The following lemma illustrates a nice property of these classes.
 
 \begin{lemma}
 If $f$, $g \in \Omega(X, x)$ and $k$, $k' \in (0, 1)$ then $[f \ast_k g] = [f \ast_{k'} g]$.
 \end{lemma}
 \begin{proof}
-Define $\phi(s) = (1 - s)k + sk'$ and $\gamma(s) = f \ast_{\phi(s)} g$. Now $\gamma(0) = f \ast_k g$ and $\gamma(1) = f \ast_{k'} g$. Show $\gamma$ is continuous (need definition of open sets in function space). Thus $\gamma$ is a homotopy and the proof is done.
+Define $\phi(s) = (1 - s)k + sk'$ and $F(s) = f \ast_{\phi(s)} g$. Now $F(0) = f \ast_k g$ and $F(1) = f \ast_{k'} g$. Show $F$ is continuous (need definition of open sets in function space). Thus $F$ is a homotopy and the proof is done.
 \end{proof}
 
 \end{document}
