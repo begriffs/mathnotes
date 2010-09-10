@@ -1,0 +1,93 @@
+\documentclass[letterpaper]{article}
+\usepackage{amsfonts}
+\usepackage [intlimits]{amsmath}
+\usepackage{amssymb}
+\usepackage{colonequals}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newcommand{\mdot}{{\cdot}}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\begin{document}
+\title{Topology\\
+Math 751}
+\author{Joe Nelson}
+\date{Fall 2010}
+\maketitle
+
+This document is distributed under the Creative Commons 3.0 attribution license.
+
+\section{Lecture 1 -- September 3}
+
+\subsection{A topological Invariant}
+
+Invariants of topological spaces are properties preserved by homeomorphisms. Invariants often help distinguish one topological space from another, but they have other uses as lemma 1.1 shows.
+
+Let $I = [0, 1] \subset \mathbb{R}$. Recall that a \emph{path} from points $x$ to $y$ in a topological space $X$ is a continuous map $f \colon I \rightarrow X$ such that $f(0) = x$ and $f(1) = y$. The set of such maps is denoted $P(X, x, y)$.
+
+Define the relation $x \sim y$ if $P(X, x, y) \ne \emptyset$. It is in fact an equivalence. First, $x \sim x$ for any $x$ by the constant path. If $x \sim y$ by a path $f$, then $y \sim x$ by $t \mapsto f(1-t)$. We can call this ``reversed'' path $f^{-1}$, taking care not to confuse it with an inverse map. Finally suppose $x \sim y$ by $f$ and $y \sim z$ by $g$. For any $k \in (0, 1)$ define
+\[ f \ast_k g \colon t \mapsto
+   \left\{
+     \begin{array}{lr}
+       f(\frac{t}{k}) & t \in [0, k]\\
+       g(\frac{t-k}{1-k}) & t \in [k, 1]
+     \end{array}
+   \right.
+\]
+Now $f$ and $g$ agree at $t = k$ and each is continuous, so $f \ast_k g$ is continuous by the pasting lemma. This puts the product in $P(X, x, z)$. (When the subscript $k$ is omitted, it is assumed $k = \frac{1}{2}$.) Hence $x \sim z$.
+
+A \emph{path component} of $X$ is an equivalence class of this relation. For any topological space $X$ let $n(X)$ be the number of path components of $X$.
+
+\begin{lemma}
+If $f \colon X \rightarrow Y$ is surjective and continuous then $n(X) \geq n(Y)$.
+\end{lemma}
+\begin{proof}
+Suppose a path $p$ connects points $a$, $b \in X$. A composition of continuous functions is continuous, so $p \circ f$ is a path which connects $f(a)$ and $f(b)$. Now choose a representative point from each path component of $Y$. By the surjectivity of $f$, there exist points in the preimage of each representative. These points are each in distinct path components of $X$ by the contrapositive of the preceeding, so $X$ has as many path components as $Y$. 
+\end{proof}
+
+\begin{corollary}
+The $n$ function is a topological invariant
+\end{corollary}
+
+This invariant, or more precisely the inequality in the lemma, provides an elementary way to understand and prove a theorem from calculus. Here is the usual proof without an invariant.
+
+\begin{theorem}
+If $f \colon I \rightarrow I$ is continuous then it fixes a point.
+\end{theorem}
+\begin{proof}
+WLOG $f(0) > 0$ and $f(1) < 1$ or we would be done. Let $g(x) = f(x) - x$. Now $g$ is continuous and $g(0) > 0$ while $g(1) < 0$. By the intermediate value theorem, $g$ attains zero at some point, which is a fixed point for $f$.
+\end{proof}
+
+Intuitively this proof works because the graph of $f$ in its course across the unit square must somewhere cross the diagonal line which runs through $(0, 0)$ and $(1, 1)$, The invariant $n$ affords us a proof which shares the same motivation while avoiding the intermediate value machinery.
+
+\begin{theorem}
+If $f \colon I \rightarrow I$ is continuous then it fixes a point.
+\end{theorem}
+\begin{proof}
+Assume not. Then $f(x) \neq x$ for any $x$ and it is sensible to define $r \colon I \rightarrow \{\pm 1\}$ by \[ r(x) = \frac{f(x) - x}{|f(x) - x|} \] Also, $f(0) > 0$ so $r(0) = 1$ and $f(1) < 1$ so $r(1) = -1$. Hence $r$ is surjective. But notice the $n$-values of the spaces. First, $n(I) = 1$ because for any $a < b$, the identity function on $[a, b]$ is a path connecting them. The discrete space $\{\pm 1\}$ is totally disconnected so $n(\{\pm 1\}) = 2$. The lemma above implies $2 \leq 1$, a contradiction.
+\end{proof}
+
+A space $X$ where $n(X) = 1$ is called \emph{path connected}. One important invariant in such spaces is the \emph{fundamental group}. It is defined in terms of homotopy.
+
+\subsection{The homotopy relation}
+
+For $x$, $y \in X$, let $P(X, x, y)$ denote the paths in $X$ from $x$ to $y$. Two paths $\gamma$, $\delta$ in this set are called \emph{homotopic} if there is a family of paths $f_t \in P(X, x, y)$ for $t \in I$ such that $f_0 = \gamma$, $f_1 = \delta$ and the map $F(s, t) = f_t(s)$ is continuous. In this case we call $F$ a homotopy and write $\gamma \overset{F}{\sim} \delta$. For each $k \in (0, 1)$, define the binary operation $\ast_k$ on homotopies by
+
+The homotopy relation is in fact an equivalence. Any path is homotopic to itself by a constant homotopy. If $\gamma \overset{F}{\sim} \delta$ then $\delta \overset{F^{-1}}{\sim} \gamma$ where $F^{-1}(s, t) = F(s, 1-t)$ is reparameterized backwards.
+
+Let $\Omega(X, x) = P(X, x, x)$. These are called \emph{loops}.
+
+
+
+\end{document}
