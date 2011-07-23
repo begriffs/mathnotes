@@ -26,23 +26,39 @@ Math 741}
 \date{Fall 2009}
 \maketitle
 
-These notes contain what we consider the highlights and subtle points of Professor Donald Passman's lectures. We express the concepts in our own words, and insert, expand, and rearrange topics.
+These notes contain what we consider the highlights and subtle
+points of Professor Donald Passman's lectures. We express the
+concepts in our own words, and insert, expand, and rearrange topics.
 
-This document is distributed under the Creative Commons 3.0 attribution license.
+This document is distributed under the Creative Commons 3.0 attribution
+license.
 
 \section{Lecture 1 -- September 3}
 
 \subsection{Solving equations in groups}
 
-The simplest form of group equation is $ax = b$, which always has a unique solution $x$. The existence and uniqueness of the solution are independent facts and must be verified separately. Notice the following proof of uniqueness requires the right-inverse and existence the left.
+The simplest form of group equation is $ax = b$, which always has
+a unique solution $x$. The existence and uniqueness of the solution
+are independent facts and must be verified separately. Notice the
+following proof of uniqueness requires the right-inverse and existence
+the left.
 
-We begin with uniqueness because it supplies the only candidate for existence.  Suppose there exists an $x$ with $ax = b$. Then $x = 1x = (a^{-1}a)x = a^{-1}(ax) = a^{-1}b$ and $x$ is unique.
+We begin with uniqueness because it supplies the only candidate for
+existence.  Suppose there exists an $x$ with $ax = b$. Then $x =
+1x = (a^{-1}a)x = a^{-1}(ax) = a^{-1}b$ and $x$ is unique.
 
-Is the element $a^{-1}b$ from the previous direction a solution? Yes. It is in our group by closure, and satisfies $a(a^{-1}b) = (aa^{-1})b = 1b = b$.  (Note that closure alone is not sufficient -- we had to verify that our candidate satisfies the equation.) Similarly $xa = b$ has exactly one solution.
+Is the element $a^{-1}b$ from the previous direction a solution?
+Yes. It is in our group by closure, and satisfies $a(a^{-1}b) =
+(aa^{-1})b = 1b = b$.  (Note that closure alone is not sufficient
+-- we had to verify that our candidate satisfies the equation.)
+Similarly $xa = b$ has exactly one solution.
 
 \subsection{Small concrete groups}
 
-Finite groups can be displayed in Cayley tables. Each row contains all group elements with no repetition because for every row $a$ and group element $b$ there is exactly one column $x$ solving the equation $ax = b$.
+Finite groups can be displayed in Cayley tables. Each row contains
+all group elements with no repetition because for every row $a$ and
+group element $b$ there is exactly one column $x$ solving the
+equation $ax = b$.
 
 \[
 \begin{array}{r|*{5}{r}}
@@ -55,9 +71,15 @@ a & . & . & b & . \\
 \end{array}
 \]
 
-Similarly every column is a permutation of the group elements, and these facts limit the table possibilities. In fact, there is only one way (up to relabeling) to construct each Cayley table smaller than four-by-four. With the foreknowledge that there is a four-by-four table wherein every element is an involution (i.e., $x^2 = 1$), we can exhaust the possibilities for that size.
+Similarly every column is a permutation of the group elements, and
+these facts limit the table possibilities. In fact, there is only
+one way (up to relabeling) to construct each Cayley table smaller
+than four-by-four. With the foreknowledge that there is a four-by-four
+table wherein every element is an involution (i.e., $x^2 = 1$), we
+can exhaust the possibilities for that size.
 
-Assume we have a table of involutions. There is only one four-by-four table with this property:
+Assume we have a table of involutions. There is only one four-by-four
+table with this property:
 
 \[
 \begin{array}{r|*{5}{r}}
@@ -70,7 +92,8 @@ c & c & b & a & 1 \\
 \end{array}
 \]
 
-Now assume we have a table of order four with a non-involution element. WLOG $a^2 = b$, and the rest of the table resolves to
+Now assume we have a table of order four with a non-involution
+element. WLOG $a^2 = b$, and the rest of the table resolves to
 
 \[
 \begin{array}{r|*{5}{r}}
@@ -83,9 +106,17 @@ c & c & 1 & a & b \\
 \end{array}
 \]
 
-One of these mutually exclusive conditions must hold: every element is an involution or at least one isn't. In each case there is only one possible table, giving exactly two tables of order four.
+One of these mutually exclusive conditions must hold: every element
+is an involution or at least one isn't. In each case there is only
+one possible table, giving exactly two tables of order four.
 
-Therefore there are at most two groups of order four, and at most one of each smaller order. We have not shown the tables to be groups. That the tables have an identity and inverses is clear, but we have not checked associativity. In fact, constructing a valid Cayley table will not guarantee associativity \cite{Burn78}. For instance, $(c * b) * a = d * a = c \ne a = c * d = c * (b * a)$ in the following table.
+Therefore there are at most two groups of order four, and at most
+one of each smaller order. We have not shown the tables to be groups.
+That the tables have an identity and inverses is clear, but we have
+not checked associativity. In fact, constructing a valid Cayley
+table will not guarantee associativity \cite{Burn78}. For instance,
+$(c * b) * a = d * a = c \ne a = c * d = c * (b * a)$ in the following
+table.
 
 \[
 \begin{array}{r|*{6}{r}}
@@ -102,29 +133,40 @@ d & d & c & a & b & 1 \\
 Now here are two familiar groups of order four.
 
 \begin{enumerate}
-\item $\left\{1, i, -1, -i\right\} \subset \mathbb{C}$ under complex multiplication
+\item $\left\{1, i, -1, -i\right\} \subset \mathbb{C}$ under complex
+multiplication
 
 \item $\left( {\begin{array}{cc}
 \pm1 & 0  \\
 0 & \pm1  \\
 \end{array} } \right) \subset M_2(\mathbb{R})$ under matrix multiplication
 \end{enumerate}
-Their Cayley tables are distinct because every element in the latter is an involution. Since we showed there are only two four-by-four tables, they correspond to our examples -- and hence are groups. Of course, we could have also checked associativity directly.
+Their Cayley tables are distinct because every element in the latter
+is an involution. Since we showed there are only two four-by-four
+tables, they correspond to our examples -- and hence are groups.
+Of course, we could have also checked associativity directly.
 
 \section{Lecture 2 -- September 8}
 
 \subsection{Properties of functions}
 
-We would like to form groups of bijective functions on a given set under composition. To this end we examine properties of 1-1 and onto functions.
+We would like to form groups of bijective functions on a given set
+under composition. To this end we examine properties of 1-1 and
+onto functions.
 
 \begin{lemma}
 \label{inverses}
 The composition of 1-1 (onto) functions is 1-1 (onto). 
 \end{lemma}
 \begin{proof}
-Suppose $f\colon A \rightarrow B$ and $g\colon B \rightarrow C$ are 1-1. If $(a)fg = (a')fg$ then $(a)f = (a')f$ since $g$ is 1-1. But $f$ is 1-1 as well, so $a = a'$, which proves $fg$ is 1-1.
+Suppose $f\colon A \rightarrow B$ and $g\colon B \rightarrow C$ are
+1-1. If $(a)fg = (a')fg$ then $(a)f = (a')f$ since $g$ is 1-1. But
+$f$ is 1-1 as well, so $a = a'$, which proves $fg$ is 1-1.
 
-Now suppose $f$ and $g$ are onto. Pick an element $c \in C$. Then there is an element $b \in B$ with $(b)g = c$. Similarly there is an $a \in A$ where $(a)f = b$. So $(a)fg = (b)g = c$. So $fg$ is onto.
+Now suppose $f$ and $g$ are onto. Pick an element $c \in C$. Then
+there is an element $b \in B$ with $(b)g = c$. Similarly there is
+an $a \in A$ where $(a)f = b$. So $(a)fg = (b)g = c$. So $fg$ is
+onto.
 \end{proof}
 
 \begin{lemma}
@@ -132,9 +174,14 @@ Now suppose $f$ and $g$ are onto. Pick an element $c \in C$. Then there is an el
 A function $f\colon A \rightarrow B$ is 1-1 iff it has a right-inverse.
 \end{lemma}
 \begin{proof}
-Suppose $f$ is 1-1. Then for every $b \in (A)f$ there exists a unique $a \in A$ such that $(a)f = b$. Since $a$ is unique, mapping $b \mapsto a$ defines a function $g \colon (A)f \rightarrow A$.  If $a \in A$, then $(a)f = b$ for some $b \in B$ and we have $a(fg) = ((a)f)g = (b)g = a$.
+Suppose $f$ is 1-1. Then for every $b \in (A)f$ there exists a
+unique $a \in A$ such that $(a)f = b$. Since $a$ is unique, mapping
+$b \mapsto a$ defines a function $g \colon (A)f \rightarrow A$.  If
+$a \in A$, then $(a)f = b$ for some $b \in B$ and we have $a(fg) =
+((a)f)g = (b)g = a$.
 
-Suppose now $f$ has a right-inverse $g$. If $(a)f = (a')f$ then $a = (a)fg = (a')fg = a'$. So $f$ is 1-1.
+Suppose now $f$ has a right-inverse $g$. If $(a)f = (a')f$ then $a
+= (a)fg = (a')fg = a'$. So $f$ is 1-1.
 \end{proof}
 
 \begin{lemma}
@@ -142,24 +189,53 @@ Suppose now $f$ has a right-inverse $g$. If $(a)f = (a')f$ then $a = (a)fg = (a'
 A function $f\colon A \rightarrow B$ is onto iff it has a left-inverse.
 \end{lemma}
 \begin{proof}
-Suppose $f$ is onto. Then for every $b \in B$ the set $(b)f^{-1}$ is not empty. We can choose an $a_b \in (b)f^{-1}$. If $B$ is infinite, we have infinitely many choices to make, requiring the Axiom of Choice. The mapping $b \mapsto a_b$ defines a function, call it $g$. Finally, $(b)gf = (a_b)f = b$ for all $b \in B$ so $g$ is a left-inverse.
+Suppose $f$ is onto. Then for every $b \in B$ the set $(b)f^{-1}$
+is not empty. We can choose an $a_b \in (b)f^{-1}$. If $B$ is
+infinite, we have infinitely many choices to make, requiring the
+Axiom of Choice. The mapping $b \mapsto a_b$ defines a function,
+call it $g$. Finally, $(b)gf = (a_b)f = b$ for all $b \in B$ so $g$
+is a left-inverse.
 
-Now assume $f$ has a left-inverse $g$. Since $b = (b)gf = ((b)g)f$ for all $b \in B$ we have that $f$ is onto.
+Now assume $f$ has a left-inverse $g$. Since $b = (b)gf = ((b)g)f$
+for all $b \in B$ we have that $f$ is onto.
 \end{proof}
 
-Taken together, lemmas \ref{right11} and \ref{leftonto} imply that $f$ has a two-sided inverse iff $f$ is 1-1 and onto. Furthermore, the inverse is unique. To see this, suppose $g$ and $g'$ are inverses of $f$. Then $fg = fg'$ which implies $g = gfg = gfg' = g'$.
+Taken together, lemmas \ref{right11} and \ref{leftonto} imply that
+$f$ has a two-sided inverse iff $f$ is 1-1 and onto. Furthermore,
+the inverse is unique. To see this, suppose $g$ and $g'$ are inverses
+of $f$. Then $fg = fg'$ which implies $g = gfg = gfg' = g'$.
 
-Inverses of bijections are not only unique, they are themselves bijections. The equalities $ff^{-1} = f^{-1}f = 1$, establish that $f^{-1}$ has a left- and right-inverse, namely $f$. Lemmas \ref{right11} and \ref{leftonto} then imply $f^{-1}$ is 1-1 and onto.
+Inverses of bijections are not only unique, they are themselves
+bijections. The equalities $ff^{-1} = f^{-1}f = 1$, establish that
+$f^{-1}$ has a left- and right-inverse, namely $f$. Lemmas \ref{right11}
+and \ref{leftonto} then imply $f^{-1}$ is 1-1 and onto.
 
-Since we now know that bijections on a set $A$ are closed under composition, and have bijective inverses, together with the fact that they associate and that the identity on $A$ is a bijection, we know that they form a group. It is called the \emph{symmetric group} on A and is denoted $Sym_A$.
+Since we now know that bijections on a set $A$ are closed under
+composition, and have bijective inverses, together with the fact
+that they associate and that the identity on $A$ is a bijection,
+we know that they form a group. It is called the \emph{symmetric
+group} on A and is denoted $Sym_A$.
 
-If $|A| = n$, then $|Sym_A| = n!$. First note that a 1-1 function on a finite set is necessarily onto. Therefore the number of 1-1 functions on $A$ is no greater than the size of $Sym_A$. Further, every element of $Sym_A$ is 1-1; hence we need only count the number of 1-1 functions on $A$.
+If $|A| = n$, then $|Sym_A| = n!$. First note that a 1-1 function
+on a finite set is necessarily onto. Therefore the number of 1-1
+functions on $A$ is no greater than the size of $Sym_A$. Further,
+every element of $Sym_A$ is 1-1; hence we need only count the number
+of 1-1 functions on $A$.
 
-Write $A = \{a_0, a_1, \ldots a_n\}$. An arbitrary 1-1 function can map $a_0$ to any of $|A| = n$ elements. Once $a_0$ has been mapped, there are $n-1$ places left for $a_1$ because our function is 1-1. In general, $a_i$ can map to $n-i$ places. By counting we have $n!$ 1-1 functions on $A$.
+Write $A = \{a_0, a_1, \ldots a_n\}$. An arbitrary 1-1 function can
+map $a_0$ to any of $|A| = n$ elements. Once $a_0$ has been mapped,
+there are $n-1$ places left for $a_1$ because our function is 1-1.
+In general, $a_i$ can map to $n-i$ places. By counting we have $n!$
+1-1 functions on $A$.
 
 \subsection{Remarks on Subgroups}
 
-Let $S$ be a subgroup of $G$. Is the identity in $S$, $1_S$, equal to the identity in $G$, $1_G$? Yes, $1_S1_S = 1_S = 1_S1_G$. By cancellation in $G$, $1_S = 1_G$. Since the identities are equal, $S$-inverses coincide with $G$-inverses. This is a nice property for groups to enjoy; no such analogue holds for rings. For instance the subring
+Let $S$ be a subgroup of $G$. Is the identity in $S$, $1_S$, equal
+to the identity in $G$, $1_G$? Yes, $1_S1_S = 1_S = 1_S1_G$. By
+cancellation in $G$, $1_S = 1_G$. Since the identities are equal,
+$S$-inverses coincide with $G$-inverses. This is a nice property
+for groups to enjoy; no such analogue holds for rings. For instance
+the subring
 \[
 \left( {\begin{array}{cc}
 \mathbb{R} & 0  \\
@@ -175,7 +251,10 @@ has as multiplicative identity
 
 \subsection{Homomorphisms}
 
-Finite groups $G$ and $H$ are essentially the same when the Cayley table of $H$ is a relabeling of $G$'s table. Let $\theta$ be the relabeling map. Suppose $a$, $b$, $c \in G$ and $ab = c$. Then part of $G$'s table is
+Finite groups $G$ and $H$ are essentially the same when the Cayley
+table of $H$ is a relabeling of $G$'s table. Let $\theta$ be the
+relabeling map. Suppose $a$, $b$, $c \in G$ and $ab = c$. Then part
+of $G$'s table is
 
 \[
 \begin{array}{r|*{5}{r}}
@@ -199,42 +278,101 @@ Being a relabeling, $H$'s table contains
 \end{array}
 \]
 
-Hence $(a)\theta\mdot (b)\theta = (c)\theta = (ab)\theta$ since $c = ab$. So for $\theta$ to be a valid relabeling it must satisfy $(ab)\theta = (a)\theta\mdot (b)\theta$. This corresponds to our notion of a group homomorphism.
+Hence $(a)\theta\mdot (b)\theta = (c)\theta = (ab)\theta$ since $c
+= ab$. So for $\theta$ to be a valid relabeling it must satisfy
+$(ab)\theta = (a)\theta\mdot (b)\theta$. This corresponds to our
+notion of a group homomorphism.
 
-A homomorphism from $G$ to $H$ maps $1_G$ to $1_H$ and respects inverses. In fact if we couldn't have proved it we would have required it in the definition of homomorphism.
+A homomorphism from $G$ to $H$ maps $1_G$ to $1_H$ and respects
+inverses. In fact if we couldn't have proved it we would have
+required it in the definition of homomorphism.
 
-Note that the inverse of an isormorphism is also an isomorphism. Let $\theta \colon G \rightarrow H$ be an isomorphism. Pick $x$, $y \in H$. Since $\theta$ is onto, there exist $a$, $b \in G$ with $(a)\theta = x$ and $(b)\theta = y$. So $(xy)\theta^{-1} = ((a)\theta\mdot (b)\theta)\theta^{-1} = ((ab)\theta)\theta^{-1} = ab = (x)\theta^{-1}\mdot (y)\theta^{-1}$.
+Note that the inverse of an isormorphism is also an isomorphism.
+Let $\theta \colon G \rightarrow H$ be an isomorphism. Pick $x$,
+$y \in H$. Since $\theta$ is onto, there exist $a$, $b \in G$ with
+$(a)\theta = x$ and $(b)\theta = y$. So $(xy)\theta^{-1} =
+((a)\theta\mdot (b)\theta)\theta^{-1} = ((ab)\theta)\theta^{-1} =
+ab = (x)\theta^{-1}\mdot (y)\theta^{-1}$.
 
-Even if $\theta$ is neither 1-1 nor onto we can gain information from preimages. Suppose $T$ is a subgroup of $H$. We will show $(T)\theta^{-1}$ is a subgroup of $G$. First, since $\theta$ is a homomorphism, $(1_G)\theta = 1_H = 1_T \in T$. Now if $x$, $y \in (T)\theta^{-1}$ then $(xy^{-1})\theta = (x)\theta\mdot ((y)\theta)^{-1} \in T$. Hence $xy^{-1} \in (T)\theta^{-1}$.
+Even if $\theta$ is neither 1-1 nor onto we can gain information
+from preimages. Suppose $T$ is a subgroup of $H$. We will show
+$(T)\theta^{-1}$ is a subgroup of $G$. First, since $\theta$ is a
+homomorphism, $(1_G)\theta = 1_H = 1_T \in T$. Now if $x$, $y \in
+(T)\theta^{-1}$ then $(xy^{-1})\theta = (x)\theta\mdot ((y)\theta)^{-1}
+\in T$. Hence $xy^{-1} \in (T)\theta^{-1}$.
 
 \section{Lecture 3 -- September 10}
 
 \subsection{Equivalence relations}
 
-Equivalence relations and set partitions are merely two faces of the same coin. Given an equivalence relation on $A$, the equivalence classes partition $A$. They are disjoint by the transitvity and symmetry of the relation, and cover $A$ by the reflexivity. Conversely, given a partition of $A$, define elements of $A$ as being equivalent iff they are in the same subset. This relation is reflexive because the subsets cover $A$, transitive by the disjointness of subsets, and trivially symmetric. Define the \emph{index} of an equivalence relation as the number of its classes.
+Equivalence relations and set partitions are merely two faces of
+the same coin. Given an equivalence relation on $A$, the equivalence
+classes partition $A$. They are disjoint by the transitvity and
+symmetry of the relation, and cover $A$ by the reflexivity. Conversely,
+given a partition of $A$, define elements of $A$ as being equivalent
+iff they are in the same subset. This relation is reflexive because
+the subsets cover $A$, transitive by the disjointness of subsets,
+and trivially symmetric. Define the \emph{index} of an equivalence
+relation as the number of its classes.
 
-One example of an equivalence relation is ismorphism between groups. The relation is reflexive because $1_G \colon G \rightarrow G$ is an isomorphism. If $G$ is isomorphic to $H$, then consider the inverse of whatever isomorphism holds between them. We have seen already that the inverse of an isomorphism is an isomorphism, by which $H$ is isomorphic to $G$. Finally, it's easy to check that the composition of isomorphisms is an isomorphism, and that establishes the transitivity of the relation.
+One example of an equivalence relation is ismorphism between groups.
+The relation is reflexive because $1_G \colon G \rightarrow G$ is
+an isomorphism. If $G$ is isomorphic to $H$, then consider the
+inverse of whatever isomorphism holds between them. We have seen
+already that the inverse of an isomorphism is an isomorphism, by
+which $H$ is isomorphic to $G$. Finally, it's easy to check that
+the composition of isomorphisms is an isomorphism, and that establishes
+the transitivity of the relation.
 
-Now for a more interesting equivalence relation. Let $G$ be a group, and $H$ be a subgroup of $G$. For every $x$, $y \in G$ write $x \sim y$ iff $x^{-1}y \in H$. Showing $\sim$ is an equivalence relation requires all of $H$'s group properties. First $x \sim x$ because $x^{-1}x = 1_G \in H$ ($H$ contains the identity). If $x \sim y$ then $x^{-1}y \in H$ so $y^{-1}x = (x^{-1}y)^{-1} \in H$ ($H$ is closed under inverses). If $x \sim y$ and $y \sim z$ then $x^{-1}z = x^{-1}(yy^{-1})z = (x^{-1}y)(y^{-1}z) \in H$ ($H$ is closed under multiplication and is associative).
+Now for a more interesting equivalence relation. Let $G$ be a group,
+and $H$ be a subgroup of $G$. For every $x$, $y \in G$ write $x
+\sim y$ iff $x^{-1}y \in H$. Showing $\sim$ is an equivalence
+relation requires all of $H$'s group properties. First $x \sim x$
+because $x^{-1}x = 1_G \in H$ ($H$ contains the identity). If $x
+\sim y$ then $x^{-1}y \in H$ so $y^{-1}x = (x^{-1}y)^{-1} \in H$
+($H$ is closed under inverses). If $x \sim y$ and $y \sim z$ then
+$x^{-1}z = x^{-1}(yy^{-1})z = (x^{-1}y)(y^{-1}z) \in H$ ($H$ is
+closed under multiplication and is associative).
 
-One particularly nice property of this equivalence relation is that all of its classes have the same size. To see this, look at the form of an arbitrary class: $\left[y\right] = \{x: y \sim x\} = \{x: y^{-1}x \in H\} = yH$. These classes are called \emph{left cosets of $H$}. The map from $H$ to $yH$ given by $h \mapsto yh$ is 1-1 by the group cancellation property, and is obviously onto.
+One particularly nice property of this equivalence relation is that
+all of its classes have the same size. To see this, look at the
+form of an arbitrary class: $\left[y\right] = \{x: y \sim x\} =
+\{x: y^{-1}x \in H\} = yH$. These classes are called \emph{left
+cosets of $H$}. The map from $H$ to $yH$ given by $h \mapsto yh$
+is 1-1 by the group cancellation property, and is obviously onto.
 
-The number of left $H$ cosets in $G$ (the index of the relation) is denoted $|G : H|$ and pronounced ``the index of $H$ in $G$.'' The cosets, being equivalence classes, partition $G$, which means the size of $G$ is the sum of their sizes.  When $G$ is finite we see that \[|G| = |H||G : H|\] because there are $|G : H|$ cosets, each containing $|H|$ elements. In particular $|H|$ divides $|G|$.
+The number of left $H$ cosets in $G$ (the index of the relation)
+is denoted $|G : H|$ and pronounced ``the index of $H$ in $G$.''
+The cosets, being equivalence classes, partition $G$, which means
+the size of $G$ is the sum of their sizes.  When $G$ is finite we
+see that \[|G| = |H||G : H|\] because there are $|G : H|$ cosets,
+each containing $|H|$ elements. In particular $|H|$ divides $|G|$.
 
-This result is known as Lagrange's Theorem, and it introduces number theory into finite group theory. For instance, a group of prime order contains only trivial subgroups (i.e. \{1\} and the group itself) because prime numbers factor only trivially.
+This result is known as Lagrange's Theorem, and it introduces number
+theory into finite group theory. For instance, a group of prime
+order contains only trivial subgroups (i.e. \{1\} and the group
+itself) because prime numbers factor only trivially.
 
-We can also define $x \sim y$ iff $xy^{-1} \in H$. The equivalence classes are now the \emph{right cosets} of $H$ in $G$ and are of the form $Hy$.  The indices of both relations are the same by the map $Hx \mapsto x^{-1}H$. The mapping is onto, and well-defined and 1-1 because
+We can also define $x \sim y$ iff $xy^{-1} \in H$. The equivalence
+classes are now the \emph{right cosets} of $H$ in $G$ and are of
+the form $Hy$.  The indices of both relations are the same by the
+map $Hx \mapsto x^{-1}H$. The mapping is onto, and well-defined and
+1-1 because
 \begin{align*}
 Hx = Hy &\Longleftrightarrow xy^{-1} \in H\\
         &\Longleftrightarrow y^{-1} \in x^{-1}H\\
 		&\Longleftrightarrow y^{-1}H = x^{-1}H.
 \end{align*}
 
-Alternatively, when $G$ is finite, Lagrange's Theorem makes this easier. We have that $|Hy| = |H| = |yH|$ since the maps $h \mapsto hy$ and $h \mapsto yh$ are bijections. The numbers of left  and right cosets are then $|G|/|H|$.
+Alternatively, when $G$ is finite, Lagrange's Theorem makes this
+easier. We have that $|Hy| = |H| = |yH|$ since the maps $h \mapsto
+hy$ and $h \mapsto yh$ are bijections. The numbers of left  and
+right cosets are then $|G|/|H|$.
 
 \subsection{Normal subgroups}
 
-Let $G$ be a group and $H$ a subgroup of $G$. Define $H^x = x^{-1}Hx$ for any $x \in G$.
+Let $G$ be a group and $H$ a subgroup of $G$. Define $H^x = x^{-1}Hx$
+for any $x \in G$.
 \begin{lemma}
 \label{normal}
 Let $H$ be a subgroup of $G$. The following are equivalent for all $x \in G$:
@@ -246,24 +384,44 @@ Let $H$ be a subgroup of $G$. The following are equivalent for all $x \in G$:
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-It is clear that $(1)$ is equivalent to $(2)$ and that $(2)$ implies $(3)$ and $(4)$.
+It is clear that $(1)$ is equivalent to $(2)$ and that $(2)$ implies
+$(3)$ and $(4)$.
 
-Suppose $(3)$ holds. Then $H^{x^{-1}} \subset H$ which implies $H = (H^{x^{-1}})^x \subset H^x$. Hence $(2)$ holds.
+Suppose $(3)$ holds. Then $H^{x^{-1}} \subset H$ which implies $H
+= (H^{x^{-1}})^x \subset H^x$. Hence $(2)$ holds.
 
-Suppose $(4)$ is true. Then $H = (H^x)^{x^{-1}} \supset H^{x^{-1}}$ and $x^{-1}$ ranges over all $G$. Hence $(2)$ is true.
+Suppose $(4)$ is true. Then $H = (H^x)^{x^{-1}} \supset H^{x^{-1}}$
+and $x^{-1}$ ranges over all $G$. Hence $(2)$ is true.
 \end{proof}
 
-Note that the seemingly weaker condition $Hx = yH$ implies $x \in yH$. Of course $x \in xH$ and since $xH$ and $yH$ are disjoint, we must have that $Hx = yH = xH$. Hence condition $(1)$ is equivalent to saying every right coset is a left coset. Note that $Hx = xH$ does not imply that $hx = xh$ for every $h \in H$.
+Note that the seemingly weaker condition $Hx = yH$ implies $x \in
+yH$. Of course $x \in xH$ and since $xH$ and $yH$ are disjoint, we
+must have that $Hx = yH = xH$. Hence condition $(1)$ is equivalent
+to saying every right coset is a left coset. Note that $Hx = xH$
+does not imply that $hx = xh$ for every $h \in H$.
 
-A subgroup $H$ of $G$ satisfying any of the properties $(1)$ through $(4)$ is called \emph{normal}, written $H \lhd G$. Normal subgroups are neither more nor less than kernels of homomorphisms. We will prove this later. So $H \lhd G$ might be read ``$H$ is the kernel of a homomorphism.''
+A subgroup $H$ of $G$ satisfying any of the properties $(1)$ through
+$(4)$ is called \emph{normal}, written $H \lhd G$. Normal subgroups
+are neither more nor less than kernels of homomorphisms. We will
+prove this later. So $H \lhd G$ might be read ``$H$ is the kernel
+of a homomorphism.''
 
-The trivial subgroups of any group $G$ are normal: $G \lhd G$ because of closure, and $1 \lhd G$ because $1^g = 1$ for any $g \in G$. Of course, any subgroup of an abelian group is also normal.
+The trivial subgroups of any group $G$ are normal: $G \lhd G$ because
+of closure, and $1 \lhd G$ because $1^g = 1$ for any $g \in G$. Of
+course, any subgroup of an abelian group is also normal.
 
-Not all subgroups are normal. One such counterexample is the subgroup $\{1, d\} \subset D_8$ where $1$ is the group identity and $d$ is a diagonal flip. Conjugating $d$ by a $90^\circ$ rotation gives a diagonal flip not in the subgroup.  Hence, by lemma \ref{normal}, the subgroup $\{1, d\}$ is not normal. Another such counterexample is a group of order four we previously considered.  We now consider $H =
+Not all subgroups are normal. One such counterexample is the subgroup
+$\{1, d\} \subset D_8$ where $1$ is the group identity and $d$ is
+a diagonal flip. Conjugating $d$ by a $90^\circ$ rotation gives a
+diagonal flip not in the subgroup.  Hence, by lemma \ref{normal},
+the subgroup $\{1, d\}$ is not normal. Another such counterexample
+is a group of order four we previously considered.  We now consider
+$H =
 \left( {\begin{array}{cc}
 \pm1 & 0  \\
 0 & \pm1  \\
-\end{array} } \right)$ as a subgroup of $GL_2(\mathbb{R})$.  It is not a normal subgroup because
+\end{array} } \right)$ as a subgroup of $GL_2(\mathbb{R})$.
+It is not a normal subgroup because
 \[
 \left( {\begin{array}{cc}
 1 & 1  \\
@@ -285,9 +443,21 @@ Not all subgroups are normal. One such counterexample is the subgroup $\{1, d\} 
 \notin H.
 \]
 
-If $N \lhd G$ we denote the set of cosets of $N$ in $G$ by $G/N$. We can use the normality of $N$ to define an operation on $G/N$. In the case of right cosets, define a multiplication by $NxNy = Nxy$. It is routine to verify that this is well-defined.  Note that the converse also happens to be true.  If $NxNy = Nz$, then $xN = Nzy^{-1} = Nx$. That is, if the product of two right cosets of a subgroup $N$ of $G$ is a right coset, then $N \lhd G$.
+If $N \lhd G$ we denote the set of cosets of $N$ in $G$ by $G/N$.
+We can use the normality of $N$ to define an operation on $G/N$.
+In the case of right cosets, define a multiplication by $NxNy =
+Nxy$. It is routine to verify that this is well-defined.  Note that
+the converse also happens to be true.  If $NxNy = Nz$, then $xN =
+Nzy^{-1} = Nx$. That is, if the product of two right cosets of a
+subgroup $N$ of $G$ is a right coset, then $N \lhd G$.
 
-Define $\nu\colon G \rightarrow G/N$ by $x \mapsto Nx$. By inspection $\nu$ is onto. In fact $\nu$ respects multiplication, which makes $G/N$ a group and $\nu$ a group homomorphism with kernel $N$. To see how $\nu$ implies, for instance, that inverses exist in $G/N$, let $x \in G/N$. There exists $g \in G$ such that $(g)\nu = x$, so $(g^{-1})\nu x = (g^{-1})\nu\mdot (g)\nu = (1)\nu$, the identity in $G/N$.
+Define $\nu\colon G \rightarrow G/N$ by $x \mapsto Nx$. By inspection
+$\nu$ is onto. In fact $\nu$ respects multiplication, which makes
+$G/N$ a group and $\nu$ a group homomorphism with kernel $N$. To
+see how $\nu$ implies, for instance, that inverses exist in $G/N$,
+let $x \in G/N$. There exists $g \in G$ such that $(g)\nu = x$, so
+$(g^{-1})\nu x = (g^{-1})\nu\mdot (g)\nu = (1)\nu$, the identity
+in $G/N$.
 
 \section{Lecture 4 -- September 15}
 
@@ -295,118 +465,268 @@ Define $\nu\colon G \rightarrow G/N$ by $x \mapsto Nx$. By inspection $\nu$ is o
 
 \begin{theorem}
 \label{firstiso}
-Suppose $\phi \colon G \rightarrow H$, $\psi \colon G \rightarrow K$ are surjective group homomorphisms with the same kernel. Then $H \cong K$.
+Suppose $\phi \colon G \rightarrow H$, $\psi \colon G \rightarrow
+K$ are surjective group homomorphisms with the same kernel. Then
+$H \cong K$.
 \end{theorem}
 \begin{proof}
-Since $\phi$ is surjective it has a left-inverse which we'll denote $\phi^{-1}$ (and be careful not to use as a two-sided inverse). We will show that $\phi^{-1}\psi$ is the isomorphism we need. Pick $h$, $l \in H$. Certainly $(hl)\phi^{-1}\phi = hl = (h\phi^{-1} \phi)\mdot(l\phi^{-1}\phi) = (h\phi^{-1}\mdot l\phi^{-1})\phi$. Since $\ker{\phi} = \ker{\psi}$, we have that for any $a$, $b \in G$, $(a)\phi = (b)\phi$ iff $(a)\psi = (b)\psi$. But this means that $(hl)\phi^{-1}\psi = (h\phi^{-1}\mdot l\phi^{-1})\psi = (h\phi^{-1})\psi\mdot (l\phi^{-1})\psi$. Hence $\phi^{-1}\psi \colon H \rightarrow K$ is a homomorphism.
+Since $\phi$ is surjective it has a left-inverse which we'll denote
+$\phi^{-1}$ (and be careful not to use as a two-sided inverse). We
+will show that $\phi^{-1}\psi$ is the isomorphism we need. Pick
+$h$, $l \in H$. Certainly $(hl)\phi^{-1}\phi = hl = (h\phi^{-1}
+\phi)\mdot(l\phi^{-1}\phi) = (h\phi^{-1}\mdot l\phi^{-1})\phi$.
+Since $\ker{\phi} = \ker{\psi}$, we have that for any $a$, $b \in
+G$, $(a)\phi = (b)\phi$ iff $(a)\psi = (b)\psi$. But this means
+that $(hl)\phi^{-1}\psi = (h\phi^{-1}\mdot l\phi^{-1})\psi =
+(h\phi^{-1})\psi\mdot (l\phi^{-1})\psi$. Hence $\phi^{-1}\psi \colon
+H \rightarrow K$ is a homomorphism.
 
-To see that it is an isomorphism, suppose $h \in \ker{ \phi^{-1}\psi}$. Then $(h)\phi^{-1}\psi = 1 = (1)\psi$, so $h = (h)\phi^{-1}\phi = (1)\phi = 1$.
+To see that it is an isomorphism, suppose $h \in \ker{ \phi^{-1}\psi}$.
+Then $(h)\phi^{-1}\psi = 1 = (1)\psi$, so $h = (h)\phi^{-1}\phi =
+(1)\phi = 1$.
 \end{proof}
 
-The above theorem says that a homomorphism's domain and kernel essentially determine its image. We can use this result to pick a canonical homomorphism for each domain and kernel.
+The above theorem says that a homomorphism's domain and kernel
+essentially determine its image. We can use this result to pick a
+canonical homomorphism for each domain and kernel.
 
-Say $\phi \colon G \rightarrow H$ is a surjective homomorphism with kernel $N$. The map $\nu \colon G \rightarrow G/N$ defined in the previous lecture is surjective and also has kernel $N$. It is a sensible choice of canonical representative because of its simplicity and the similarity between the group operations in $G$ and $G/N$. By theorem \ref{firstiso}, $H \cong G/N$, so all homomorphic images can be considered factor groups.
+Say $\phi \colon G \rightarrow H$ is a surjective homomorphism with
+kernel $N$. The map $\nu \colon G \rightarrow G/N$ defined in the
+previous lecture is surjective and also has kernel $N$. It is a
+sensible choice of canonical representative because of its simplicity
+and the similarity between the group operations in $G$ and $G/N$.
+By theorem \ref{firstiso}, $H \cong G/N$, so all homomorphic images
+can be considered factor groups.
 
-Alternatively we can (and most books do) show directly that all surjective homomorphisms ``factor through'' the canonical $\nu$. The disadvantage of such a presentation is that it makes the use of $\nu$ seem somehow necessary or inevitable.
+Alternatively we can (and most books do) show directly that all
+surjective homomorphisms ``factor through'' the canonical $\nu$.
+The disadvantage of such a presentation is that it makes the use
+of $\nu$ seem somehow necessary or inevitable.
 
 \begin{theorem}
 \label{iso1}
 \emph{\textbf{(First Isomorphism)}}
-Let $\theta \colon G \rightarrow H$ be a surjective group homomorphism with kernel $N$.  Then $H \cong G/N$.
+Let $\theta \colon G \rightarrow H$ be a surjective group homomorphism
+with kernel $N$.  Then $H \cong G/N$.
 \end{theorem}
 \begin{proof}
-The map $\eta \colon G/N \rightarrow H$ defined by $Nx \mapsto (x)\theta$ is an isomorphism. It is well-defined because $Nx = Ny$ implies $xy^{-1} \in N = \ker{\theta}$, which implies $(x)\theta\mdot(y)\theta^{-1} = (xy^{-1})\theta = 1$; hence $(x)\theta = (y)\theta$. It is a homomorphism because $(NxNy)\eta = (Nxy)\eta = (xy)\theta = (x)\theta\mdot(y)\theta = (Nx)\eta\mdot(Ny)\eta$.
+The map $\eta \colon G/N \rightarrow H$ defined by $Nx \mapsto
+(x)\theta$ is an isomorphism. It is well-defined because $Nx = Ny$
+implies $xy^{-1} \in N = \ker{\theta}$, which implies
+$(x)\theta\mdot(y)\theta^{-1} = (xy^{-1})\theta = 1$; hence $(x)\theta
+= (y)\theta$. It is a homomorphism because $(NxNy)\eta = (Nxy)\eta
+= (xy)\theta = (x)\theta\mdot(y)\theta = (Nx)\eta\mdot(Ny)\eta$.
 
-If $Nx \in \ker{\eta}$ then $x \in \ker{\theta} = N$. So $Nx = N$, the identity of $G/N$. Hence $\eta$ is injective; it is onto almost by inspection.
+If $Nx \in \ker{\eta}$ then $x \in \ker{\theta} = N$. So $Nx = N$,
+the identity of $G/N$. Hence $\eta$ is injective; it is onto almost
+by inspection.
 \end{proof}
 
-Although Theorem \ref{firstiso} may seem more general than Theorem \ref{iso1}, it isn't really. If $\phi \colon G \rightarrow H$ and $\psi \colon G \rightarrow K$ are surjective homomorphisms both with kernel $N$, then Theorem \ref{iso1} says that $H \cong G/N \cong K$.
+Although Theorem \ref{firstiso} may seem more general than Theorem
+\ref{iso1}, it isn't really. If $\phi \colon G \rightarrow H$ and
+$\psi \colon G \rightarrow K$ are surjective homomorphisms both
+with kernel $N$, then Theorem \ref{iso1} says that $H \cong G/N
+\cong K$.
 
-Based on either theorem, to determine the homomorphic images from a group, we need only determine its normal subgroups. Distinct normal subgroups, however, do not necessarily give distinct images. For example, the order-four group of involutions from lecture one contains the two normal subgroups $A = \{1, a\}$ and $B = \{1, b\}$. By Lagrange, $|G/A| = |G/B| = 2$. There is only one group of order two, so $G/A \cong G/B$.
+Based on either theorem, to determine the homomorphic images from
+a group, we need only determine its normal subgroups. Distinct
+normal subgroups, however, do not necessarily give distinct images.
+For example, the order-four group of involutions from lecture one
+contains the two normal subgroups $A = \{1, a\}$ and $B = \{1, b\}$.
+By Lagrange, $|G/A| = |G/B| = 2$. There is only one group of order
+two, so $G/A \cong G/B$.
 
-We now look at the homomorphisms coming out of $\mathbb{Z}$. If $f$ is such a homomorphism, then its image is isomorphic to $\mathbb{Z}/\ker{f}$, by Theorem \ref{iso1}. Assume the kernel is nontrivial, and pick the smallest positive $k \in \ker{f}$. Any other $h$ in the kernel can be written as $h = kq + r$ where $0 \le r < k$. Furthermore, $r = h - kq \in \ker{f}$. By the minimality of $k$, $r = 0$. Hence $h = kq$, which shows $\ker{f} \subset k\mathbb{Z}$ since $h$ was arbitrary. By closure we get the other inclusion. (The same argument shows that actually every subgroup of $\mathbb{Z}$ is of the form $n\mathbb{Z}$ for some $n \ge 0$.) Note that the trivial kernels $\{0\}$ and $\mathbb{Z}$ are equal to $0\mathbb{Z}$ and $1\mathbb{Z}$ respectively.
+We now look at the homomorphisms coming out of $\mathbb{Z}$. If $f$
+is such a homomorphism, then its image is isomorphic to
+$\mathbb{Z}/\ker{f}$, by Theorem \ref{iso1}. Assume the kernel is
+nontrivial, and pick the smallest positive $k \in \ker{f}$. Any
+other $h$ in the kernel can be written as $h = kq + r$ where $0 \le
+r < k$. Furthermore, $r = h - kq \in \ker{f}$. By the minimality
+of $k$, $r = 0$. Hence $h = kq$, which shows $\ker{f} \subset
+k\mathbb{Z}$ since $h$ was arbitrary. By closure we get the other
+inclusion. (The same argument shows that actually every subgroup
+of $\mathbb{Z}$ is of the form $n\mathbb{Z}$ for some $n \ge 0$.)
+Note that the trivial kernels $\{0\}$ and $\mathbb{Z}$ are equal
+to $0\mathbb{Z}$ and $1\mathbb{Z}$ respectively.
 
-Assume $G$ is a group. We can use $\mathbb{Z}$ to find some of $G$'s subgroups. Fix $g \in G$ and consider the map $f \colon \mathbb{Z} \rightarrow G$ given by $i \mapsto g^{i}$. It is a homorphism by the exponent laws in $G$, which we will sketch a proof of below. Hence, $(\mathbb{Z})f \cong \mathbb{Z}/n\mathbb{Z}$. The image $(\mathbb{Z})f = \{g^i \colon i \in \mathbb{Z}\}$ is denoted ${<}g{>}$ and is called the \emph{cyclic group generated by $g$}.
+Assume $G$ is a group. We can use $\mathbb{Z}$ to find some of $G$'s
+subgroups. Fix $g \in G$ and consider the map $f \colon \mathbb{Z}
+\rightarrow G$ given by $i \mapsto g^{i}$. It is a homorphism by
+the exponent laws in $G$, which we will sketch a proof of below.
+Hence, $(\mathbb{Z})f \cong \mathbb{Z}/n\mathbb{Z}$. The image
+$(\mathbb{Z})f = \{g^i \colon i \in \mathbb{Z}\}$ is denoted ${<}g{>}$
+and is called the \emph{cyclic group generated by $g$}.
 
-To prove the exponent laws, let $x \in G$. When $i$ and $j$ are both positive, both negative, or either is zero, it's fairly straight-forward to check that $x^ix^j = x^{i+j}$. Assume one is positive and the other negative. Fix $j < 0$. We will induct on $i$. When $i = 0$, we have $x^0x^j = 1x^j = x^{0+j}$. Assume the hypothesis for $i$. Then $x^{i+1}x^j = xx^ix^j = xx^{i+j}$. If $i + j \geq 0$ then $xx^{i+j} = x^{i+j+1} = x^{(i+1)+j}$. If $i + j < 0$ then $-i -j > 0$ and $xx^{i+j} = x(x^{-1})^{-i - j} = xx^{-1}(x^{-1})^{-i -j -1} = x^{(i+1) + j}$.
+To prove the exponent laws, let $x \in G$. When $i$ and $j$ are
+both positive, both negative, or either is zero, it's fairly
+straight-forward to check that $x^ix^j = x^{i+j}$. Assume one is
+positive and the other negative. Fix $j < 0$. We will induct on
+$i$. When $i = 0$, we have $x^0x^j = 1x^j = x^{0+j}$. Assume the
+hypothesis for $i$. Then $x^{i+1}x^j = xx^ix^j = xx^{i+j}$. If $i
++ j \geq 0$ then $xx^{i+j} = x^{i+j+1} = x^{(i+1)+j}$. If $i + j <
+0$ then $-i -j > 0$ and $xx^{i+j} = x(x^{-1})^{-i - j} =
+xx^{-1}(x^{-1})^{-i -j -1} = x^{(i+1) + j}$.
 
-The usefulness of the remaining isomorphism theorems will become apparent later. For now we will just state and prove them.
+The usefulness of the remaining isomorphism theorems will become
+apparent later. For now we will just state and prove them.
 
 \begin{corollary}
 \label{iso2}
 \emph{\textbf{(Isomorphism 2)}}
-Let $H$ be a subgroup of a group $G$ and $N \lhd G$.  Then $HN/N \cong H/{H \cap N}$.
+Let $H$ be a subgroup of a group $G$ and $N \lhd G$.  Then $HN/N
+\cong H/{H \cap N}$.
 \end{corollary}
 \begin{proof}
-First, for the result to make sense, notice that $HN$ is a group and $N \lhd HN$.  Now let $\nu \colon G \rightarrow G/N$ be the canonical homomorphism. Restrict $\nu$ to $H$. This restriction maps $H$ onto $\{Nh \colon h \in H\} = HN/N$, and is still a homomorphism. Its kernel is the intersection of $N$ with the new domain, or $N \cap H$. The result follows by Theorem \ref{iso1}.
+First, for the result to make sense, notice that $HN$ is a group
+and $N \lhd HN$.  Now let $\nu \colon G \rightarrow G/N$ be the
+canonical homomorphism. Restrict $\nu$ to $H$. This restriction
+maps $H$ onto $\{Nh \colon h \in H\} = HN/N$, and is still a
+homomorphism. Its kernel is the intersection of $N$ with the new
+domain, or $N \cap H$. The result follows by Theorem \ref{iso1}.
 \end{proof}
 
 \begin{corollary}
 \label{iso3}
 \emph{\textbf{(Isomorphism 3)}}
-Let $H$ and $N$ be subgroups of a group $G$ such that $N \lhd G$, $N \subset H \subset G$, and $H/N \lhd G/N$. Then $H \lhd G$ and $\frac{G/N}{H/N} \cong G/H$.
+Let $H$ and $N$ be subgroups of a group $G$ such that $N \lhd G$,
+$N \subset H \subset G$, and $H/N \lhd G/N$. Then $H \lhd G$ and
+$\frac{G/N}{H/N} \cong G/H$.
 \end{corollary}
 \begin{proof}
-Let both $\nu \colon G \rightarrow G/N$ and $\eta \colon G/N \rightarrow \frac{G/N}{H/N}$ be canonical. The composition is a surjective homomorhism. To show the kernel is $H$ we will show $g \in H$ iff $(H/N)Ng = H/N$. Certainly $(H/N)Ng = H/N$ for $g \in H$. If $(H/N)Ng = H/N$ then $Ng = Nh$ for some $h \in H$. This implies $gh^{-1} \in N \subset H$, so $g \in Hh = H$.
+Let both $\nu \colon G \rightarrow G/N$ and $\eta \colon G/N
+\rightarrow \frac{G/N}{H/N}$ be canonical. The composition is a
+surjective homomorhism. To show the kernel is $H$ we will show $g
+\in H$ iff $(H/N)Ng = H/N$. Certainly $(H/N)Ng = H/N$ for $g \in
+H$. If $(H/N)Ng = H/N$ then $Ng = Nh$ for some $h \in H$. This
+implies $gh^{-1} \in N \subset H$, so $g \in Hh = H$.
 \end{proof}
 
 \begin{theorem}
 \emph{\textbf{(Correspondence Theorem)}}
-Suppose $\phi \colon G \rightarrow H$ is a surjective homomorphism with kernel $N$. Then there is a 1-1 correspondence between the subgroups of $G$ which contain $N$ and the subgroups of $H$.
+Suppose $\phi \colon G \rightarrow H$ is a surjective homomorphism
+with kernel $N$. Then there is a 1-1 correspondence between the
+subgroups of $G$ which contain $N$ and the subgroups of $H$.
 \end{theorem}
 \begin{proof}
-Let $\overline G$ be the subgroups of $G$ which contain $N$, and let $\overline H$ be the subgroups of $H$. Define $\overline \phi \colon \overline G \rightarrow \overline H$ by $U \mapsto (U)\phi$. The map does land in $\overline H$ because the homomorphic images of subgroups are subgroups. Define $\overline \psi \colon \overline H \rightarrow \overline G$ by $V \mapsto (V)\phi^{-1}$. This map lands in $\overline G$ because homomorphic preimages of subgroups are subgroups (which contain $N$ because subgroups of $H$ contain $1$). We will show $\overline \phi$ is a bijection.
+Let $\overline G$ be the subgroups of $G$ which contain $N$, and
+let $\overline H$ be the subgroups of $H$. Define $\overline \phi
+\colon \overline G \rightarrow \overline H$ by $U \mapsto (U)\phi$.
+The map does land in $\overline H$ because the homomorphic images
+of subgroups are subgroups. Define $\overline \psi \colon \overline
+H \rightarrow \overline G$ by $V \mapsto (V)\phi^{-1}$. This map
+lands in $\overline G$ because homomorphic preimages of subgroups
+are subgroups (which contain $N$ because subgroups of $H$ contain
+$1$). We will show $\overline \phi$ is a bijection.
 
-For any $T \in \overline H$, $T\overline\psi \overline\phi = T\phi^{-1}\phi = T$. The last equality holds since the original $\phi$ is surjective. Hence $\overline\phi$ has a left-inverse and is surjective.
+For any $T \in \overline H$, $T\overline\psi \overline\phi =
+T\phi^{-1}\phi = T$. The last equality holds since the original
+$\phi$ is surjective. Hence $\overline\phi$ has a left-inverse and
+is surjective.
 
-Pick $S \in \overline G$.  Certainly $S \subset S\phi\phi^{-1} = S\overline\phi \overline\psi$. For the other inclusion, notice $(S\phi\phi^{-1})\phi = (S\phi)\phi^{-1}\phi \subset S\phi$. Thus $(S\phi\phi^{-1})S^{-1} \subset N \subset S$ which implies $S\overline\phi \overline\psi = S\phi\phi^{-1} \subset SS = S$. Hence $\overline\phi$ has a right-inverse and is injective.
+Pick $S \in \overline G$.  Certainly $S \subset S\phi\phi^{-1} =
+S\overline\phi \overline\psi$. For the other inclusion, notice
+$(S\phi\phi^{-1})\phi = (S\phi)\phi^{-1}\phi \subset S\phi$. Thus
+$(S\phi\phi^{-1})S^{-1} \subset N \subset S$ which implies
+$S\overline\phi \overline\psi = S\phi\phi^{-1} \subset SS = S$.
+Hence $\overline\phi$ has a right-inverse and is injective.
 \end{proof}
 
 \section{Lecture 5 -- September 17}
 
 \subsection{Cyclic subgroups}
 
-Let $x$ be an element of a group $G$. The \emph{order of x}, denoted $o(x)$, is defined to be $|{<}x{>}|$. We have seen ${<}x{>} \cong \mathbb{Z}/n\mathbb{Z}$ for some $n \ge 0$. If $n = 0$ we say that $x$ has infinite order. If $n > 0$ we can count $|\mathbb{Z}/n\mathbb{Z}|$. For any $i, j \in \mathbb{Z}$,
+Let $x$ be an element of a group $G$. The \emph{order of x}, denoted
+$o(x)$, is defined to be $|{<}x{>}|$. We have seen ${<}x{>} \cong
+\mathbb{Z}/n\mathbb{Z}$ for some $n \ge 0$. If $n = 0$ we say that
+$x$ has infinite order. If $n > 0$ we can count $|\mathbb{Z}/n\mathbb{Z}|$.
+For any $i, j \in \mathbb{Z}$,
 \[
 n\mathbb{Z} + i = n\mathbb{Z} + j \Longleftrightarrow i - j \in n\mathbb{Z} 
 \Longleftrightarrow i \equiv j\ (mod\ n).
 \]
-That is, the cosets in $\mathbb{Z}/n\mathbb{Z}$ are the congruence classes mod $n$. Hence $o(x) = |\mathbb{Z}/n\mathbb{Z}| = n$. Recall that $i \mapsto x^i$ is a surjective homomorphism; as in the proof of the First Isomorphism theorem, the map $(n\mathbb{Z} + i) \mapsto x^i$ is an isomorphism. Thus
+That is, the cosets in $\mathbb{Z}/n\mathbb{Z}$ are the congruence
+classes mod $n$. Hence $o(x) = |\mathbb{Z}/n\mathbb{Z}| = n$. Recall
+that $i \mapsto x^i$ is a surjective homomorphism; as in the proof
+of the First Isomorphism theorem, the map $(n\mathbb{Z} + i) \mapsto
+x^i$ is an isomorphism. Thus
 \[
-x^i = x^j \Longleftrightarrow n\mathbb{Z} + i = n\mathbb{Z} + j \Longleftrightarrow i \equiv j\ (mod\ n).
+x^i = x^j \Longleftrightarrow n\mathbb{Z} + i = n\mathbb{Z} + j
+\Longleftrightarrow i \equiv j\ (mod\ n).
 \]
-In particular, taking $1 = x^0$, we get $x^i = 1$ iff $n$ divides $i$. So $i = n$ is the first positive power of $x$ where $x^i = 1$, and this is what some people choose as the defining property for the order of $x$.
+In particular, taking $1 = x^0$, we get $x^i = 1$ iff $n$ divides
+$i$. So $i = n$ is the first positive power of $x$ where $x^i = 1$,
+and this is what some people choose as the defining property for
+the order of $x$.
 
-Earlier we mentioned that there is only one group each of order two and three up to isomorphism. We are now in a position to strengthen this result, and do it without analyzing Cayley tables. Suppose $G$ has prime order. Pick a non-identity $x \in G$. Certainly ${<}x{>} \ne 1$, and by Lagrange $|{<}x{>}|$ divides $|G|$. The only possibility is $|{<}x{>}| = p = |G|$. But ${<}x{>} \subset G$ so $G = {<}x{>} \cong \mathbb{Z}/p\mathbb{Z}$.
+Earlier we mentioned that there is only one group each of order two
+and three up to isomorphism. We are now in a position to strengthen
+this result, and do it without analyzing Cayley tables. Suppose $G$
+has prime order. Pick a non-identity $x \in G$. Certainly ${<}x{>}
+\ne 1$, and by Lagrange $|{<}x{>}|$ divides $|G|$. The only possibility
+is $|{<}x{>}| = p = |G|$. But ${<}x{>} \subset G$ so $G = {<}x{>}
+\cong \mathbb{Z}/p\mathbb{Z}$.
 
 \subsection{Permutation representations}
 
-A homomorphism from a group $G$ to $Sym_\Omega$ for some set $\Omega$ is called a \emph{permutation representation of $G$}. We will show later that each such homomorphism is actually induced from a binary function called a \emph{group action}. It is sometimes easier to check that a binary function is an action than to find a representation directly.
+A homomorphism from a group $G$ to $Sym_\Omega$ for some set $\Omega$
+is called a \emph{permutation representation of $G$}. We will show
+later that each such homomorphism is actually induced from a binary
+function called a \emph{group action}. It is sometimes easier to
+check that a binary function is an action than to find a representation
+directly.
 
-In the proof below we use a representation where $\Omega$ is a set of cosets.
+In the proof below we use a representation where $\Omega$ is a set
+of cosets.
 
 \begin{theorem}
 \emph{\textbf{(n! Theorem)}}
-Let $H$ be a subgroup of a group $G$ and suppose $|G\colon H| = n$. Then there exists a subgroup $N \lhd G$ contained in $H$ such that $|G \colon N|$ divides $n!$.
+Let $H$ be a subgroup of a group $G$ and suppose $|G\colon H| = n$.
+Then there exists a subgroup $N \lhd G$ contained in $H$ such that
+$|G \colon N|$ divides $n!$.
 \end{theorem}
 \begin{proof}
-Fix $g \in G$. The map $Hx \mapsto (Hx)g$ is an element of $Sym_{G/H}$ because $(Hx)g = H(xg)$ and the equation $y = xg$ has exactly one solution for $g$. Define $f\colon G \rightarrow Sym_{G/H}$ by $a \mapsto (Hx \mapsto Hxa)$. Now $(Hx)(abf) = (Hx)ab = ((Hx)a)b = (Hx)(af \circ bf)$ so $abf = af \circ bf$ which makes $f$ a permutation representation. Let $N = \ker{f}$. The index $|G \colon N| = |G/N| = |(G)f|$ and $(G)f$ is a subgroup of $Sym_{G/H}$. By Lagrange, $|G \colon N|$ divides $n!$, the size of $Sym_{G/H}$.
+Fix $g \in G$. The map $Hx \mapsto (Hx)g$ is an element of $Sym_{G/H}$
+because $(Hx)g = H(xg)$ and the equation $y = xg$ has exactly one
+solution for $g$. Define $f\colon G \rightarrow Sym_{G/H}$ by $a
+\mapsto (Hx \mapsto Hxa)$. Now $(Hx)(abf) = (Hx)ab = ((Hx)a)b =
+(Hx)(af \circ bf)$ so $abf = af \circ bf$ which makes $f$ a permutation
+representation. Let $N = \ker{f}$. The index $|G \colon N| = |G/N|
+= |(G)f|$ and $(G)f$ is a subgroup of $Sym_{G/H}$. By Lagrange, $|G
+\colon N|$ divides $n!$, the size of $Sym_{G/H}$.
 
-Finally, suppose $y \in N$. Then $Hxy = Hx$ for all $x \in G$, including $x = 1$, so $y \in H$. This establishes that $N \subset H$.
+Finally, suppose $y \in N$. Then $Hxy = Hx$ for all $x \in G$,
+including $x = 1$, so $y \in H$. This establishes that $N \subset
+H$.
 \end{proof}
 
-A subgroup (in this case a kernel) is large exactly when its index is small. After all, its order and index are inversely proportional by Lagrange's Theorem. The $n!$ Theorem limits the index of a normal subgroup to be no bigger than $n!$. This isn't necessarily a very good bound, but when $n$ is small enough, $n!$ will be small enough to guarantee that $N > 1$. In other words, when $n$ is small, we can find a nontrivial normal subgroup of G.
+A subgroup (in this case a kernel) is large exactly when its index
+is small. After all, its order and index are inversely proportional
+by Lagrange's Theorem. The $n!$ Theorem limits the index of a normal
+subgroup to be no bigger than $n!$. This isn't necessarily a very
+good bound, but when $n$ is small enough, $n!$ will be small enough
+to guarantee that $N > 1$. In other words, when $n$ is small, we
+can find a nontrivial normal subgroup of G.
 
-For instance, if $H$ is half of $G$, then $n! = n = 2$, so $|G \colon N| = 1$ or $2$. The first option is out of the question because $2 = |G \colon H| \le |G \colon N|$. Hence $|G \colon N| = 2$. In this case more is true: $N = H$, so $H \lhd G$. When $|G| > 2$ then $H$ is nontrivial.
+For instance, if $H$ is half of $G$, then $n! = n = 2$, so $|G
+\colon N| = 1$ or $2$. The first option is out of the question
+because $2 = |G \colon H| \le |G \colon N|$. Hence $|G \colon N| =
+2$. In this case more is true: $N = H$, so $H \lhd G$. When $|G| >
+2$ then $H$ is nontrivial.
 
-It is worth investigating the normal subgroup constructed in the $n!$ Theorem since we will see it again. For any $g$, $Hxg = Hx$ iff $Hxgx^{-1} = H$ iff $g^{x^{-1}} \in H$ iff $g \in H^x$. Hence the kernel is $\bigcap \limits_{x \in G}H^x$ and is called the \emph{core of $H$}.
+It is worth investigating the normal subgroup constructed in the
+$n!$ Theorem since we will see it again. For any $g$, $Hxg = Hx$
+iff $Hxgx^{-1} = H$ iff $g^{x^{-1}} \in H$ iff $g \in H^x$. Hence
+the kernel is $\bigcap \limits_{x \in G}H^x$ and is called the
+\emph{core of $H$}.
 
-One more note about the theorem. Its permutation representation might seem surprising, or hard to invent or discover. In reality there is an easy way to make representations. Suppose an operation $\cdot \colon \Omega \times G \rightarrow \Omega$ satisfies the following axioms:
-\begin{enumerate}
-\item $a \cdot 1 = a$
-\item $(a \cdot x) \cdot y = a \cdot (xy)$.
-\end{enumerate}
-Such an operation is called an \emph{action} of $G$ on $\Omega$. Actions are generally easy to verify, and some common types include:
+One more note about the theorem. Its permutation representation
+might seem surprising, or hard to invent or discover. In reality
+there is an easy way to make representations. Suppose an operation
+$\cdot \colon \Omega \times G \rightarrow \Omega$ satisfies the
+following axioms: \begin{enumerate} \item $a \cdot 1 = a$ \item $(a
+\cdot x) \cdot y = a \cdot (xy)$.  \end{enumerate} Such an operation
+is called an \emph{action} of $G$ on $\Omega$. Actions are generally
+easy to verify, and some common types include:
 
 \begin{description}
 \item[Regular actions] of a group are obtained from the group's multiplication.
@@ -420,184 +740,417 @@ The last example emphasizes that $\Omega$ need not have any group structure.
 \item[Permutation actions] are prototypical and defined as the evaluation of permutations. A permutation group $G \subset Sym_\Omega$ acts on $\Omega$ by $a\cdot \sigma = (a)\sigma$.
 \end{description}
 
-Actions induce permutation representations. Say $\cdot$ is a $G$-action on $\Omega$. For each $g \in G$, define $\sigma_g \colon \Omega \rightarrow \Omega$ by $a \mapsto a\cdot g$. Notice both that $\sigma_g \circ \sigma_h = \sigma_{gh}$ by the second property of actions and that $\sigma_1 = 1_\Omega$ by the first property. Thus $\sigma_g \sigma_{g^{-1}} = \sigma_{g^{-1}}\sigma_g = \sigma_1 = 1_\Omega$, which means $\sigma_g \in Sym_\Omega$. We now have a permutation representation $g \mapsto \sigma_g$. We can now recognize that the representation in the $n!$ Theorem came from $G$'s regular action on cosets of a subgroup $H$.
+Actions induce permutation representations. Say $\cdot$ is a
+$G$-action on $\Omega$. For each $g \in G$, define $\sigma_g \colon
+\Omega \rightarrow \Omega$ by $a \mapsto a\cdot g$. Notice both
+that $\sigma_g \circ \sigma_h = \sigma_{gh}$ by the second property
+of actions and that $\sigma_1 = 1_\Omega$ by the first property.
+Thus $\sigma_g \sigma_{g^{-1}} = \sigma_{g^{-1}}\sigma_g = \sigma_1
+= 1_\Omega$, which means $\sigma_g \in Sym_\Omega$. We now have a
+permutation representation $g \mapsto \sigma_g$. We can now recognize
+that the representation in the $n!$ Theorem came from $G$'s regular
+action on cosets of a subgroup $H$.
 
-Conversely, let $\theta$ be a permutation representation on $\Omega$. Define $\cdot \colon \Omega \times G \rightarrow \Omega$ by $a \cdot g = a(g\theta)$. Now $1\theta = 1_\Omega$ so $\cdot$ satisfies action property one. Property two holds as well because $\theta$ is a homomorphism. We have made an action from a representation. The two concepts are nearly identical, but the latter avoids the fuss of a new operation.
+Conversely, let $\theta$ be a permutation representation on $\Omega$.
+Define $\cdot \colon \Omega \times G \rightarrow \Omega$ by $a \cdot
+g = a(g\theta)$. Now $1\theta = 1_\Omega$ so $\cdot$ satisfies
+action property one. Property two holds as well because $\theta$
+is a homomorphism. We have made an action from a representation.
+The two concepts are nearly identical, but the latter avoids the
+fuss of a new operation.
 
-We saw how the core of a subgroup is the kernel of a representation. Here is another kernel. Let $G$ act on itself by conjugation. Notice that $x^g = x$ iff $xg = gx$. Hence the kernel of the induced permutation representation is the set of elements which commute with every element of the group. This common subgroup is called the \emph{center} of $G$ and written $Z(G)$. The image of the representation has a name too; it's called the \emph{inner automorphisms} of $G$ and denoted $Inn(G)$. Being a homomorphic image, it is a subgroup of $Sym_G$. The first isormorphism theorem says that $Inn(G) \cong G/Z(G)$. The group $Inn(G) \subset Aut(G)$, the group of automorphisms of $G$ -- that is the isomorphisms from $G$ to itself.
+We saw how the core of a subgroup is the kernel of a representation.
+Here is another kernel. Let $G$ act on itself by conjugation. Notice
+that $x^g = x$ iff $xg = gx$. Hence the kernel of the induced
+permutation representation is the set of elements which commute
+with every element of the group. This common subgroup is called the
+\emph{center} of $G$ and written $Z(G)$. The image of the representation
+has a name too; it's called the \emph{inner automorphisms} of $G$
+and denoted $Inn(G)$. Being a homomorphic image, it is a subgroup
+of $Sym_G$. The first isormorphism theorem says that $Inn(G) \cong
+G/Z(G)$. The group $Inn(G) \subset Aut(G)$, the group of automorphisms
+of $G$ -- that is the isomorphisms from $G$ to itself.
 
-Finally, if a group $G$ acts on a group $H$ such that the induced permutation representation maps $G \rightarrow Aut(H)$ rather than just $G \rightarrow Sym_H$ then $G$ is said to \emph{act via automorphism} on $H$. We will see a special use for these kinds of actions later.
+Finally, if a group $G$ acts on a group $H$ such that the induced
+permutation representation maps $G \rightarrow Aut(H)$ rather than
+just $G \rightarrow Sym_H$ then $G$ is said to \emph{act via
+automorphism} on $H$. We will see a special use for these kinds of
+actions later.
 
 \section{Lecture 6 -- September 22}
 
 \subsection{Counting with orbits and stabilizers}
 
-A permutation group $G \subset Sym_\Omega$ provides a way to partition and count  $\Omega$. For each $a \in \Omega$ the \emph{orbit of $a$} is the set $aG \colonequals \{(a)g\colon g \in G\} \subset \Omega$. The following demonstrates that the orbits partition $\Omega$. Suppose $b \in aG$. Then $bG \subset aGG = aG$. Also $b = (a)g$ for some $g \in G$ so $a = (b)g^{-1} \in bG$ which puts $aG \subset bG$ as well. Therefore orbits are disjoint. Finally the orbits cover $\Omega$ because $a \in aG$ for any $a \in \Omega$.
+A permutation group $G \subset Sym_\Omega$ provides a way to partition
+and count  $\Omega$. For each $a \in \Omega$ the \emph{orbit of
+$a$} is the set $aG \colonequals \{(a)g\colon g \in G\} \subset
+\Omega$. The following demonstrates that the orbits partition
+$\Omega$. Suppose $b \in aG$. Then $bG \subset aGG = aG$. Also $b
+= (a)g$ for some $g \in G$ so $a = (b)g^{-1} \in bG$ which puts $aG
+\subset bG$ as well. Therefore orbits are disjoint. Finally the
+orbits cover $\Omega$ because $a \in aG$ for any $a \in \Omega$.
 
-Orbits are a generalization of cosets. Suppose $H$ is a subgroup of an arbitrary group $G$ and let $g \in G$. We will show that the coset $gH$ is an orbit. Let $H$ act regularly on $G$ (i.e. $g\cdot h \mapsto gh$). From the induced representation $\theta \colon H \rightarrow Sym_G$ we see that $gH = g(H\theta)$, an orbit.
+Orbits are a generalization of cosets. Suppose $H$ is a subgroup
+of an arbitrary group $G$ and let $g \in G$. We will show that the
+coset $gH$ is an orbit. Let $H$ act regularly on $G$ (i.e. $g\cdot
+h \mapsto gh$). From the induced representation $\theta \colon H
+\rightarrow Sym_G$ we see that $gH = g(H\theta)$, an orbit.
 
-This generalization comes at a cost: orbits needn't all be the same size. The map $G \rightarrow aG$ by $g \mapsto (a)g$ is not always injective. Suppose for instance (and this sometimes happens) that $G$ is finite and $(a)g = a$ for some $g \ne 1$. Then $(a)g = (a)1$ so the map is not injective. It is surjective, though, so $|G| > |aG|$. The inequality happened because the \emph{stabilizer of $a$} -- that is, the elements of $G$ which fix $a$ -- contained a nonidentity element. The stabilizer is denoted $G_a$ can can be used to modify our map and obtain a bijection.
+This generalization comes at a cost: orbits needn't all be the same
+size. The map $G \rightarrow aG$ by $g \mapsto (a)g$ is not always
+injective. Suppose for instance (and this sometimes happens) that
+$G$ is finite and $(a)g = a$ for some $g \ne 1$. Then $(a)g = (a)1$
+so the map is not injective. It is surjective, though, so $|G| >
+|aG|$. The inequality happened because the \emph{stabilizer of $a$}
+-- that is, the elements of $G$ which fix $a$ -- contained a
+nonidentity element. The stabilizer is denoted $G_a$ can can be
+used to modify our map and obtain a bijection.
 
-The following theorem requires that $G_a$ is a subgroup of $G$. Well, $G_a$ certainly contains 1 and if $x$, $y \in G_a$ then $(a)xy^{-1} = ay^{-1} = ayy^{-1} = a$ so $xy^{-1} \in G_a$.
+The following theorem requires that $G_a$ is a subgroup of $G$.
+Well, $G_a$ certainly contains 1 and if $x$, $y \in G_a$ then
+$(a)xy^{-1} = ay^{-1} = ayy^{-1} = a$ so $xy^{-1} \in G_a$.
 
 \begin{theorem}
 \emph{\textbf{(Orbit-stabilizer)}}
-Suppose $G$ is a subgroup of $Sym_\Omega$. Then $|aG| = |G \colon G_a|$ for any $a \in \Omega$.
+Suppose $G$ is a subgroup of $Sym_\Omega$. Then $|aG| = |G \colon
+G_a|$ for any $a \in \Omega$.
 \end{theorem}
 \begin{proof}
-Define a map $aG \rightarrow G/G_a$ by $(a)g \mapsto gG_a$. It is well-defined and injective because $(a)g = (a)k$ iff $gk^{-1} \in G_a$ iff $gG_a = kG_a$. It is obviously surjective.
+Define a map $aG \rightarrow G/G_a$ by $(a)g \mapsto gG_a$. It is
+well-defined and injective because $(a)g = (a)k$ iff $gk^{-1} \in
+G_a$ iff $gG_a = kG_a$. It is obviously surjective.
 \end{proof}
 
-We have related the size of $\Omega$ to that of $G$. By the orbit-stabilizer theorem and the fact that orbits partition $\Omega$ we have that
-\[|\Omega| = \sum_{a \in \Omega} |aG| = \sum_{a \in \Omega} |G \colon G_a|\]
-where the summation runs over a transversal of the orbits. This equation is sometimes called the \emph{Fundamental Counting Principle} (FCP).
+We have related the size of $\Omega$ to that of $G$. By the
+orbit-stabilizer theorem and the fact that orbits partition $\Omega$
+we have that \[|\Omega| = \sum_{a \in \Omega} |aG| = \sum_{a \in
+\Omega} |G \colon G_a|\] where the summation runs over a transversal
+of the orbits. This equation is sometimes called the \emph{Fundamental
+Counting Principle} (FCP).
 
-Thus far we have defined stabilizers only in permutation groups, but we can define them using nothing more than a permutation representation. Let G be any group and $\theta \colon G \rightarrow H \subset Sym_\Omega$ be a homomorphism. For any $a \in \Omega$, define $G_a = H_a\theta^{-1}$. The stabilizer $G_a$ is a subgroup, being the homomorphic  preimage of a subgroup,
+Thus far we have defined stabilizers only in permutation groups,
+but we can define them using nothing more than a permutation
+representation. Let G be any group and $\theta \colon G \rightarrow
+H \subset Sym_\Omega$ be a homomorphism. For any $a \in \Omega$,
+define $G_a = H_a\theta^{-1}$. The stabilizer $G_a$ is a subgroup,
+being the homomorphic  preimage of a subgroup,
 
 The FCP remains true under this broader definition of stabilizers. To see this, let $N = \ker \theta$. Then $H \cong G/N$, so $H/H_a \cong (G/N)/(G_a/N)$. However, $(G/N)/(G_a/N) \cong G/G_a$ so $|G \colon G_a| = |H \colon H_a|$.
 
-The earlier definition of the core of a subgroup as an intersection might have seemed bulky. We are now in a position to see that it was perfectly ordinary: any kernel of a permutation representation is an intersection. The kernel is certainly contained in any stabilizer because the latter is a homomorphic preimage. Hence the kernel is contained in the intersection of all stabilizers. Conversely, if an element of $G$ is in every stabilizer, then it is mapped to a permutation which fixes every element of $\Omega$ -- that is, to the element $1$.
+The earlier definition of the core of a subgroup as an intersection
+might have seemed bulky. We are now in a position to see that it
+was perfectly ordinary: any kernel of a permutation representation
+is an intersection. The kernel is certainly contained in any
+stabilizer because the latter is a homomorphic preimage. Hence the
+kernel is contained in the intersection of all stabilizers. Conversely,
+if an element of $G$ is in every stabilizer, then it is mapped to
+a permutation which fixes every element of $\Omega$ -- that is, to
+the element $1$.
 
-As an application, let $G$ act on itself by conjugation. This induces a representation to $Inn(G)$. For $g \in G$, the stabilizer $G_g$ is in this instance written $C(g)$ and is the set of those elements of $G$ which commute with $g$. The FCP becomes
+As an application, let $G$ act on itself by conjugation. This induces
+a representation to $Inn(G)$. For $g \in G$, the stabilizer $G_g$
+is in this instance written $C(g)$ and is the set of those elements
+of $G$ which commute with $g$. The FCP becomes
 \[|G| = \sum_{g \in G} |G \colon C(g)|\]
-Notice that $C(z)$ is all of $G$ for any central $z$, making $|G \colon C(z)| = 1$. We may thus break up the sum into the so-called \emph{class equation}:
+Notice that $C(z)$ is all of $G$ for any central $z$, making $|G
+\colon C(z)| = 1$. We may thus break up the sum into the so-called
+\emph{class equation}:
 \begin{alignat*}{3}
 |G| \quad &=& \quad \sum_{z \in Z(G)} 1 \quad &+& \quad \sum_{g \not \in Z(G)} |G \colon C(g)| \\
     &=& \quad |Z(G)|              \quad &+& \quad \sum_{g \not \in Z(G)} |G \colon C(g)|
 \end{alignat*}
 
-Now suppose $G$ is a \emph{\emph{p}-group}, that is $|G| = p^\alpha$ for a prime $p$. Then $p$ divides both $|G|$ and each $|G \colon C(g)|$, so $p$ divides $|Z(G)| = |G| - \sum |G \colon C(g)|$. Finally, $Z(G)$ is not empty (it contains the identity) so it contains at least $p$ elements. The class equation shows that every $p$-group has a nontrivial center.
+Now suppose $G$ is a \emph{\emph{p}-group}, that is $|G| = p^\alpha$
+for a prime $p$. Then $p$ divides both $|G|$ and each $|G \colon
+C(g)|$, so $p$ divides $|Z(G)| = |G| - \sum |G \colon C(g)|$.
+Finally, $Z(G)$ is not empty (it contains the identity) so it
+contains at least $p$ elements. The class equation shows that every
+$p$-group has a nontrivial center.
 
-\textit{Aside.} Some books define a $p$-group to be a group $G$ in which the order of every element is a power of a prime $p$ regardless of whether the group is finite or not. In the finite case, as above, we would still have that $p$ divides $|G|$ from Lagrange's Theorem; however, we cannot guarantee that $p$ divides each $|G \colon C(g)|$. We would have to wait until we prove that a group whose elements have prime-power order is equivalent to the group having prime-power order. This is a consequence of Cauchy's Theorem taken up in lecture 8.
+\textit{Aside.} Some books define a $p$-group to be a group $G$ in
+which the order of every element is a power of a prime $p$ regardless
+of whether the group is finite or not. In the finite case, as above,
+we would still have that $p$ divides $|G|$ from Lagrange's Theorem;
+however, we cannot guarantee that $p$ divides each $|G \colon C(g)|$.
+We would have to wait until we prove that a group whose elements
+have prime-power order is equivalent to the group having prime-power
+order. This is a consequence of Cauchy's Theorem taken up in lecture
+8.
 
-When $\alpha = 2$ more is true: the center is of order $p$ or $p^2$. Suppose for contradiction that its order is $p$ and pick $g \in G \setminus Z(G)$. Then $Z(G) \subsetneq C(g)$ so $C(g) = G$. But then all elements of $G$ commute with $g$, which puts $g \in Z(G)$, a contradiction. Hence any group of order $p^2$ is abelian.
+When $\alpha = 2$ more is true: the center is of order $p$ or $p^2$.
+Suppose for contradiction that its order is $p$ and pick $g \in G
+\setminus Z(G)$. Then $Z(G) \subsetneq C(g)$ so $C(g) = G$. But
+then all elements of $G$ commute with $g$, which puts $g \in Z(G)$,
+a contradiction. Hence any group of order $p^2$ is abelian.
 
-Certain stabilizers are ubiquitous subgroups. We saw that the stabilizers of a group's conjugation on itself are centralizers. If we let $G$ act by conjugation on its subgroups then $G_H = \{g\colon H^g = H\}$. That stabilizer is called the \emph{normalizer of H in G}, and written $N_G(H)$. Certainly $H \subset N_G(H)$; in fact $H \lhd N_G(H)$.
+Certain stabilizers are ubiquitous subgroups. We saw that the
+stabilizers of a group's conjugation on itself are centralizers.
+If we let $G$ act by conjugation on its subgroups then $G_H =
+\{g\colon H^g = H\}$. That stabilizer is called the \emph{normalizer
+of H in G}, and written $N_G(H)$. Certainly $H \subset N_G(H)$; in
+fact $H \lhd N_G(H)$.
 
 \section{Lecture 7 -- September 24}
 
 \subsection{Cycle structure}
 
-Suppose $|\Omega| < \infty$ and $f \in Sym_\Omega$. The permutation $f$ is a \emph{cycle} if the permutation action of ${<}f{>}$ on $\Omega$ induces exactly one nontrivial orbit. When $f$ is a cycle we refer to the nontrivial orbit as its \emph{primary orbit}. The \emph{length} of a cycle is the size of its primary orbit. Finally, two cycles are \emph{disjoint} when their primary orbits are.
+Suppose $|\Omega| < \infty$ and $f \in Sym_\Omega$. The permutation
+$f$ is a \emph{cycle} if the permutation action of ${<}f{>}$ on
+$\Omega$ induces exactly one nontrivial orbit. When $f$ is a cycle
+we refer to the nontrivial orbit as its \emph{primary orbit}. The
+\emph{length} of a cycle is the size of its primary orbit. Finally,
+two cycles are \emph{disjoint} when their primary orbits are.
 
 \begin{lemma}
-Every permutation in $Sym_\Omega$ is a composition of disjoint cycles when $\Omega$ is finite.
+Every permutation in $Sym_\Omega$ is a composition of disjoint
+cycles when $\Omega$ is finite.
 \end{lemma}
 \begin{proof}
-Suppose $f \in Sym_\Omega$ and enumerate its orbits by $O_1, O_2, \ldots, O_r$ for some $r \leq |\Omega|$. For each $0 < i \leq r$ define $c_i \colon \Omega \rightarrow \Omega$ by
+Suppose $f \in Sym_\Omega$ and enumerate its orbits by $O_1, O_2,
+\ldots, O_r$ for some $r \leq |\Omega|$. For each $0 < i \leq r$
+define $c_i \colon \Omega \rightarrow \Omega$ by
 \[(a)c_i = \begin{cases}
 (a)f & a \in O_i \\
 a & a \not \in O_i
 \end{cases}
 \]
-We will show that each $c_i$ is a cycle, and that $f = c_1 \circ c_2 \circ \cdots \circ c_r$. First, $c_i$ is bijective on $O_i$ since $f$ is, and bijective on the rest because it is the identity map on the rest. Also, one of its orbits is $O_i$, and the rest are trivial, so it is a cycle with primary orbit $O_i$. Now fix $x \in Sym_\Omega$. There exists a $j$ such that $x \in O_j$ since the orbits cover $\Omega$. Hence $(x)(c_1 \circ c_2 \circ \cdots \circ c_j \circ \cdots \circ c_r) = (x)c_j = (x)f$, proving $f$ is a composition of disjoint cycles.
+We will show that each $c_i$ is a cycle, and that $f = c_1 \circ
+c_2 \circ \cdots \circ c_r$. First, $c_i$ is bijective on $O_i$
+since $f$ is, and bijective on the rest because it is the identity
+map on the rest. Also, one of its orbits is $O_i$, and the rest are
+trivial, so it is a cycle with primary orbit $O_i$. Now fix $x \in
+Sym_\Omega$. There exists a $j$ such that $x \in O_j$ since the
+orbits cover $\Omega$. Hence $(x)(c_1 \circ c_2 \circ \cdots \circ
+c_j \circ \cdots \circ c_r) = (x)c_j = (x)f$, proving $f$ is a
+composition of disjoint cycles.
 \end{proof}
 
 A \emph{transposition} is a cycle whose primary orbit has size two.
 
 \subsection{Alternating groups}
 
-Let $\Omega$ be a set with $|\Omega|>1$. Then $Alt_\Omega \lhd Sym_\Omega$.
+Let $\Omega$ be a set with $|\Omega|>1$. Then $Alt_\Omega \lhd
+Sym_\Omega$.
 
 \section{Lecture 8 -- September 29}
 
 \subsection{A partial converse of Lagrange's theorem}
 
-As we saw, Lagrange's theorem says the order of every group element divides the order of the group. The converse is not true, however: given an arbitrary divisor $d$ of a group's order, there is not necessarily an element having order $d$. For instance $Alt_5$ has order 60 but contains no element of order 30. Such an element would generate a cyclic subgroup with index 2, which would make the subgroup normal. However we will see later that $Alt_5$ has no nontrivial normal subgroups.
+As we saw, Lagrange's theorem says the order of every group element
+divides the order of the group. The converse is not true, however:
+given an arbitrary divisor $d$ of a group's order, there is not
+necessarily an element having order $d$. For instance $Alt_5$ has
+order 60 but contains no element of order 30. Such an element would
+generate a cyclic subgroup with index 2, which would make the
+subgroup normal. However we will see later that $Alt_5$ has no
+nontrivial normal subgroups.
 
-Although there is no hope for a full converse, a curious fact emerges for prime divisors of a group's order. The following proof due to James H. McKay \cite{McKay59} uses group actions and a surprising set. To get a sense of motivation we include McKay's preamble: \begin{quote}
-Since $ab=1$ implies $ba=b(ab)b^{-1}=1$, the identities are symmetrically placed in the group table of a finite group. Each row of a group table contains exactly one identity and thus if the group has even order, there are an even number of identities on the main diagonal. Therefore, $x^2=1$ has an even number of solutions. \end{quote}
+Although there is no hope for a full converse, a curious fact emerges
+for prime divisors of a group's order. The following proof due to
+James H. McKay \cite{McKay59} uses group actions and a surprising
+set. To get a sense of motivation we include McKay's preamble:
+\begin{quote}
+Since $ab=1$ implies $ba=b(ab)b^{-1}=1$, the identities are
+symmetrically placed in the group table of a finite group. Each row
+of a group table contains exactly one identity and thus if the group
+has even order, there are an even number of identities on the main
+diagonal. Therefore, $x^2=1$ has an even number of solutions.
+\end{quote}
 
 McKay generalized this discovery to obtain the proof.
 
 \begin{theorem}
 \emph{\textbf{(Cauchy)}}
-Let $G$ be a finite group. If $p$ is a prime such that $p$ divides $|G|$, then $G$ has an element of order $p$.
+Let $G$ be a finite group. If $p$ is a prime such that $p$ divides
+$|G|$, then $G$ has an element of order $p$.
 \end{theorem}
 \begin{proof}
-Consider the set $S$ of $p$-tuples of $G$ whose components multiply to $1$,
-\[S = \left\{ (g_1, \dots, g_p) \in G^p\colon g_1 g_2\cdots g_p = 1 \right\}.\]
-We need to find an element $g \in G$ with order $p$, that is, a non-identity $g$ such that $(g, g, \ldots, g) \in S$.
+Consider the set $S$ of $p$-tuples of $G$ whose components multiply
+to $1$, \[S = \left\{ (g_1, \dots, g_p) \in G^p\colon g_1 g_2\cdots
+g_p = 1 \right\}.\] We need to find an element $g \in G$ with order
+$p$, that is, a non-identity $g$ such that $(g, g, \ldots, g) \in
+S$.
 
-Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1, \dots, g_p) \mapsto (g_p, g_1, \dots, g_{p-1})$. Notice $\sigma$ has order $p$. Let the group ${<}\sigma{>}$ act naturally on S. By the orbit-stabilizer theorem, all orbits of this action have size 1 or $p$. Let $a$ and $b$ be the numbers of orbits of sizes 1 and $p$  respectively. Now $|S| = a + pb$, and certainly $a \geq 1$ since $\sigma$ fixes $(1, \ldots, 1)$.
+Define the permutation $\sigma\colon S \rightarrow S$ by $(g_1,
+\dots, g_p) \mapsto (g_p, g_1, \dots, g_{p-1})$. Notice $\sigma$
+has order $p$. Let the group ${<}\sigma{>}$ act naturally on S. By
+the orbit-stabilizer theorem, all orbits of this action have size
+1 or $p$. Let $a$ and $b$ be the numbers of orbits of sizes 1 and
+$p$  respectively. Now $|S| = a + pb$, and certainly $a \geq 1$
+since $\sigma$ fixes $(1, \ldots, 1)$.
 
-When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides $|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides $a$, which forces $a > 1$. Thus $\sigma$  fixes an element of $S$ other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$ must be equal, and their common value is precisely the element we are seeking.
+When choosing a tuple $(g_1, \ldots, g_p) \in S$, we are free to
+pick any $g_1, \ldots, g_{p-1}$ so long as $g_p = (g_1 \cdots
+g_{p-1})^{-1}$. Thus $|S| = |G|^{p-1}$, and in particular $p$ divides
+$|S|$. Revisiting our orbit counting, $a = |S| - pb$ so $p$ divides
+$a$, which forces $a > 1$. Thus $\sigma$  fixes an element of $S$
+other than $(1, \ldots, 1)$. Call it $(g_1, \ldots, g_p)$. All $g_i$
+must be equal, and their common value is precisely the element we
+are seeking.
 \end{proof}
 
-In lecture 6 we noted that some books define a $p$-group to be a group whose elements have prime-power order. When the group is finite we can now prove that this is equivalent to the group having prime-power order. Recall that in lecture 6 we applied the class equation to a group of prime-power order to show that it had a nontrivial center.
+In lecture 6 we noted that some books define a $p$-group to be a
+group whose elements have prime-power order. When the group is
+finite we can now prove that this is equivalent to the group having
+prime-power order. Recall that in lecture 6 we applied the class
+equation to a group of prime-power order to show that it had a
+nontrivial center.
 
 \begin{corollary}
-Let $G$ be a finite group. The order of $G$ is a power of a prime $p$ iff the order of every element of $G$ is a power of $p$.
+Let $G$ be a finite group. The order of $G$ is a power of a prime
+$p$ iff the order of every element of $G$ is a power of $p$.
 \end{corollary}
 \begin{proof}
-If $|G|=p^a$ for some $a \in \mathbb{N}$, then the order of every element is a power of $p$ by Lagrange's Theorem. Suppose next that the order of every element is a power of $p$. If a prime $q \neq p$ divides $|G|$, then Cauchy's Theorem gives us an element with order $q$, a contradiction.
+If $|G|=p^a$ for some $a \in \mathbb{N}$, then the order of every
+element is a power of $p$ by Lagrange's Theorem. Suppose next that
+the order of every element is a power of $p$. If a prime $q \neq
+p$ divides $|G|$, then Cauchy's Theorem gives us an element with
+order $q$, a contradiction.
 \end{proof}
 
-Cauchy's theorem gives subgroups of order $p$, but larger subgroups can be proven to exist. Let $G$ be a finite group of order $p^ab$ where $p$ is a prime which does not divide $b$. Any subgroup in $G$ of size $p^a$ is called a \emph{Sylow $p$-subgroup} of $G$.
+Cauchy's theorem gives subgroups of order $p$, but larger subgroups
+can be proven to exist. Let $G$ be a finite group of order $p^ab$
+where $p$ is a prime which does not divide $b$. Any subgroup in $G$
+of size $p^a$ is called a \emph{Sylow $p$-subgroup} of $G$.
 
 \begin{theorem}
 \emph{\textbf{(Sylow-E)}}
-Let $G$ be a finite group. There exists a Sylow $p$-subgroup of $G$ for any prime $p$.
+Let $G$ be a finite group. There exists a Sylow $p$-subgroup of $G$
+for any prime $p$.
 \end{theorem}
 \begin{proof}
-Fix a prime $p$. We will induct on $|G|$. Write $|G| = p^ab$ for suitable $a$ and $b$ where $p \nmid b$. If $a = 0$ then the trivial subgroup $\{1\}$ is a Sylow $p$-subgroup, so assume $a \neq 0$.
+Fix a prime $p$. We will induct on $|G|$. Write $|G| = p^ab$ for
+suitable $a$ and $b$ where $p \nmid b$. If $a = 0$ then the trivial
+subgroup $\{1\}$ is a Sylow $p$-subgroup, so assume $a \neq 0$.
 
-We'll consider cases. First assume there is a proper subgroup $H \subset G$ with $p \nmid |G : H|$. Since $p^a \mid |G| = |H||G : H|$ we have that $p^a \mid |H|$. By induction $H$ contains a Sylow subgroup, and in this case it is of size $p^a$. This is of course a Sylow $p$-subgroup of $G$.
+We'll consider cases. First assume there is a proper subgroup $H
+\subset G$ with $p \nmid |G : H|$. Since $p^a \mid |G| = |H||G :
+H|$ we have that $p^a \mid |H|$. By induction $H$ contains a Sylow
+subgroup, and in this case it is of size $p^a$. This is of course
+a Sylow $p$-subgroup of $G$.
 
-The remaining option is that $p \mid |G : H|$ for every proper $H \subset G$. By the class equation,
+The remaining option is that $p \mid |G : H|$ for every proper $H
+\subset G$. By the class equation,
 \[|G| = |Z(G)| + \sum_{g \not \in Z(G)} |G \colon C(g)|\]
-and $p$ divides $|G|$ and each $|G \colon C(g)|$. Hence $p$ divides $|Z(G)|$. By Cauchy's theorem, $Z(G)$ contains an element of order $p$. This element generates a cyclic subgroup of $Z(G)$, call it $J$. Being central, $J$ is normal, and $|G/J| = p^{a-1}b$ is smaller than $G$. The induction hypothesis gives us a Sylow $p$-subgroup $P/J$ of $G/J$, with $|P/J| = p^{a-1}$. Thus $P \subset G$ has order $p^a$ making it a Sylow $p$-subgroup of $G$.
+and $p$ divides $|G|$ and each $|G \colon C(g)|$. Hence $p$ divides
+$|Z(G)|$. By Cauchy's theorem, $Z(G)$ contains an element of order
+$p$. This element generates a cyclic subgroup of $Z(G)$, call it
+$J$. Being central, $J$ is normal, and $|G/J| = p^{a-1}b$ is smaller
+than $G$. The induction hypothesis gives us a Sylow $p$-subgroup
+$P/J$ of $G/J$, with $|P/J| = p^{a-1}$. Thus $P \subset G$ has order
+$p^a$ making it a Sylow $p$-subgroup of $G$.
 \end{proof}
 
-We can reverse this procedure by using an exotic action to prove the Sylow-E theorem independently of Cauchy's theorem, and to obtain the latter as a corollary. The following proof is due to Wielandt.
+We can reverse this procedure by using an exotic action to prove
+the Sylow-E theorem independently of Cauchy's theorem, and to obtain
+the latter as a corollary. The following proof is due to Wielandt.
 
 \begin{theorem}
 \emph{\textbf{(Sylow-E using actions)}}
 \end{theorem}
 \begin{proof}
-Once again, write $|G| = p^ab$ where $p \nmid b$. Let $\Omega$ be the subsets of $G$ which have order $p^a$. Let $G$ act on $\Omega$ by right multiplication. There is hope for this to be a valid action because for any subset $X \subset G$ and element $g \in G$, the cardinality $|X| = |Xg|$ so $Xg \in \Omega$. The other action properties are easy to check. Now by definition \[|\Omega| = {p^ab \choose p^a}.\] It is also a fact that \[{p^ab \choose p^a} \equiv b\] but it takes us too far afield to prove this number theoretic lemma here. What matters is that $p \nmid |\Omega|$. Hence at least one of this action's orbits, say one containing a subset $X$, has size not divisible by $p$. By the orbit-stabilizer theorem, the index of the stabilizer of $X$, call it $P$, is thus not divisible by $p$. Lagrange's theorem forces $p^a \mid |P|$ since $p \nmid |G \colon P|$, and now in particular $p^a \leq |P|$.
+Once again, write $|G| = p^ab$ where $p \nmid b$. Let $\Omega$ be
+the subsets of $G$ which have order $p^a$. Let $G$ act on $\Omega$
+by right multiplication. There is hope for this to be a valid action
+because for any subset $X \subset G$ and element $g \in G$, the
+cardinality $|X| = |Xg|$ so $Xg \in \Omega$. The other action
+properties are easy to check. Now by definition \[|\Omega| = {p^ab
+\choose p^a}.\] It is also a fact that \[{p^ab \choose p^a} \equiv
+b\] but it takes us too far afield to prove this number theoretic
+lemma here. What matters is that $p \nmid |\Omega|$. Hence at least
+one of this action's orbits, say one containing a subset $X$, has
+size not divisible by $p$. By the orbit-stabilizer theorem, the
+index of the stabilizer of $X$, call it $P$, is thus not divisible
+by $p$. Lagrange's theorem forces $p^a \mid |P|$ since $p \nmid |G
+\colon P|$, and now in particular $p^a \leq |P|$.
 
-Pick $x \in X$. The coset $xP \subset XP \subset X$ where the last inclusion holds because $P$ stabilizes $X$. But $|P| = |xP|$ so $|P| \leq |X| = p^a$. Being a stabilizer, $P \subset G$ is a subgroup, and the two inequalities establish that $|P| = p^a$.
+Pick $x \in X$. The coset $xP \subset XP \subset X$ where the last
+inclusion holds because $P$ stabilizes $X$. But $|P| = |xP|$ so
+$|P| \leq |X| = p^a$. Being a stabilizer, $P \subset G$ is a subgroup,
+and the two inequalities establish that $|P| = p^a$.
 \end{proof}
 
-Compare the action-based proof of Sylow-E with the action-based proof of Cauchy. They both act creatively on non-groups, and they both use primes and divisibility to reveal large stabilizers. In one case the stabilizer is a Sylow subgroup, and in the other it is the entire group.
+Compare the action-based proof of Sylow-E with the action-based
+proof of Cauchy. They both act creatively on non-groups, and they
+both use primes and divisibility to reveal large stabilizers. In
+one case the stabilizer is a Sylow subgroup, and in the other it
+is the entire group.
 
-Alternately we can prove Cauchy's theorem using induction. This proof resembles the induction based proof of Sylow-E in that it involves the class equation and proving a prime divides the order of the center. So it seems Cauchy's and Sylow's theorems are closely related whichever way we tackle them.
+Alternately we can prove Cauchy's theorem using induction. This
+proof resembles the induction based proof of Sylow-E in that it
+involves the class equation and proving a prime divides the order
+of the center. So it seems Cauchy's and Sylow's theorems are closely
+related whichever way we tackle them.
 
 \section{Lecture 9 -- October 1}
 
 \subsection{Maximal $p$-subgroups}
 
-Let $G$ be a group and suppose a prime $p$ does not divide $|G|$. Then the trivial subgroup 1 has order $p^0$ and is the only $p$-subgroup of $G$ -- hence the maximal such. However, if $p$ does divide $|G|$ then Cauchy's theorem gives us a subgroup of order $p$ which contains 1, so 1 is no longer maximal. We would like necessary and sufficient conditions for a $p$-subgroup to be maximal.
+Let $G$ be a group and suppose a prime $p$ does not divide $|G|$.
+Then the trivial subgroup 1 has order $p^0$ and is the only
+$p$-subgroup of $G$ -- hence the maximal such. However, if $p$ does
+divide $|G|$ then Cauchy's theorem gives us a subgroup of order $p$
+which contains 1, so 1 is no longer maximal. We would like necessary
+and sufficient conditions for a $p$-subgroup to be maximal.
 
-Write $|G| = p^\alpha b$ where $p \nmid b$. A Sylow $p$-subgroup of $G$ has order $p^\alpha$, and Lagrange's theorem prevents any bigger $p$-subgroup. Sylow subgroups are thus maximal, and we will show conversely that any maximal $p$-subgroup is Sylow.
+Write $|G| = p^\alpha b$ where $p \nmid b$. A Sylow $p$-subgroup
+of $G$ has order $p^\alpha$, and Lagrange's theorem prevents any
+bigger $p$-subgroup. Sylow subgroups are thus maximal, and we will
+show conversely that any maximal $p$-subgroup is Sylow.
 
 \begin{lemma}
 \label{|AB|}
-Let $A$ and $B$ be finite subgroups of a group $G$. Then $|AB|= \frac{|A||B|}{|A \cap B|}$.
+Let $A$ and $B$ be finite subgroups of a group $G$. Then $|AB|=
+\frac{|A||B|}{|A \cap B|}$.
 \end{lemma}
 \begin{proof}
-Define $f \colon A \times B \rightarrow AB$ by $(a,b) \mapsto ab$. Since $f$ is surjective the size of $AB$ is the number of inverse images. Since the inverse images of $AB$ partition $A \times B$ our strategy is to show that all the inverse images have the same size, namely, $|A \cap B|$. For then the number of inverse images will be $\frac{|A \times B|}{|A \cap B|}=\frac{|A||B|}{|A \cap B|}$. We accomplish this by showing that for an arbitrary $ab \in AB$ the map $\theta \colon f^{-1}(ab) \rightarrow A \cap B$ defined by $(x,y) \mapsto a^{-1}x$ is a bijection.
+Define $f \colon A \times B \rightarrow AB$ by $(a,b) \mapsto ab$.
+Since $f$ is surjective the size of $AB$ is the number of inverse
+images. Since the inverse images of $AB$ partition $A \times B$ our
+strategy is to show that all the inverse images have the same size,
+namely, $|A \cap B|$. For then the number of inverse images will
+be $\frac{|A \times B|}{|A \cap B|}=\frac{|A||B|}{|A \cap B|}$. We
+accomplish this by showing that for an arbitrary $ab \in AB$ the
+map $\theta \colon f^{-1}(ab) \rightarrow A \cap B$ defined by
+$(x,y) \mapsto a^{-1}x$ is a bijection.
 
-The inverse image of $ab \in AB$ is $(ab)f^{-1}=\left\{(x,y) \in A \times B \colon xy=ab\right\}=\left\{(x,y) \in A \times B \colon a^{-1}x=by^{-1}\right\}$. Hence, $((x,y))\theta \in A \cap B$. If $(x,y)=(r,s) \in (ab)f^{-1}$, then since $x=r$ we have $((x,y))\theta=a^{-1}x=a^{-1}r=((r,s))\theta$. Hence, $\theta$ is well-defined.
+The inverse image of $ab \in AB$ is $(ab)f^{-1}=\left\{(x,y) \in A
+\times B \colon xy=ab\right\}=\left\{(x,y) \in A \times B \colon
+a^{-1}x=by^{-1}\right\}$. Hence, $((x,y))\theta \in A \cap B$. If
+$(x,y)=(r,s) \in (ab)f^{-1}$, then since $x=r$ we have
+$((x,y))\theta=a^{-1}x=a^{-1}r=((r,s))\theta$. Hence, $\theta$ is
+well-defined.
 
-To show that $\theta$ is 1-1 let $(x,y),(r,s) \in (ab)f^{-1}$ and suppose $((x,y))\theta=((r,s))\theta$. Then $by^{-1}=a^{-1}x=a^{-1}r=bs^{-1}$. Hence, $x=r$ and $y=s$. Hence, $\theta$ is 1-1.
+To show that $\theta$ is 1-1 let $(x,y),(r,s) \in (ab)f^{-1}$ and
+suppose $((x,y))\theta=((r,s))\theta$. Then
+$by^{-1}=a^{-1}x=a^{-1}r=bs^{-1}$. Hence, $x=r$ and $y=s$. Hence,
+$\theta$ is 1-1.
 
-Finally, let $x \in A \cap B$.  Then $((ax,x^{-1}b))f=(ax)(x^{-1}b)=ab$ and so $(ax,x^{-1}b) \in (ab)f^{-1}$. Further, $((ax,x^{-1}b))\theta=a^{-1}(ax)=x$ and so $\theta$ is onto.
+Finally, let $x \in A \cap B$.  Then $((ax,x^{-1}b))f=(ax)(x^{-1}b)=ab$
+and so $(ax,x^{-1}b) \in (ab)f^{-1}$. Further,
+$((ax,x^{-1}b))\theta=a^{-1}(ax)=x$ and so $\theta$ is onto.
 \end{proof}
 
 \begin{lemma}
-Let $P$ be a Sylow $p$-subgroup of a group $G$ and $D$ a $p$-subgroup of $G$ such that $D \subset N_G(P)$. Then $D \subset P$.
+Let $P$ be a Sylow $p$-subgroup of a group $G$ and $D$ a $p$-subgroup
+of $G$ such that $D \subset N_G(P)$. Then $D \subset P$.
 \end{lemma}
 
 \begin{proof}
-By Lemma \ref{|AB|} we have $|PD|=\frac{|P||D|}{|P \cap D|}$ which implies $|PD|$ is a power of $p$ and $|PD| \geq |P|$. Since $D$ normalizes $P$ we get that $PD$ is a subgroup of $G$. As a Sylow $p$-subgroup $|P|$ is the largest power of $p$ a subgroup of $G$ can have; hence, $|PD|=|P|$. Thus, $PD=P$ and so $D \subset P$.
+By Lemma \ref{|AB|} we have $|PD|=\frac{|P||D|}{|P \cap D|}$ which
+implies $|PD|$ is a power of $p$ and $|PD| \geq |P|$. Since $D$
+normalizes $P$ we get that $PD$ is a subgroup of $G$. As a Sylow
+$p$-subgroup $|P|$ is the largest power of $p$ a subgroup of $G$
+can have; hence, $|PD|=|P|$. Thus, $PD=P$ and so $D \subset P$.
 \end{proof}
 
-We can also say that $D$ always normalizes a conjugate of a Sylow, in particular.......  We have just proved that D is contained in a conjugate of a Sylow.....
+We can also say that $D$ always normalizes a conjugate of a Sylow,
+in particular.......  We have just proved that D is contained in a
+conjugate of a Sylow.....
 
 \begin{corollary}
-Let $P$ be a Sylow $p$-subgroup of a group $G$ and $D$ a $p$-subgroup of $G$. Then $D \subset P^g$ for some $g \in G$.
+Let $P$ be a Sylow $p$-subgroup of a group $G$ and $D$ a $p$-subgroup
+of $G$. Then $D \subset P^g$ for some $g \in G$.
 \end{corollary}
 
 \begin{theorem}
@@ -606,36 +1159,112 @@ All Sylow $p$-subgroups of a group $G$ are conjugate.
 \end{theorem}
 
 \begin{proof}
-Let $P$ and $Q$ be Sylow $p$-subgroups of $G$. In particular, $Q$ is a $p$-subgroup and so by Theorem XXX (above) we have that $Q \subset P^g$ for some $g \in G$. Since the map from $P$ to $P^g$ given by $p \mapsto p^g$ is a bijection, and $|P|=|Q|$, we have that $Q=P^g$.
+Let $P$ and $Q$ be Sylow $p$-subgroups of $G$. In particular, $Q$
+is a $p$-subgroup and so by Theorem XXX (above) we have that $Q
+\subset P^g$ for some $g \in G$. Since the map from $P$ to $P^g$
+given by $p \mapsto p^g$ is a bijection, and $|P|=|Q|$, we have
+that $Q=P^g$.
 \end{proof}
 
 \section{Lecture 10 -- October 6}
 
 \subsection{Decomposing a group with direct products}
 
-A \emph{decomposition} is a means of listing the possible isomorphism classes of a group using auxiliary facts. The direct product is a basic decomposition. We will pass over the definitions of internal and external direct product as they are straightforward. Merely notice that $A \times B$ has two normal subgroups, the first isomorphic to $A$, the other to $B$, and that these subgroups intersect trivially. At this point we have for free that $B \cong B/1 = B/(A\cap B) \cong AB/A = G/A$. Similarly $A \cong G/B$.
+A \emph{decomposition} is a means of listing the possible isomorphism
+classes of a group using auxiliary facts. The direct product is a
+basic decomposition. We will pass over the definitions of internal
+and external direct product as they are straightforward. Merely
+notice that $A \times B$ has two normal subgroups, the first
+isomorphic to $A$, the other to $B$, and that these subgroups
+intersect trivially. At this point we have for free that $B \cong
+B/1 = B/(A\cap B) \cong AB/A = G/A$. Similarly $A \cong G/B$.
 
-Conversely if $AB = G$ where $A$ and $B$ are normal in $G$ and $A \cap B = 1$ then $G \cong A \times B$. What qualifies the direct product as a decomposition is that $A \times B \cong A' \times B'$ implies $A \cong A'$ and $B \cong B'$ -- i.e. the isomorphism class of $A \times B$ is determined by the classes of $A$ and $B$.
+Conversely if $AB = G$ where $A$ and $B$ are normal in $G$ and $A
+\cap B = 1$ then $G \cong A \times B$. What qualifies the direct
+product as a decomposition is that $A \times B \cong A' \times B'$
+implies $A \cong A'$ and $B \cong B'$ -- i.e. the isomorphism class
+of $A \times B$ is determined by the classes of $A$ and $B$.
 
-(Example: $|G| = p^2$. Notice we looked at groups of order four using grubby Cayley tables, but we get it immediately now.)
+(Example: $|G| = p^2$. Notice we looked at groups of order four
+using grubby Cayley tables, but we get it immediately now.)
 
-Sylow subgroups are a natural instrument for decomposing finite groups into direct products. Write $|G| = p_1^{e_1}p_2^{e_2}\cdots p_n^{e_n}$ for suitable primes $p_i$ and powers $e_i$. For each $p_i$, pick $P_i \in Syl_{p_i}(G)$. Then \emph{if all Sylow subgroups are normal}, $|P_1P_2\cdots P_n| = |P_1||P_2|\cdots |P_n| = p_1^{e_1}p_2^{e_2}\cdots p_n^{e_n} = |G|$. Because $G$ is finite we have $G = P_1P_2\cdots P_n$, and Lagrange forces the intersection of any two Sylow subgroups to be trivial. In this case $G$ is the direct product of its Sylow subgroups.
+Sylow subgroups are a natural instrument for decomposing finite
+groups into direct products. Write $|G| = p_1^{e_1}p_2^{e_2}\cdots
+p_n^{e_n}$ for suitable primes $p_i$ and powers $e_i$. For each
+$p_i$, pick $P_i \in Syl_{p_i}(G)$. Then \emph{if all Sylow subgroups
+are normal}, $|P_1P_2\cdots P_n| = |P_1||P_2|\cdots |P_n| =
+p_1^{e_1}p_2^{e_2}\cdots p_n^{e_n} = |G|$. Because $G$ is finite
+we have $G = P_1P_2\cdots P_n$, and Lagrange forces the intersection
+of any two Sylow subgroups to be trivial. In this case $G$ is the
+direct product of its Sylow subgroups.
 
-For instance, suppose $|G| = 15 = 3\cdot 5$. The number of Sylow 3-subgroups is congruent to 1 mod 3, and divides 15. The only possibility is 1. Let $P \in Syl_3(G)$. Then $|G \colon N(P)| = 1$ so $N(P) = G$ which means $P \lhd G$. Let $Q \in Syl_5(G)$. Similarly $Q \lhd G$. By our discussion above, $G \cong P \times Q$. In lecture five we saw that groups of prime order (like $P$ and $Q$) are cylic. In particular $G \cong \mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/5\mathbb{Z}$. This is commonly written $\mathbb{Z}_3 \times \mathbb{Z}_5$.
+For instance, suppose $|G| = 15 = 3\cdot 5$. The number of Sylow
+3-subgroups is congruent to 1 mod 3, and divides 15. The only
+possibility is 1. Let $P \in Syl_3(G)$. Then $|G \colon N(P)| = 1$
+so $N(P) = G$ which means $P \lhd G$. Let $Q \in Syl_5(G)$. Similarly
+$Q \lhd G$. By our discussion above, $G \cong P \times Q$. In lecture
+five we saw that groups of prime order (like $P$ and $Q$) are cylic.
+In particular $G \cong \mathbb{Z}/3\mathbb{Z} \times
+\mathbb{Z}/5\mathbb{Z}$. This is commonly written $\mathbb{Z}_3
+\times \mathbb{Z}_5$.
 
-More is true. In general if $a$ and $b$ are relatively prime then $\mathbb{Z}_a \times \mathbb{Z}_b \cong \mathbb{Z}_{ab}$. As noted, $\mathbb{Z}_a \times \mathbb{Z}_b$ contains normal subgroups $A$ and $B$ ismorphic to $\mathbb{Z}_a$ and $\mathbb{Z}_b$ respectively. Suppose $(x, 0)$ generates $A$ and $(0, y)$ generates $B$. We write our group operation additively. Since $i \cdot (x, y) = (i \cdot x, i \cdot y)$ for any integer $i$, the order of $(x, y)$ is a common multiple of $o(x,0) = a$ and $o(0, y) = b$. By the definition of order it is the \emph{least} common multiple. However $a$ and $b$ are relatively prime so the order of $(x, y) = ab = |\mathbb{Z}_a \times \mathbb{Z}_b|$. This establishes the general fact. Looking back at our example, any group of order 15 must be cyclic.
+More is true. In general if $a$ and $b$ are relatively prime then
+$\mathbb{Z}_a \times \mathbb{Z}_b \cong \mathbb{Z}_{ab}$. As noted,
+$\mathbb{Z}_a \times \mathbb{Z}_b$ contains normal subgroups $A$
+and $B$ ismorphic to $\mathbb{Z}_a$ and $\mathbb{Z}_b$ respectively.
+Suppose $(x, 0)$ generates $A$ and $(0, y)$ generates $B$. We write
+our group operation additively. Since $i \cdot (x, y) = (i \cdot
+x, i \cdot y)$ for any integer $i$, the order of $(x, y)$ is a
+common multiple of $o(x,0) = a$ and $o(0, y) = b$. By the definition
+of order it is the \emph{least} common multiple. However $a$ and
+$b$ are relatively prime so the order of $(x, y) = ab = |\mathbb{Z}_a
+\times \mathbb{Z}_b|$. This establishes the general fact. Looking
+back at our example, any group of order 15 must be cyclic.
 
 \subsection{Generalizing: semidirect products}
 
-Suppose $N \lhd G$ and $H \subset G$ where $NH = G$ and $N \cap H = 1$. The group $G$ would be a direct product except $H$ is not necessarily normal. However, there is still enough structure to endow the product $N \times H$ with a group operation. The operation, while somewhat baffling, makes this new group (denoted $N \rtimes H$) isomorphic to $G$. It is defined $(n_1, h_1) \cdot (n_2, h_2) = (n_1 n_2^{h_1^{-1}}, h_1 h_2)$. The reader can check the group axioms. For instance, the group identity is $(1, 1)$ and inverses are given by $(n, h)^{-1} = ((n^{-1})^h, h^{-1})$.
+Suppose $N \lhd G$ and $H \subset G$ where $NH = G$ and $N \cap H
+= 1$. The group $G$ would be a direct product except $H$ is not
+necessarily normal. However, there is still enough structure to
+endow the product $N \times H$ with a group operation. The operation,
+while somewhat baffling, makes this new group (denoted $N \rtimes
+H$) isomorphic to $G$. It is defined $(n_1, h_1) \cdot (n_2, h_2)
+= (n_1 n_2^{h_1^{-1}}, h_1 h_2)$. The reader can check the group
+axioms. For instance, the group identity is $(1, 1)$ and inverses
+are given by $(n, h)^{-1} = ((n^{-1})^h, h^{-1})$.
 
-As with direct products, we can build external semidirect products. Let $N$ and $H$ be any two groups and suppose $\phi \colon H \rightarrow Aut(N)$ is a homomorphism. (Notice $\phi$ is the permutation representation of an $H$-action via automorphisms on $N$.) Define a binary operation on $H \times N$ by $(n_1, h_1) \cdot (n_2, h_2) \mapsto (n_1n_2^{(h_1^{-1})\phi}, h_1 h_2)$. Once again a brute force check of the axioms is required, but the operation forms a group.
+As with direct products, we can build external semidirect products.
+Let $N$ and $H$ be any two groups and suppose $\phi \colon H
+\rightarrow Aut(N)$ is a homomorphism. (Notice $\phi$ is the
+permutation representation of an $H$-action via automorphisms on
+$N$.) Define a binary operation on $H \times N$ by $(n_1, h_1) \cdot
+(n_2, h_2) \mapsto (n_1n_2^{(h_1^{-1})\phi}, h_1 h_2)$. Once again
+a brute force check of the axioms is required, but the operation
+forms a group.
 
-The operation looks similar to the earlier one using conjugation, as well it should. Let $\bar N = (N, 1) \subset N \times H$ and $\bar H = (1, H) \subset N \times H$. Then $N \cong \bar N$ and $H \cong \bar H$. Also $\bar N$ is normal because it is the kernel of the the projection homoorphism from $N \times H$ to $\bar H$. Pick $\bar n \in \bar N$ and $\bar h \in \bar H$. Then $\bar n = (n, 1)$ and $\bar h = (1, h)$ for some $n \in N$ and $h \in H$. So ${\bar n}^{\bar h} = (n, 1)^{(1, h)} = (1, h^{-1})(n, 1)(1, h) = (1n^{(h^{-1})\phi}, h^{-1})(1, h) = (n^{(h^{-1})\phi}, 1)$. Thus an automorphism on $N$ behaves just like $\bar H$-conjugation does on $\bar N$. The external semidirect product operation ``becomes'' the conjugation operation internally.
+The operation looks similar to the earlier one using conjugation,
+as well it should. Let $\bar N = (N, 1) \subset N \times H$ and
+$\bar H = (1, H) \subset N \times H$. Then $N \cong \bar N$ and $H
+\cong \bar H$. Also $\bar N$ is normal because it is the kernel of
+the the projection homoorphism from $N \times H$ to $\bar H$. Pick
+$\bar n \in \bar N$ and $\bar h \in \bar H$. Then $\bar n = (n, 1)$
+and $\bar h = (1, h)$ for some $n \in N$ and $h \in H$. So ${\bar
+n}^{\bar h} = (n, 1)^{(1, h)} = (1, h^{-1})(n, 1)(1, h) =
+(1n^{(h^{-1})\phi}, h^{-1})(1, h) = (n^{(h^{-1})\phi}, 1)$. Thus
+an automorphism on $N$ behaves just like $\bar H$-conjugation does
+on $\bar N$. The external semidirect product operation ``becomes''
+the conjugation operation internally.
 
-Constructing distinct semidirect products can be challenging. Suppose $N \lhd G$ and both $H$ and $K$ are subgroups of $G$. It can happen that $N \rtimes H \cong N \rtimes K$ even though $H$ is not isomorphic to $K$. (Example needed.) Checking the distinctness of semidirect products can be done ad hoc, as we will see.
+Constructing distinct semidirect products can be challenging. Suppose
+$N \lhd G$ and both $H$ and $K$ are subgroups of $G$. It can happen
+that $N \rtimes H \cong N \rtimes K$ even though $H$ is not isomorphic
+to $K$. (Example needed.) Checking the distinctness of semidirect
+products can be done ad hoc, as we will see.
 
-We already classified all groups of order 15, so one would think that doing the same for those of order 12 should be easy. It is actually much harder and provides good exercise with semidirect products and Sylow theory.
+We already classified all groups of order 15, so one would think
+that doing the same for those of order 12 should be easy. It is
+actually much harder and provides good exercise with semidirect
+products and Sylow theory.
 
 Let $G$ be a group of order 12.
 
